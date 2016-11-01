@@ -5,8 +5,8 @@
 		"url": "/",
 		"children": [
 			{
-				"description": "This is the landing page for docs",
-				"title": "Themes",
+				"description": "Child page.",
+				"title": "Child",
 				"url": "/child"
 			}
 		]

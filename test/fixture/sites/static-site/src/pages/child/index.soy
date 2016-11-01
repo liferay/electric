@@ -1,6 +1,6 @@
 ---
-description: "This is the landing page for docs"
-title: "Themes"
+description: "Child page."
+title: "Child"
 ---
 
 {namespace pageChildIndex}
@@ -9,6 +9,7 @@ title: "Themes"
  * This template will be rendered by SoyWeb when the user loads static.soy.
  * It deliberately includes dummy data so the designer can get a feel for how
  * the task list will appear with real data rather with minimal copy and paste.
+ * @param site
  */
 {template .render}
 	{call main.render data="all"}
@@ -16,7 +17,9 @@ title: "Themes"
 			<h1>Child</h1>
 
 			<div id="moduleFinder">
-				{call Navigation.render data="all" /}
+				{call Navigation.render data="all"}
+					{param section: $site.index /}
+				{/call}
 			</div>
 		{/param}
 	{/call}

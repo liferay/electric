@@ -34,6 +34,7 @@
     "gulp-metal": "^1.9.10",
     "gulp-sass": "^2.3.2",
     "gulp-soynode": "eduardolundgren/gulp-soynode",
+    "gulp-util": "^3.0.7",
     "metal": "^2.5.1",
     "metal-component": "^2.5.1",
     "metal-soy": "^2.5.1",
