@@ -1,0 +1,24 @@
+{namespace main}
+
+/**
+ * @param content
+ * @param site
+ * @param? elementClasses
+ */
+{template .render}
+	<div class="{$elementClasses ?: 'main'}">
+		<div class="topper">
+			<a class="topper-site-title" href="{$site.index.url}">{$site.index.title}</a>
+
+			{call Navigation.render}
+				{param depth: 1 /}
+				{param elementClasses: 'nav nav-pills topper-nav' /}
+				{param section: $site.index /}
+			{/call}
+		</div>
+
+		<main class="content">
+			{$content}
+		</main>
+	</div>
+{/template}

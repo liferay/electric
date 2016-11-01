@@ -1,0 +1,35 @@
+{namespace Navigation}
+
+/**
+ * Navigation
+ * @param? currentDepth
+ * @param? currentURL
+ * @param? depth
+ * @param? elementClasses
+ * @param section
+ */
+{template .render}
+	{let $localCurrentDepth: $currentDepth ?: 0 /}
+
+	{if $section.children}
+		<ul class="{$elementClasses ?: ''}">
+			{foreach $page in $section.children}
+				<li class="{$page.active ? 'active' : ''}">
+					<a href="{$page.url}">
+						<span>{$page.title}</span>
+					</a>
+
+					{if not $depth or $localCurrentDepth + 1 < $depth}
+						{call Navigation.render}
+							{param currentDepth: $localCurrentDepth + 1 /}
+							{param currentURL: $currentURL /}
+							{param depth: $depth /}
+							{param elementClasses: $elementClasses /}
+							{param section: $page /}
+						{/call}
+					{/if}
+				</li>
+			{/foreach}
+		</ul>
+	{/if}
+{/template}

@@ -1,0 +1,14 @@
+{
+	"index": {
+		"description": "Page index.",
+		"title": "Home",
+		"url": "/",
+		"children": [
+			{
+				"description": "This is the landing page for docs",
+				"title": "Themes",
+				"url": "/child"
+			}
+		]
+	}
+}
