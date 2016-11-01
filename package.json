@@ -33,7 +33,7 @@
     "gulp-insert": "^0.5.0",
     "gulp-metal": "^1.9.10",
     "gulp-sass": "^2.3.2",
-    "gulp-soynode": "eduardolundgren/gulp-soynode",
+    "gulp-soynode": "^1.5.3",
     "gulp-util": "^3.0.7",
     "metal": "^2.5.1",
     "metal-component": "^2.5.1",
