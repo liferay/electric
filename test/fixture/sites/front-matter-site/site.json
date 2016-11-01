@@ -1,0 +1,83 @@
+{
+	"index": {
+		"description": "Index.",
+		"title": "Index",
+		"weight": 1,
+		"url": "/",
+		"children": [
+			{
+				"description": "Child1.",
+				"title": "Child1",
+				"weight": 1,
+				"url": "/child1",
+				"children": [
+					{
+						"description": "Child1 Page1.",
+						"title": "Child1 Page1",
+						"weight": 2,
+						"url": "/child1/page1.html"
+					},
+					{
+						"description": "Child1 Page3.",
+						"title": "Child1 Page3",
+						"weight": 3,
+						"url": "/child1/page3.html"
+					},
+					{
+						"description": "Child1 Page2.",
+						"title": "Child1 Page2",
+						"weight": 4,
+						"url": "/child1/page2.html"
+					},
+					{
+						"description": "Child1 Page4.",
+						"title": "Child1 Page4",
+						"weight": 5,
+						"url": "/child1/page4.html"
+					},
+					{
+						"description": "Child2.",
+						"title": "Child2",
+						"url": "/child1/child2",
+						"children": [
+							{
+								"description": "Child2 Page1.",
+								"title": "Child2 Page1",
+								"url": "/child1/child2/page1.html"
+							},
+							{
+								"description": "Child2 Page2.",
+								"title": "Child2 Page2",
+								"url": "/child1/child2/page2.html"
+							}
+						]
+					}
+				]
+			},
+			{
+				"description": "Page4.",
+				"title": "Page4",
+				"weight": 2,
+				"url": "/page4.html"
+			},
+			{
+				"description": "Page3.",
+				"title": "Page3",
+				"weight": 3,
+				"url": "/page3.html"
+			},
+			{
+				"description": "Page2.",
+				"title": "Page2",
+				"weight": 4,
+				"url": "/page2.html"
+			},
+			{
+				"description": "Page1.",
+				"title": "Page1",
+				"weight": 5,
+				"url": "/page1.html"
+			}
+		]
+	}
+}
