@@ -1,6 +1,6 @@
 {
   "name": "soy-static-generator",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Static generator using soy templates and metal.js.",
   "main": "lib/index.js",
   "scripts": {
