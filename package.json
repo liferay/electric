@@ -1,5 +1,5 @@
 {
-  "name": "soy-static-generator",
+  "name": "metal-ssg",
   "version": "0.0.0",
   "description": "Static generator using soy templates and metal.js.",
   "main": "lib/index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Robert-Frampton/soy-static-generator"
+    "url": "https://github.com/Robert-Frampton/metal-ssg"
   },
   "keywords": [
     "metal.js",
@@ -19,9 +19,9 @@
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Robert-Frampton/soy-static-generator/issues"
+    "url": "https://github.com/Robert-Frampton/metal-ssg/issues"
   },
-  "homepage": "https://github.com/Robert-Frampton/soy-static-generator",
+  "homepage": "https://github.com/Robert-Frampton/metal-ssg",
   "dependencies": {
     "del": "^2.2.2",
     "fs-extra": "^0.30.0",
