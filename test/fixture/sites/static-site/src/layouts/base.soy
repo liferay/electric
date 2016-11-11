@@ -2,7 +2,7 @@
 
 /**
  * @param content
- * @param? frontMatter
+ * @param? page
  */
 {template .render private="true"}
 <!DOCTYPE html>
@@ -11,9 +11,9 @@
 	<meta charset="UTF-8">
 	<meta content="minimum-scale=1.0, width=device-width" name="viewport">
 	<meta name="format-detection" content="telephone=no">
-	<meta name="description" content="{$frontMatter.description ?: ''}">
+	<meta name="description" content="{$page.description ?: ''}">
 
-	<title>{$frontMatter.title}</title>
+	<title>{$page.title}</title>
 </head>
 <body>
 	<div id="main">
