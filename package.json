@@ -1,6 +1,6 @@
 {
   "name": "metal-ssg",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Static generator using soy templates and metal.js.",
   "main": "lib/index.js",
   "scripts": {
