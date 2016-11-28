@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Robert-Frampton/metal-ssg",
   "dependencies": {
     "del": "^2.2.2",
+    "front-matter": "^2.1.1",
     "fs-extra": "^0.30.0",
     "gulp-concat": "^2.6.0",
     "gulp-data": "^1.2.1",
@@ -37,11 +38,13 @@
     "gulp-soynode": "^1.5.3",
     "gulp-util": "^3.0.7",
     "lodash": "^4.16.6",
+    "marked": "^0.3.6",
     "metal": "^2.5.1",
     "metal-component": "^2.5.1",
     "metal-soy": "^2.5.1",
     "require-dir": "^0.3.1",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "through2": "^2.0.2"
   },
   "devDependencies": {
     "ava": "^0.16.0",
