@@ -5,4 +5,26 @@ title: "Pages"
 weight: 5
 ---
 
-## Something
+<article id="article1">
+
+## Front Matter
+
+</article>
+
+<article id="article2">
+
+## Soy
+
+</article>
+
+<article id="article3">
+
+## Markdown
+
+</article>
+
+<article id="article4">
+
+## Page Component
+
+</article>

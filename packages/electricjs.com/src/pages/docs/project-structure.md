@@ -5,4 +5,8 @@ title: "Project Structure"
 weight: 3
 ---
 
-## Something
+<article id="article1">
+
+## Structure
+
+</article>

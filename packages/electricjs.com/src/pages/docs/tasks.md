@@ -5,4 +5,14 @@ title: "Tasks"
 weight: 2
 ---
 
-## Something
+<article id="article1">
+
+## Registering
+
+</article>
+
+<article id="article2">
+
+## Configuration
+
+</article>
