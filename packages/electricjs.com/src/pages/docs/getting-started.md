@@ -5,7 +5,7 @@ title: "Getting Started"
 weight: 1
 ---
 
-<article id="article1">
+<article id="yeoman">
 
 ## Yeoman Generator
 
@@ -34,7 +34,7 @@ tips.
 
 </article>
 
-<article id="article2">
+<article id="dependencies">
 
 ## Project Dependencies
 
@@ -48,7 +48,7 @@ npm i --save gulp metal-ssg
 
 </article>
 
-<article id="article3">
+<article id="projects">
 
 ## Projects Using Metal SSG
 
