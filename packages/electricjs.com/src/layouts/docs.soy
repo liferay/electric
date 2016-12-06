@@ -1,0 +1,75 @@
+{namespace docs}
+
+/**
+ * @param page
+ * @param site
+ */
+{template .render}
+	{call main.render data="all"}
+		{param elementClasses: 'docs' /}
+		{param content kind="html"}
+			{call SSGSidebar.render}
+				{param section: $site.index.children[0] /}
+			{/call}
+
+			{call .guide data="all" /}
+		{/param}
+	{/call}
+{/template}
+
+/**
+ * @param page
+ * @param content
+ */
+{template .guide}
+	<div class="sidebar-offset">
+		<header class="guide-header">
+			<div class="container-hybrid">
+				<h1 class="guide-header-title">{$page.title}</h1>
+			</div>
+		</header>
+
+		<div class="container-hybrid">
+			<div class="docs-guide row">
+				<div class="docs-content col-xs-16 col-md-9">
+					{$content}
+
+					{call .feedback data="all" /}
+				</div>
+
+				<nav class="col-xs-16 col-md-offset-2 col-md-5">
+					<div class="docs-nav-container">
+						{call SSGReadingProgress.render}
+							{param elementClasses: 'docs-nav' /}
+						{/call}
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+{/template}
+
+/**
+ * @param page
+ * @param site
+ */
+{template .feedback}
+	<div>
+		<div class="guide-feedback">
+			<p>Was this section helpful?</p>
+
+			<button class="btn btn-accent guide-feedback-btn guide-feedback-btn-yes">Yes</button>
+			<button class="btn btn-accent guide-feedback-btn guide-feedback-btn-no">No</button>
+		</div>
+
+		<div class="guide-github">
+			<div class="guide-github-img">
+				<span class="icon-16-github"></span>
+			</div>
+
+			<div class="guide-github-text">
+				<p>Contribute to this Doc on Github! <a href="{$site.repo ?: ''}/tree/master/{$page.srcFilePath}" class="docs-github-link" target="_blank">Edit this section</a>.</p>
+			</div>
+		</div>
+	</div>
+{/template}

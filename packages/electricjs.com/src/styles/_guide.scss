@@ -1,0 +1,252 @@
+/* Custom TopbarColor
+		========================================================================== */
+.topbar.topbar-inverse,
+.topbar.topbar-light {
+	background: rgba($primary, 0.02);
+
+	.we {
+		color: $white;
+	}
+	.deploy {
+		color: rgba($primary, 0.9);
+		display: inline-block;
+	}
+	.liferay {
+		color: rgba($primary, 0.4);
+		display: inline-block;
+	}
+
+	.topbar-link {
+			color: rgba($primary, 0.6);
+		&:hover {
+			color: rgba($primary, 0.4);
+		}
+	}
+}
+
+.topbar.topbar-light {
+	background: $white;
+}
+
+/* Header
+		========================================================================== */
+
+.guide-header {
+	background: rgba($primary, 0.02);
+	text-align: center;
+	padding: 108px 0 96px;
+	margin-top: 60px;
+}
+
+.guide-header-title {
+	color: rgba($primary, .9);
+	font-family: $font-family-secondary-bold;
+	font-size: 53px;
+	font-weight: 400;
+	line-height: 60px;
+}
+
+.guide-header-title span {
+	color: rgba($primary, .9);
+	font-family: $font-family-secondary-bold;
+	font-weight: 400;
+}
+
+/* Topics Button Group
+   ========================================================================== */
+
+.guide-topics-container {
+	text-align: center;
+	margin: 0 0 60px;
+}
+
+.guide-topics {
+	.btn-default {
+		background: white;
+	}
+}
+
+/* Call to Action Button
+   ========================================================================== */
+
+.guide-btn-cta {
+	text-align: center;
+	margin: 45px 0 0;
+
+	.btn.btn-accent {
+		@include anim(all);
+		color: $white;
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+}
+
+.guide-aux-cta {
+	font-size: 13px;
+	margin: 5px 0 0;
+	text-align: center;
+}
+
+/* Feedback
+   ========================================================================== */
+
+.guide-feedback {
+	background: rgba($primary, .02);
+	border-radius: 4px;
+	padding: 36px 0;
+	margin: 60px 0 24px;
+	text-align: center;
+	width: 100%;
+
+	p {
+		line-height: 36px;
+		font-family: $font-family-secondary-semibold;
+		font-size: 19px;
+		color: rgba($primary, .8);
+		margin: 0 0 24px;
+	}
+}
+
+.guide-feedback-btn {
+	margin: 0 12px;
+	width: 134px;
+}
+
+/* Edit on GitHub
+   ========================================================================== */
+
+.docs-content .guide-github {
+	margin: 0 0 60px;
+	width: 100%;
+}
+
+.docs-content .guide-github-img {
+	background: rgba($primary, .1);
+	border-radius: 4px 0 0 4px;
+	float: left;
+	height: 96px;
+	line-height: 96px;
+	text-align: center;
+	width: 96px;
+
+	span {
+		font-size: 36px;
+		vertical-align: middle;
+	}
+}
+
+.docs-content .guide-github-text {
+	align-items: center;
+	background: rgba($primary, .02);
+	border-radius: 0 4px 4px 0;
+	color: rgba($primary, .6);
+	display: flex;
+	font-size: 16px;
+	font-weight: 600;
+	height: 96px;
+	margin-left: 96px;
+	padding: 0 20px;
+
+	a {
+		font-weight: 600;
+	}
+}
+
+.docs-content .guide-github-text p {
+	margin: 0;
+}
+
+.docs-content .guide-github-link {
+	font-weight: 600;
+}
+
+.guide-topic .docs-content pre code {
+	background: transparent;
+	border: 0;
+	color: rgba(white, .9);
+}
+
+.docs-content img {
+	max-width: 100%;
+}
+
+.docs-content em {
+	font-style: normal;
+}
+
+.guide-topic .sidebar-list-2 .sidebar-link {
+	padding-left: 56px;
+}
+
+.docs .reading-progress {
+	width: 100%;
+}
+
+/* Medium screens
+   ========================================================================== */
+
+@media (min-width: $screen-md-min) {
+	.guide-header {
+		padding-top: 40px;
+	}
+}
+
+@media (max-width: $screen-md-min) {
+
+	// Header --------------------------------------------------------------------
+
+	.sidebar-inverse .sidebar-header {
+		background: rgba(white, .3);
+		color: white;
+	}
+
+	.sidebar-inverse .sidebar-header:hover,
+	.sidebar-inverse .sidebar-header:focus,
+	.sidebar-inverse .sidebar-header .sidebar-icon {
+		color: white;
+	}
+
+	// Search --------------------------------------------------------------------
+
+	.sidebar-inverse .sidebar-search .form-control {
+		background: white;
+		border: 1px solid transparent;
+
+		&:focus {
+			border-color: white;
+		}
+	}
+
+	// First level ---------------------------------------------------------------
+
+	.guide-topic .sidebar-inverse .sidebar-list-1 .sidebar-link:hover,
+	.guide-topic .sidebar-inverse .sidebar-list-1 .sidebar-link:focus,
+	.guide-topic .sidebar-inverse .sidebar-list-1 .sidebar-link-selected,
+	.guide-topic .sidebar-inverse .sidebar-list-1 .sidebar-link-selected:hover,
+	.guide-topic .sidebar-inverse .sidebar-list-1 .sidebar-link-selected:focus {
+		background: rgba(white, .1);
+		color: white;
+	}
+
+	.guide-topic .sidebar-inverse .sidebar-list-1 .sidebar-link:hover .sidebar-icon,
+	.guide-topic .sidebar-inverse .sidebar-list-1 .sidebar-link:focus .sidebar-icon,
+	.guide-topic .sidebar-inverse .sidebar-list-1 .sidebar-link-selected .sidebar-icon {
+		color: white;
+	}
+
+	// Second level ------------------------------------------------------------
+
+	.guide-topic .sidebar-inverse .sidebar-list-2 .sidebar-link:hover,
+	.guide-topic .sidebar-inverse .sidebar-list-2 .sidebar-link:focus,
+	.guide-topic .sidebar-inverse .sidebar-list-2 .sidebar-link-selected,
+	.guide-topic .sidebar-inverse .sidebar-list-2 .sidebar-link-selected:hover,
+	.guide-topic .sidebar-inverse .sidebar-list-2 .sidebar-link-selected:focus {
+		background: rgba(white, .1);
+		color: white;
+	}
+}
+
+

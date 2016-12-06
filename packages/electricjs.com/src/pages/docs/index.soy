@@ -1,0 +1,83 @@
+---
+description: "Documentation description."
+title: "Documentation"
+---
+
+{namespace pageDocsIndex}
+
+/**
+ * @param site
+ */
+{template .render}
+	{call main.render data="all"}
+		{param elementClasses: 'docs' /}
+		{param content kind="html"}
+			{call SSGSidebar.render}
+				{param section: $site.index.children[0] /}
+			{/call}
+
+			{call .topics data="all" /}
+		{/param}
+	{/call}
+{/template}
+
+/**
+ * @param site
+ */
+{template .topics}
+	<div class="sidebar-offset">
+		<div class="container-hybrid docs-home-top">
+			<div class="row">
+				<div class="col-xs-16">
+					<h1 class="docs-home-top-title"><span>Awesome</span> Docs Center</h1>
+					<p class="docs-home-top-description">Start learning how to leverage the power of Awesome in your project.</p>
+				</div>
+			</div>
+			<div class="row">
+				<form class="docs-home-top-form" action="/docs/search.html" method="GET" enctype="multipart/form-data">
+					<div class="col-md-7 col-md-offset-3 col-xs-16">
+						<div class="form-group">
+							<div class="input-inner-addon input-inner-addon-right">
+								<input name="q" class="form-control" type="text" placeholder="Enter a search term here" autocomplete="off" required>
+								<span class="input-inner-icon-helper icon-16-magnifier"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-xs-16">
+						<button class="btn btn-accent btn-block" type="submit">Search</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="docs-home-topics">
+			<div class="container-hybrid">
+				<div class="row">
+					<div class="col-xs-16">
+						<section class="docs-home-middle">
+							<h2 class="docs-home-middle-subtitle">Choose a Guide</h2>
+							<p class="docs-home-middle-description">Each one provide step by step coverage for every core feature.</p>
+						</section>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-13 col-md-offset-3 col-xs-16">
+						<div class="row">
+							{foreach $topic in $site.index.children[0].children}
+								{if not $topic.hidden}
+									<div class="col-md-6 col-xs-16">
+										<a class="topic radial-out" href="{$topic.url}">
+											<div class="topic-icon">
+												<span class="icon-16-{$topic.icon}"></span>
+											</div>
+											<h3 class="topic-title">{$topic.title}</h3>
+										</a>
+									</div>
+								{/if}
+							{/foreach}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{/template}

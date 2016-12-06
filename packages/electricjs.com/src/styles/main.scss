@@ -1,0 +1,27 @@
+$accent: #4285f4;
+
+@import "node_modules/westyle/src/westyle";
+
+// General
+
+@import "topbar";
+
+// Home
+
+@import "header";
+@import "about";
+@import "features";
+@import "highlights";
+@import "footer";
+
+// Docs
+
+@import "autocomplete";
+@import "docs";
+@import "guide";
+@import "search";
+@import "topics";
+
+// Updates
+
+@import "updates";

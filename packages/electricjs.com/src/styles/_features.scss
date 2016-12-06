@@ -1,0 +1,30 @@
+.features {
+	border-bottom: 5px solid rgba($primary, .1);
+	padding: 150px 0 70px;
+}
+
+.feature {
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+.feature-icon [class^="icon-16-"],
+.feature-icon [class*="icon-16-"] {
+	color: $accent;
+	font-size: 42px;
+	position: relative;
+	top: 10px;
+}
+
+.feature-title {
+	font-family: $font-family-secondary-bold;
+	font-size: 32px;
+	margin: 20px 0;
+}
+
+.feature-description {
+	font-family: $font-family-sans-serif;
+	font-size: 16px;
+	line-height: 26px;
+	margin: 0;
+}

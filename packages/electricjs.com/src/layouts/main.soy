@@ -1,0 +1,51 @@
+{namespace main}
+
+/**
+ * @param content
+ * @param? elementClasses
+ */
+{template .render}
+	<div class="{$elementClasses ?: 'main'}">
+		<main class="content">
+			{call .topbar data="all" /}
+
+			{$content}
+		</main>
+	</div>
+{/template}
+
+/**
+ * @param site
+ */
+{template .topbar}
+	<nav class="topbar">
+		{call .logo data="all" /}
+		{call .menu data="all" /}
+	</nav>
+{/template}
+
+/**
+ *
+ */
+{template .logo}
+	<div class="topbar-logo">
+		<a class="topbar-logo-link" href="/">
+			<span class="icon icon-16-heart"></span>
+			<span class="name">Awesome</span>
+			<span class="by">by Liferay</span>
+		</a>
+	</div>
+{/template}
+
+/**
+ * @param site
+ */
+{template .menu}
+	{call SSGNavigation.render}
+		{param depth: 1 /}
+		{param elementClasses: 'topbar-list' /}
+		{param linkClasses: 'topbar-link' /}
+		{param listItemClasses: 'topbar-item' /}
+		{param section: $site.index /}
+	{/call}
+{/template}

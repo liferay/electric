@@ -1,0 +1,22 @@
+.header {
+	padding: 150px 0 130px;
+	text-align: center;
+}
+
+.header-title {
+	font-family: $font-family-secondary-bold;
+	font-size: 76px;
+	margin: 0;
+}
+
+.header-subtitle {
+	font-family: $font-family-sans-serif;
+	font-size: 19px;
+	line-height: 24px;
+	margin: 25px 0 35px;
+}
+
+.header-cta a {
+	font-size: 17px;
+	margin: 0 20px 20px;
+}
