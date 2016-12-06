@@ -5,7 +5,7 @@ title: "Tasks"
 weight: 2
 ---
 
-<article id="article1">
+<article id="registering">
 
 ## Registering
 
@@ -26,7 +26,22 @@ ssg.registerTasks({
 
 </article>
 
-<article id="article2">
+<article id="generate">
+
+## Generate
+
+To generate your distribution files, simple run the following command.
+
+```bash
+gulp generate
+```
+
+This will render all `soy` and `markdown` files from `src` into HTML and place
+them in the `dist` folder.
+
+</article>
+
+<article id="configuration">
 
 ## Configuration
 
