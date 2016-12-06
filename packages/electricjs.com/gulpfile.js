@@ -1,14 +1,33 @@
-const gulp = require('gulp');
-const connect = require('gulp-connect');
-const sass = require('gulp-sass');
-const ghPages = require('gulp-gh-pages');
-const ssg = require('metal-ssg');
+'use strict';
 
+const connect = require('gulp-connect');
+const ghPages = require('gulp-gh-pages');
+const gulp = require('gulp');
+const hljs = require('highlight.js');
 const runSequence = require('run-sequence');
+const sass = require('gulp-sass');
+const ssg = require('metal-ssg');
 
 ssg.registerTasks({
 	gulp: gulp,
-	plugins: ['metal-ssg-components']
+	plugins: ['metal-ssg-components'],
+	markdownOptions: {
+		highlight: function (str, lang) {
+			if (lang && hljs.getLanguage(lang)) {
+				try {
+					return hljs.highlight(lang, str).value;
+				}
+				catch (err) {}
+			}
+
+			try {
+				return hljs.highlightAuto(str).value;
+			}
+			catch (err) {}
+
+			return '';
+		}
+	}
 });
 
 // CSS -------------------------------------------------------------------------
