@@ -28,6 +28,10 @@ Run the generator with `yo metal-ssg` in the command line. This will prompt you
 for a project id and name, then it creates a folder in your current
 directory with your new `metal-ssg` project.
 
+Having issues getting the generator running? Check
+out [Yeoman's FAQs](http://yeoman.io/learning/faq.html) for troubleshooting
+tips.
+
 </article>
 
 <article id="article2">
@@ -48,6 +52,6 @@ npm i --save gulp metal-ssg
 
 ## Projects Using Metal SSG
 
-> Coming soon...
+- [Metal SSG Docs](https://github.com/Robert-Frampton/metal-ssg-docs)
 
 </article>
