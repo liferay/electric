@@ -46,7 +46,7 @@ Every file in `pages` with a `.soy` or `.md` extension is rendered to HTML
 during the `generate` task.
 
 The file structure of `pages` determines the urls of your pages. For the above
-example, the child.md file will be located at `/docs/parent/child.html` after
+example, the `child.md` file will be located at `/docs/parent/child.html` after
 generating.
 
 Pages named `index` will be located at the path of it's parent directory,

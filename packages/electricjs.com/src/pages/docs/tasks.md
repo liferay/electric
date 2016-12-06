@@ -71,7 +71,7 @@ Exmaple:
 ssg.registerTasks({
 	gulp: gulp,
 	markdownOptions: {
-		breaks: true,
+		breaks: true
 	}
 });
 ```
