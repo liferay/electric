@@ -5,7 +5,7 @@ title: "Project Structure"
 weight: 3
 ---
 
-<article id="article1">
+<article id="structure">
 
 ## Structure
 
@@ -18,6 +18,7 @@ Here is a basic example of a `metal-ssg` project.
 |--src/
    |--layouts/
       |--base.soy (required base template)
+      |--docs.soy
    |--pages/
       |--index.soy (required index page)
       |--docs/
@@ -31,16 +32,25 @@ Here is a basic example of a `metal-ssg` project.
 
 {/literal}
 
-### Layouts
+</article>
+
+<article id="layouts">
+
+## Layouts
 
 The file structure of `layouts` is flexible, as `soy` uses the `namespace` of
 every file as an identifier.
 
-All layout files must be a `soy` template.
+All layout files must be a `soy` template, and the only required layout is
+`base.soy`.
 
 See [layouts](/docs/layouts.html) for more information.
 
-### Pages
+</article>
+
+<article id="pages">
+
+## Pages
 
 Every file in `pages` with a `.soy` or `.md` extension is rendered to HTML
 during the `generate` task.
