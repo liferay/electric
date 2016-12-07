@@ -16,6 +16,7 @@ Here is a basic example of a `metal-ssg` project.
 ```bash
 |--gulpfile.js (registers tasks)
 |--src/
+   |--site.json
    |--layouts/
       |--base.soy (required base template)
       |--docs.soy
@@ -31,6 +32,16 @@ Here is a basic example of a `metal-ssg` project.
 ```
 
 {/literal}
+
+</article>
+
+<article id="site_json">
+
+## site.json
+
+This file contains meta data about your project. Any property can be added to
+this file. Front matter from `pages` is merged with this data and passed to
+every page as a soy param.
 
 </article>
 

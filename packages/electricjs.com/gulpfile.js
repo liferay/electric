@@ -15,17 +15,21 @@ ssg.registerTasks({
 		highlight: function (str, lang) {
 			if (lang && hljs.getLanguage(lang)) {
 				try {
-					return hljs.highlight(lang, str).value;
+					str = hljs.highlight(lang, str).value;
 				}
 				catch (err) {}
 			}
 
 			try {
-				return hljs.highlightAuto(str).value;
+				str = hljs.highlightAuto(str).value;
 			}
 			catch (err) {}
 
-			return '';
+			if (str && lang === 'soy') {
+				str = str.replace(/\n/g, '<br>');
+			}
+
+			return str;
 		}
 	}
 });
