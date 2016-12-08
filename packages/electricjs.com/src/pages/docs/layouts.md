@@ -5,7 +5,7 @@ title: "Layouts"
 weight: 4
 ---
 
-<article id="article1">
+<article id="base">
 
 ## Base Layout
 
@@ -61,7 +61,7 @@ consumes to render each page.
 
 </article>
 
-<article id="article2">
+<article id="sub">
 
 ## Sub Layouts
 

@@ -5,7 +5,7 @@ title: "Pages"
 weight: 5
 ---
 
-<article id="article1">
+<article id="front_matter">
 
 ## Front Matter
 
@@ -31,7 +31,7 @@ functionality.
 
 </article>
 
-<article id="article2">
+<article id="soy">
 
 ## Soy
 
@@ -90,7 +90,7 @@ added to this data by editing the `src/site.json` file.
 
 </article>
 
-<article id="article3">
+<article id="markdown">
 
 ## Markdown
 
