@@ -14,7 +14,7 @@ All tasks are registered in the project's `gulpfile.js`.
 
 {literal}
 
-```js
+```
 const gulp = require('gulp');
 const ssg = require('metal-ssg');
 
@@ -68,7 +68,7 @@ Exmaple:
 
 {literal}
 
-```js
+```
 ssg.registerTasks({
 	gulp: gulp,
 	markdownOptions: {
@@ -94,7 +94,7 @@ Exmaple:
 
 {literal}
 
-```js
+```
 ssg.registerTasks({
 	gulp: gulp,
 	pathDest: 'build'
@@ -117,7 +117,7 @@ Exmaple:
 
 {literal}
 
-```js
+```
 ssg.registerTasks({
 	gulp: gulp,
 	pathSrc: 'web'
@@ -139,7 +139,7 @@ Exmaple:
 
 {literal}
 
-```js
+```
 ssg.registerTasks({
 	gulp: gulp,
 	plugins: ['metal-ssg-components']
@@ -165,7 +165,7 @@ Exmaple:
 
 {literal}
 
-```js
+```
 ssg.registerTasks({
 	gulp: gulp,
 	taskPrefix: 'ssg:'
