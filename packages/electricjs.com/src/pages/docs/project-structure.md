@@ -1,5 +1,6 @@
 ---
 description: "Basic project structure and boilerplate."
+icon: "folder"
 layout: "docs"
 title: "Project Structure"
 weight: 3

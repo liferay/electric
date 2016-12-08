@@ -1,5 +1,6 @@
 ---
 description: "Getting started with a metal-ssg project."
+icon: "arrow-right-rod"
 layout: "docs"
 title: "Getting Started"
 weight: 1

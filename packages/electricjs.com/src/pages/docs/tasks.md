@@ -1,5 +1,6 @@
 ---
 description: "Gulp tasks for site generating, and configuration options."
+icon: "gear"
 layout: "docs"
 title: "Tasks"
 weight: 2

@@ -1,5 +1,6 @@
 ---
 description: "Creating and rendering Metal components."
+icon: "module"
 layout: "docs"
 title: "Metal Components"
 weight: 6
