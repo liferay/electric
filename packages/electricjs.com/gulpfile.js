@@ -65,7 +65,7 @@ gulp.task('wedeploy', () => {
 		.pipe(gulp.dest('dist'));
 });
 
-gulp.task('deploy', ['default'], () => {
+gulp.task('deploy', ['build'], () => {
 	return gulp.src('dist/**/*')
 		.pipe(ghPages({
 			branch: 'wedeploy'
