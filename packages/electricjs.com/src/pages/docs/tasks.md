@@ -23,9 +23,11 @@ ssg.registerTasks({
 
 </article>
 
-<article id="generate">
+<article id="tasks">
 
-## Generate
+## Available Tasks
+
+### Generate
 
 To generate your distribution files, simple run the following command.
 
