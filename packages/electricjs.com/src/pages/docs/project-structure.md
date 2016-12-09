@@ -12,8 +12,6 @@ weight: 3
 
 Here is a basic example of a `metal-ssg` project.
 
-{literal}
-
 ```bash
 |--gulpfile.js (registers tasks)
 |--src/
@@ -31,8 +29,6 @@ Here is a basic example of a `metal-ssg` project.
             |--index.md
             |--child.md
 ```
-
-{/literal}
 
 </article>
 

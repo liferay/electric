@@ -12,9 +12,6 @@ weight: 2
 
 All tasks are registered in the project's `gulpfile.js`.
 
-{literal}
-
-```
 const gulp = require('gulp');
 const ssg = require('metal-ssg');
 
@@ -22,8 +19,6 @@ ssg.registerTasks({
 	gulp: gulp
 });
 ```
-
-{/literal}
 
 </article>
 
@@ -66,8 +61,6 @@ used to render Markdown files.
 
 Exmaple:
 
-{literal}
-
 ```
 ssg.registerTasks({
 	gulp: gulp,
@@ -76,8 +69,6 @@ ssg.registerTasks({
 	}
 });
 ```
-
-{/literal}
 
 See [Remarkable's documentation](https://github.com/jonschlinkert/remarkable#options) for
 list of options.
@@ -92,16 +83,12 @@ The path that generated files are placed in.
 
 Exmaple:
 
-{literal}
-
 ```
 ssg.registerTasks({
 	gulp: gulp,
 	pathDest: 'build'
 });
 ```
-
-{/literal}
 
 Now all generated files will be placed in the `build` directory.
 
@@ -115,16 +102,12 @@ The path where all source files are located.
 
 Exmaple:
 
-{literal}
-
 ```
 ssg.registerTasks({
 	gulp: gulp,
 	pathSrc: 'web'
 });
 ```
-
-{/literal}
 
 Now `metal-ssg` will look inside the `web` directory for all source files.
 
@@ -137,16 +120,12 @@ Array of `npm` modules that expose Metal components.
 
 Exmaple:
 
-{literal}
-
 ```
 ssg.registerTasks({
 	gulp: gulp,
 	plugins: ['metal-ssg-components']
 });
 ```
-
-{/literal}
 
 The components found in the `metal-ssg-components` package will now be available
 to all `soy` files in your project.
@@ -163,16 +142,12 @@ String that is prefixed to every task exposed by `metal-ssg`.
 
 Exmaple:
 
-{literal}
-
 ```
 ssg.registerTasks({
 	gulp: gulp,
 	taskPrefix: 'ssg:'
 });
 ```
-
-{/literal}
 
 The `generate` task will now be exposed as `ssg:generate`. This option allows
 you to implement `metal-ssg` in conjunction with other packages that

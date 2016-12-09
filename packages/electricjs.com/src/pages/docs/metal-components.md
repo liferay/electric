@@ -16,8 +16,6 @@ components and invoke them in your `soy` layouts and pages.
 Components can exist anywhere in the `src` directory, for this example we will
 place them inside `src/components`.
 
-{literal}
-
 ```bash
 |--src/
    |--layouts/
@@ -29,8 +27,6 @@ place them inside `src/components`.
 	  |--MyComponent.soy
 	  |--MyComponent.js
 ```
-
-{/literal}
 
 `MyComponent.soy`.
 
@@ -46,8 +42,6 @@ place them inside `src/components`.
 ```
 
 `MyComponent.js`.
-
-{literal}
 
 ```
 'use strict';
@@ -67,8 +61,6 @@ Soy.register(MyComponent, templates);
 
 export default MyComponent;
 ```
-
-{/literal}
 
 Now that you have the base component files, the `MyComponent` template simply
 needs to be rendered in a page/layout.

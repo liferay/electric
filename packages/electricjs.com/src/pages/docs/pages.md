@@ -12,16 +12,12 @@ weight: 5
 All files in the `pages` directory must have the following front matter declared
 at the beginning of the file.
 
-{literal}
-
 ```
 ---
 title: "Page Title"
 description: "Description."
 ---
 ```
-
-{/literal}
 
 The `title` property will be used for auto-generated navigation elements and as
 the page's `<title>`.
@@ -62,28 +58,20 @@ Every page is passed a `site` and `page` param.
 
 The `page` param represents the front matter of the current file.
 
-{literal}
-
 ```
 {$page.title}
 {$page.description}
 ```
-
-{/literal}
 
 The `site` param contains project meta data such
 as `site.title` and `site.repo`. It also contains the structure of the entire
 site which can be used to generate navigation elements. This structure data is
 defined as the `site.index` property representing the index page of the project.
 
-{literal}
-
 ```
 {$site.title}
 {$site.index}
 ```
-
-{/literal}
 
 This data is pulled from the `dist/site.json` file. Additional properties can be
 added to this data by editing the `src/site.json` file.
@@ -98,8 +86,6 @@ Markdown files are intended for easier writing of documentation and content,
 these files are rendered to HTML and then wrapped in a `soy` template and
 rendered along all `soy` pages.
 
-{literal}
-
 ```
 ---
 description: "Page description."
@@ -109,8 +95,6 @@ title: "Page"
 
 # Hello, World!
 ```
-
-{/literal}
 
 It's important to note that because markdown files are wrapped in soy templates,
 that some content may need to be sanitized of `soy` related syntax (such as

@@ -127,8 +127,6 @@ implement any of the global params (`site` or `page`).
 Markdown implementation doesn't require any `soy` code, rather it leverages the
 front matter `layout` property to determine the layout.
 
-{literal}
-
 ```
 ---
 description: "Page description."
@@ -145,7 +143,5 @@ the layouts directory with the `docs` namespace.
 
 See the section on [configuration](http://localhost:8888/docs/tasks.html#configuration) for
 info on configuring the markdown engine.
-
-{/literal}
 
 </article>

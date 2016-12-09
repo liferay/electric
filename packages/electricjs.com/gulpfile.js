@@ -8,6 +8,10 @@ const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
 const ssg = require('metal-ssg');
 
+const REGEX_SOY_ESCAPED_BRACES = /{rb}([\s\S]*?){lb}/g;
+
+const REGEX_SOY_BOOKENDS = /(^[\s\S]*?){lb}|{rb}(?=[^{rb}]*$)([\s\S]*?$)/g;
+
 ssg.registerTasks({
 	gulp: gulp,
 	plugins: ['metal-ssg-components'],
@@ -19,14 +23,29 @@ ssg.registerTasks({
 				}
 				catch (err) {}
 			}
-
-			try {
-				str = hljs.highlightAuto(str).value;
+			else {
+				try {
+					str = hljs.highlightAuto(str).value;
+				}
+				catch (err) {}
 			}
-			catch (err) {}
 
-			if (str && lang === 'soy') {
-				str = str.replace(/\n/g, '<br>');
+			if (lang !== 'soy') {
+				str = '{literal}' + str + '{/literal}';
+			}
+			else {
+				str = str.replace(REGEX_SOY_BOOKENDS, function(match, g1, g2) {
+					if (g2) {
+						return '{rb}{literal}' + g2+ '{/literal}';
+					}
+					else {
+						return '{literal}' + g1 + '{/literal}{lb}';
+					}
+				});
+
+				str = str.replace(REGEX_SOY_ESCAPED_BRACES, function(match, g1) {
+					return '{rb}{literal}' + g1 + '{/literal}{lb}';
+				});
 			}
 
 			return str;
