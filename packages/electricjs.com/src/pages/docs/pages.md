@@ -111,11 +111,11 @@ title: "Page"
 
 {lb}literal{rb}
 
-<script type="text/javascript">
+<pre
 	var example = function() {lb}
 		return 'Example js';
 	{rb}
-</script>
+</pre>
 
 {lb}/literal{rb}
 ```
