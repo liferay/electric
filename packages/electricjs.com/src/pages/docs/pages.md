@@ -27,7 +27,7 @@ functionality.
 
 </article>
 
-<article id="soy">
+<article id="soy_files">
 
 ## Soy
 
@@ -78,7 +78,7 @@ added to this data by editing the `src/site.json` file.
 
 </article>
 
-<article id="markdown">
+<article id="markdown_files">
 
 ## Markdown
 
