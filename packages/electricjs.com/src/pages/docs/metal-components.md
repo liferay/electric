@@ -43,7 +43,7 @@ place them inside `src/components`.
 
 `MyComponent.js`.
 
-```
+```js
 'use strict';
 
 import Component from 'metal-component';

@@ -12,7 +12,7 @@ weight: 2
 
 All tasks are registered in the project's `gulpfile.js`.
 
-```
+```js
 const gulp = require('gulp');
 const ssg = require('metal-ssg');
 
@@ -62,7 +62,7 @@ used to render Markdown files.
 
 Exmaple:
 
-```
+```js
 ssg.registerTasks({
 	gulp: gulp,
 	markdownOptions: {
@@ -84,7 +84,7 @@ The path that generated files are placed in.
 
 Exmaple:
 
-```
+```js
 ssg.registerTasks({
 	gulp: gulp,
 	pathDest: 'build'
@@ -103,7 +103,7 @@ The path where all source files are located.
 
 Exmaple:
 
-```
+```js
 ssg.registerTasks({
 	gulp: gulp,
 	pathSrc: 'web'
@@ -121,7 +121,7 @@ Array of `npm` modules that expose Metal components.
 
 Exmaple:
 
-```
+```js
 ssg.registerTasks({
 	gulp: gulp,
 	plugins: ['metal-ssg-components']
@@ -143,7 +143,7 @@ String that is prefixed to every task exposed by `metal-ssg`.
 
 Exmaple:
 
-```
+```js
 ssg.registerTasks({
 	gulp: gulp,
 	taskPrefix: 'ssg:'
