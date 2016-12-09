@@ -12,6 +12,7 @@ weight: 2
 
 All tasks are registered in the project's `gulpfile.js`.
 
+```
 const gulp = require('gulp');
 const ssg = require('metal-ssg');
 
