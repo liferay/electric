@@ -1,5 +1,6 @@
 ---
 description: "Creating pages in soy and markdown."
+icon: "code-file"
 layout: "docs"
 title: "Pages"
 weight: 5
@@ -85,6 +86,9 @@ added to this data by editing the `src/site.json` file.
 Markdown files are intended for easier writing of documentation and content,
 these files are rendered to HTML and then wrapped in a `soy` template and
 rendered along all `soy` pages.
+
+The `namespace` is also auto-generated based on the file path, so it does not
+need to be declared at the top of the file.
 
 ```
 ---
