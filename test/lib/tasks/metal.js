@@ -13,7 +13,7 @@ var registerTasks = require('../../../lib/index').registerTasks;
 var sitePath = path.join(__dirname, '../../fixture/sites/static-site');
 
 var initCwd = process.cwd();
-var tempDir = path.join(os.tmpdir(), 'soyweb');
+var tempDir = path.join(os.tmpdir(), 'metal');
 
 test.cb.before(function(t) {
 	gulp.src(path.join(sitePath, '**/*'))
@@ -39,14 +39,20 @@ test.cb.after(function(t) {
 	});
 });
 
-test.cb('it should compile soyweb templates', function(t) {
-	runSequence('front-matter', 'soyweb', function() {
-		gulp.src('dist/**/*.html')
+test.cb('it should bundle metal components', function(t) {
+	runSequence('front-matter', 'metal', function() {
+		gulp.src('dist/js/**/*')
 			.pipe(gutil.buffer(function(err, files) {
-				t.is(path.relative(files[0].base, files[0].path), 'index.html');
-				t.is(path.relative(files[1].base, files[1].path), 'child/index.html');
-				t.is(files[0].contents.length, 553);
-				t.is(files[1].contents.length, 652);
+				var bundle = files[0];
+				var bundleMap = files[1];
+
+				t.is(path.basename(bundle.path), 'bundle.js');
+				t.is(path.basename(bundleMap.path), 'bundle.js.map');
+
+				var bundleContent = bundle.contents.toString();
+
+				t.true(bundleContent.indexOf("this['metal']['pageIndex'] = pageIndex;") > -1);
+				t.true(bundleContent.indexOf("this['metal']['pageChildIndex'] = pageChildIndex;") > -1);
 
 				t.end();
 			}));
