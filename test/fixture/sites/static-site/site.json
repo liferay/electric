@@ -1,12 +1,15 @@
 {
+	"title": "static-site",
 	"index": {
 		"description": "Page index.",
 		"title": "Home",
-		"url": "/",
+		"srcFilePath": "src/pages/index.soy",
+		"url": "/.",
 		"children": [
 			{
 				"description": "Child page.",
 				"title": "Child",
+				"srcFilePath": "src/pages/child/index.soy",
 				"url": "/child"
 			}
 		]

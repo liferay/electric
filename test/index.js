@@ -39,6 +39,9 @@ test.cb('it should generate site.json file that matches pages folder structure',
 		var siteData = fs.readFileSync(path.join(sitePath, 'site.json'), config);
 		var targetSiteData = fs.readFileSync(path.join(sitePath, 'dist/site.json'), config);
 
+		console.log(siteData);
+		console.log(targetSiteData);
+
 		t.is(siteData, targetSiteData);
 
 		t.end();
@@ -51,8 +54,8 @@ test.cb('it should compile soyweb templates', function(t) {
 			.pipe(gutil.buffer(function(err, files) {
 				t.is(path.relative(files[0].base, files[0].path), 'index.html');
 				t.is(path.relative(files[1].base, files[1].path), 'child/index.html');
-				t.is(files[0].contents.length, 552);
-				t.is(files[1].contents.length, 651);
+				t.is(files[0].contents.length, 553);
+				t.is(files[1].contents.length, 652);
 
 				t.end();
 			}));
