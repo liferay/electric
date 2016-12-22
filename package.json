@@ -4,6 +4,7 @@
   "description": "Static generator using soy templates and metal.js.",
   "main": "lib/index.js",
   "scripts": {
+    "lint": "jshint lib/**/*.js",
     "test": "ava test"
   },
   "repository": {
@@ -49,6 +50,7 @@
   },
   "devDependencies": {
     "ava": "^0.16.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "jshint": "^2.9.4"
   }
 }
