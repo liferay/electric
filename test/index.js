@@ -39,9 +39,6 @@ test.cb('it should generate site.json file that matches pages folder structure',
 		var siteData = fs.readFileSync(path.join(sitePath, 'site.json'), config);
 		var targetSiteData = fs.readFileSync(path.join(sitePath, 'dist/site.json'), config);
 
-		console.log(siteData);
-		console.log(targetSiteData);
-
 		t.is(siteData, targetSiteData);
 
 		t.end();
