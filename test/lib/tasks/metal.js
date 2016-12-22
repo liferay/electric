@@ -49,10 +49,12 @@ test.cb('it should bundle metal components', function(t) {
 				t.is(path.basename(bundle.path), 'bundle.js');
 				t.is(path.basename(bundleMap.path), 'bundle.js.map');
 
+				/* jshint ignore:start */
 				var bundleContent = bundle.contents.toString();
 
 				t.true(bundleContent.indexOf("this['metal']['pageIndex'] = pageIndex;") > -1);
 				t.true(bundleContent.indexOf("this['metal']['pageChildIndex'] = pageChildIndex;") > -1);
+				/* jshint ignore:end */
 
 				t.end();
 			}));

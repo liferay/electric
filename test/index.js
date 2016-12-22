@@ -1,8 +1,6 @@
 'use strict';
 
-var fs = require('fs-extra');
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var path = require('path');
 var test = require('ava');
 
@@ -11,7 +9,7 @@ var runSequence = require('run-sequence').use(gulp);
 var registerTasks = require('../lib/index').registerTasks;
 var sitePath = path.join(__dirname, 'fixture/sites/static-site');
 
-test.before(function(t) {
+test.before(function() {
 	process.chdir(sitePath);
 
 	registerTasks({
