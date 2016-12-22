@@ -10,7 +10,7 @@ var runSequence = require('run-sequence').use(gulp);
 var registerTasks = require('../../../lib/index').registerTasks;
 var sitePath = path.join(__dirname, '../../fixture/sites/front-matter-site');
 
-test.before(function(t) {
+test.before(function() {
 	process.chdir(sitePath);
 
 	registerTasks({
