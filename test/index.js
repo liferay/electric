@@ -17,14 +17,6 @@ test.before(function(t) {
 	registerTasks({
 		gulp: gulp
 	});
-
-	var tasks = gulp.tasks;
-
-	t.truthy(tasks.clean);
-	t.truthy(tasks['front-matter']);
-	t.truthy(tasks.generate);
-	t.truthy(tasks.metal);
-	t.truthy(tasks.soyweb);
 });
 
 test.cb.after.always(function(t) {
@@ -33,28 +25,12 @@ test.cb.after.always(function(t) {
 	});
 });
 
-test.cb('it should generate site.json file that matches pages folder structure', function(t) {
-	runSequence('front-matter', function() {
-		var config = {encoding: 'utf8'};
-		var siteData = fs.readFileSync(path.join(sitePath, 'site.json'), config);
-		var targetSiteData = fs.readFileSync(path.join(sitePath, 'dist/site.json'), config);
+test('it should register tasks', function(t) {
+	var tasks = gulp.tasks;
 
-		t.is(siteData, targetSiteData);
-
-		t.end();
-	});
-});
-
-test.cb('it should compile soyweb templates', function(t) {
-	runSequence('front-matter', 'soyweb', function() {
-		gulp.src('dist/**/*.html')
-			.pipe(gutil.buffer(function(err, files) {
-				t.is(path.relative(files[0].base, files[0].path), 'index.html');
-				t.is(path.relative(files[1].base, files[1].path), 'child/index.html');
-				t.is(files[0].contents.length, 553);
-				t.is(files[1].contents.length, 652);
-
-				t.end();
-			}));
-	});
+	t.truthy(tasks.clean);
+	t.truthy(tasks['front-matter']);
+	t.truthy(tasks.generate);
+	t.truthy(tasks.metal);
+	t.truthy(tasks.soyweb);
 });
