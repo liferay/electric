@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "gulp lint",
     "prepublish": "npm run lint",
-    "test": "ava test"
+    "test": "nyc ava test"
   },
   "repository": {
     "type": "git",
@@ -54,6 +54,16 @@
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.4",
     "jshint": "^2.9.4",
-    "jshint-stylish": "^2.2.1"
+    "jshint-stylish": "^2.2.1",
+    "nyc": "^10.0.0"
+  },
+  "nyc": {
+    "include": [
+      "lib/**/*"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ]
   }
 }
