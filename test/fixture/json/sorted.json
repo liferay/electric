@@ -1,0 +1,97 @@
+{
+	"title": "front-matter-site",
+	"index": {
+		"description": "Index.",
+		"title": "Index",
+		"weight": 1,
+		"srcFilePath": "src/pages/index.soy",
+		"url": "/.",
+		"children": [
+			{
+				"description": "Child1.",
+				"title": "Child1",
+				"weight": 1,
+				"srcFilePath": "src/pages/child1/index.soy",
+				"url": "/child1",
+				"children": [
+					{
+						"description": "Child1 Page1.",
+						"title": "Child1 Page1",
+						"weight": 2,
+						"srcFilePath": "src/pages/child1/page1.soy",
+						"url": "/child1/page1.html"
+					},
+					{
+						"description": "Child1 Page3.",
+						"title": "Child1 Page3",
+						"weight": 3,
+						"srcFilePath": "src/pages/child1/page3.soy",
+						"url": "/child1/page3.html"
+					},
+					{
+						"description": "Child1 Page2.",
+						"title": "Child1 Page2",
+						"weight": 4,
+						"srcFilePath": "src/pages/child1/page2.soy",
+						"url": "/child1/page2.html"
+					},
+					{
+						"description": "Child1 Page4.",
+						"title": "Child1 Page4",
+						"weight": 5,
+						"srcFilePath": "src/pages/child1/page4.soy",
+						"url": "/child1/page4.html"
+					},
+					{
+						"description": "Child2.",
+						"title": "Child2",
+						"srcFilePath": "src/pages/child1/child2/index.soy",
+						"url": "/child1/child2",
+						"children": [
+							{
+								"description": "Child2 Page1.",
+								"title": "Child2 Page1",
+								"srcFilePath": "src/pages/child1/child2/page1.soy",
+								"url": "/child1/child2/page1.html"
+							},
+							{
+								"description": "Child2 Page2.",
+								"title": "Child2 Page2",
+								"srcFilePath": "src/pages/child1/child2/page2.soy",
+								"url": "/child1/child2/page2.html"
+							}
+						]
+					}
+				]
+			},
+			{
+				"description": "Page4.",
+				"title": "Page4",
+				"weight": 2,
+				"srcFilePath": "src/pages/page4.soy",
+				"url": "/page4.html"
+			},
+			{
+				"description": "Page3.",
+				"title": "Page3",
+				"weight": 3,
+				"srcFilePath": "src/pages/page3.soy",
+				"url": "/page3.html"
+			},
+			{
+				"description": "Page2.",
+				"title": "Page2",
+				"weight": 4,
+				"srcFilePath": "src/pages/page2.soy",
+				"url": "/page2.html"
+			},
+			{
+				"description": "Page1.",
+				"title": "Page1",
+				"weight": 5,
+				"srcFilePath": "src/pages/page1.soy",
+				"url": "/page1.html"
+			}
+		]
+	}
+}
