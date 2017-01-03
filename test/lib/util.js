@@ -128,7 +128,7 @@ test('it should sort by weight and then by title', function(t) {
 test('it should pass', function(t) {
 	var siteJSON = require(path.join(process.cwd(), 'site.json'));
 
-	util.sortChildren(siteJSON.index)
+	util.sortChildren(siteJSON.index);
 
 	t.deepEqual(siteJSON, require(path.join(__dirname, '../fixture/json/sorted.json')));
 });
