@@ -22,7 +22,7 @@ npm i -g gulp yo
 Install generator.
 
 ```
-npm i -g genrator-metal-ssg
+npm i -g generator-metal-ssg
 ```
 
 Run the generator with `yo metal-ssg` in the command line. This will prompt you
