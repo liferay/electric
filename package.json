@@ -1,5 +1,5 @@
 {
-  "name": "metal-ssg",
+  "name": "electric",
   "version": "0.1.0",
   "description": "Static generator using soy templates and metal.js.",
   "main": "lib/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Robert-Frampton/metal-ssg"
+    "url": "https://github.com/liferay/electric.js"
   },
   "keywords": [
     "metal.js",
@@ -21,9 +21,9 @@
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Robert-Frampton/metal-ssg/issues"
+    "url": "https://github.com/liferay/electric.js/issues"
   },
-  "homepage": "https://github.com/Robert-Frampton/metal-ssg",
+  "homepage": "http://electricjs.com",
   "dependencies": {
     "del": "^2.2.2",
     "front-matter": "^2.1.1",
