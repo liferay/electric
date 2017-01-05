@@ -51,7 +51,7 @@ npm i --save gulp electric
 
 <article id="projects">
 
-## Projects Using Electric.js
+## Projects Using Electric
 
 - [Electricjs.com](https://github.com/liferay/electricjs.com)
 

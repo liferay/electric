@@ -98,7 +98,7 @@ Now you should see 'MyComponent attached!' in the browser console.
 
 <article id="metal_sgg_components">
 
-## Electric.js Components
+## Electric Components
 
 The [electric-components](https://github.com/liferay/electric-components) package
 contains a number of components that are compatible with the site meta data,
