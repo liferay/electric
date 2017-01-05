@@ -20,3 +20,12 @@
 	font-size: 17px;
 	margin: 0 20px 20px;
 }
+
+.btn-accent {
+	color: rgba($primary, .6);
+
+	&:hover,
+	&:focus {
+		color: rgba($primary, .9);
+	}
+}
