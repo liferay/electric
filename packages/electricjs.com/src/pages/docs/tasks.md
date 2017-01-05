@@ -14,9 +14,9 @@ All tasks are registered in the project's `gulpfile.js`.
 
 ```js
 const gulp = require('gulp');
-const ssg = require('metal-ssg');
+const electric = require('electric');
 
-ssg.registerTasks({
+electric.registerTasks({
 	gulp: gulp
 });
 ```
@@ -112,7 +112,7 @@ ssg.registerTasks({
 });
 ```
 
-Now `metal-ssg` will look inside the `web` directory for all source files.
+Now `electric` will look inside the `web` directory for all source files.
 
 #### plugins
 
@@ -124,13 +124,13 @@ Array of `npm` modules that expose Metal components.
 Exmaple:
 
 ```js
-ssg.registerTasks({
+electric.registerTasks({
 	gulp: gulp,
-	plugins: ['metal-ssg-components']
+	plugins: ['electric-components']
 });
 ```
 
-The components found in the `metal-ssg-components` package will now be available
+The components found in the `electric-components` package will now be available
 to all `soy` files in your project.
 
 Note that every package listed in `plugins` must also be listed as a dependency
@@ -141,7 +141,7 @@ in the project's `package.json`.
 - Required: `false`
 - Type: `String`
 
-String that is prefixed to every task exposed by `metal-ssg`.
+String that is prefixed to every task exposed by `electric`.
 
 Exmaple:
 
@@ -153,7 +153,7 @@ ssg.registerTasks({
 ```
 
 The `generate` task will now be exposed as `ssg:generate`. This option allows
-you to implement `metal-ssg` in conjunction with other packages that
+you to implement `electric` in conjunction with other packages that
 expose `gulp` tasks without the risk of overwriting previously defined tasks.
 
 </article>

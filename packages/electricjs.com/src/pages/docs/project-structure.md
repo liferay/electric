@@ -10,7 +10,7 @@ weight: 3
 
 ## Structure
 
-Here is a basic example of a `metal-ssg` project.
+Here is a basic example of an `electric` project.
 
 ```bash
 |--gulpfile.js (registers tasks)

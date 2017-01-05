@@ -10,7 +10,7 @@ weight: 6
 
 ## Creating Components
 
-One of the major benefits of `metal-ssg` is the ability to create metal.js
+One of the major benefits of `electric` is the ability to create metal.js
 components and invoke them in your `soy` layouts and pages.
 
 Components can exist anywhere in the `src` directory, for this example we will
@@ -98,9 +98,9 @@ Now you should see 'MyComponent attached!' in the browser console.
 
 <article id="metal_sgg_components">
 
-## Metal SSG Components
+## Electric.js Components
 
-The [metal-ssg-components](https://github.com/Robert-Frampton/metal-ssg-components) package
+The [electric-components](https://github.com/liferay/electric-components) package
 contains a number of components that are compatible with the site meta data,
 such as navigation and search components.
 
