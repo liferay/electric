@@ -87,8 +87,7 @@ gulp.task('wedeploy', () => {
 gulp.task('deploy', ['build'], () => {
 	return gulp.src('dist/**/*')
 		.pipe(ghPages({
-			branch: 'wedeploy',
-			remoteUrl: 'git@github.com:liferay/electricjs.com.git'
+			branch: 'wedeploy'
 		}));
 });
 
