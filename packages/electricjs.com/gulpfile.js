@@ -87,7 +87,8 @@ gulp.task('wedeploy', () => {
 gulp.task('deploy', ['build'], () => {
 	return gulp.src('dist/**/*')
 		.pipe(ghPages({
-			branch: 'wedeploy'
+			branch: 'wedeploy',
+			remote: 'upstream'
 		}));
 });
 
