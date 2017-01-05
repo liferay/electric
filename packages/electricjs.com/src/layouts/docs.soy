@@ -39,7 +39,7 @@
 
 				<nav class="col-xs-16 col-md-offset-2 col-md-5">
 					<div class="docs-nav-container">
-						{call SSGReadingProgress.render}
+						{call ElectricReadingProgress.render}
 							{param elementClasses: 'docs-nav' /}
 						{/call}
 					</div>
@@ -89,13 +89,13 @@
 		</a>
 
 		<div class="sidebar-search">
-			{call SSGSearchAutocomplete.render}
+			{call ElectricSearchAutocomplete.render}
 				{param section: $section /}
 				{param placeholder: 'Search Docs' /}
 			{/call}
 		</div>
 
-		{call SSGNavigation.render}
+		{call ElectricNavigation.render}
 			{param elementClasses: 'sidebar-list sidebar-list-1 toggler-collapsed' /}
 			{param listItemClasses: 'sidebar-item' /}
 			{param anchorVariant: 'sidebar' /}
@@ -107,7 +107,7 @@
 /**
  * @param page
  */
-{deltemplate SSGNavigation.anchor variant="'sidebar'"}
+{deltemplate ElectricNavigation.anchor variant="'sidebar'"}
 	<a class="sidebar-link {$page.active ? 'sidebar-link-selected' : ''}" href="{$page.url}">
 		<span class="sidebar-icon icon-16-{$page.icon}"></span>
 		<span>{$page.title}</span>

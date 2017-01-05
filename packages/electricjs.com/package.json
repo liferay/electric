@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "highlight.js": "^9.8.0",
-    "metal-ssg-components": "^0.2.1",
+    "electric-components": "^1.0.0",
     "westyle": "wedeploy/westyle#master"
   },
   "devDependencies": {
@@ -16,7 +16,7 @@
     "gulp-connect": "^2.2.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-sass": "^2.0.1",
-    "metal-ssg": "^0.1.0",
+    "electric": "^1.0.0",
     "run-sequence": "^1.2.2"
   }
 }

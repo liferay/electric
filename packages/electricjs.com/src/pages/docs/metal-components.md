@@ -122,7 +122,7 @@ title: "Page"
  */
 {lb}template .render{rb}
 	<div>
-		{lb}call SSGNavigation.render{rb}
+		{lb}call ElectricNavigation.render{rb}
 			{lb}param depth: 1 /{rb}
 			{lb}param section: $site.index /{rb}
 		{lb}/call{rb}

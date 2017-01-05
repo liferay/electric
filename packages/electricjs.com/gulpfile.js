@@ -6,15 +6,15 @@ const gulp = require('gulp');
 const hljs = require('highlight.js');
 const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
-const ssg = require('metal-ssg');
+const electric = require('electric');
 
 const REGEX_SOY_ESCAPED_BRACES = /{rb}([\s\S]*?){lb}/g;
 
 const REGEX_SOY_BOOKENDS = /(^[\s\S]*?){lb}|{rb}(?=[^{rb}]*$)([\s\S]*?$)/g;
 
-ssg.registerTasks({
+electric.registerTasks({
 	gulp: gulp,
-	plugins: ['metal-ssg-components'],
+	plugins: ['electric-components'],
 	markdownOptions: {
 		highlight: function (str, lang) {
 			if (lang && hljs.getLanguage(lang)) {
