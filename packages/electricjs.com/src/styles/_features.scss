@@ -6,6 +6,14 @@
 .feature {
 	text-align: center;
 	margin-bottom: 80px;
+
+	&:hover ,
+	&:focus {
+		.feature-icon [class^="icon-16-"],
+		.feature-icon [class*="icon-16-"] {
+			color: rgba($accent, .7);
+		}
+	}
 }
 
 .feature-icon [class^="icon-16-"],
@@ -14,6 +22,7 @@
 	font-size: 42px;
 	position: relative;
 	top: 10px;
+	transition: color 0.3s ease-in-out;
 }
 
 .feature-title {
