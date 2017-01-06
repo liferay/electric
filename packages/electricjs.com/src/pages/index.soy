@@ -13,6 +13,8 @@ description: "Create beautiful documentation for your projects"
 		{param content kind="html"}
 			{call .header data="all" /}
 			{call .why /}
+			{call .highlights /}
+			{call .how /}
 			{call .features /}
 			{call .footer /}
 		{/param}
@@ -48,6 +50,59 @@ description: "Create beautiful documentation for your projects"
 					<h3 class="about-title">Why?</h3>
 					<p class="about-description">Because good documentation is a must, and your project deserves better than a readme file.</p>
 					<p class="about-description">Electric exists to accelerate the process of writing detailed, and easy to read documentation sites.</p>
+				</div>
+			</div>
+		</div>
+	</article>
+{/template}
+
+/**
+ *
+ */
+{template .highlights}
+	<div class="highlights">
+		<div class="container">
+			<section class="highlight row">
+				<div class="col-md-6 col-md-offset-2">
+					<h4 class="highlight-title">Customize the way you want.</h4>
+					<p class="highlight-description">Electric comes with a flexible default theme that includes a landing page, docs, changelog, search, code highlight, copy to clipboard, and more.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-1">
+					<img class="highlight-image" src="http://placehold.it/500x400/e7e8e8/64696d" alt="Placeholder">
+				</div>
+			</section>
+			<section class="highlight row">
+				<div class="col-md-6 col-md-push-8">
+					<h4 class="highlight-title">Focus on the content.</h4>
+					<p class="highlight-description">No more databases or server-side logic. Transform plain text into dynamic sites using the latest web technologies.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-2 col-md-pull-6">
+					<img class="highlight-image" src="http://placehold.it/500x400/e7e8e8/64696d" alt="Placeholder">
+				</div>
+			</section>
+			<section class="highlight row">
+				<div class="col-md-6 col-md-offset-2">
+					<h4 class="highlight-title">Host anywhere.</h4>
+					<p class="highlight-description">Eletric builds completely static HTML sites that you can host on Amazon S3, GitHub pages, WeDeploy or anywhere else you choose.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-1">
+					<img class="highlight-image" src="http://placehold.it/500x400/e7e8e8/64696d" alt="Placeholder">
+				</div>
+			</section>
+		</div>
+	</div>
+{/template}
+
+/**
+ *
+ */
+{template .how}
+	<article class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-2">
+					<h3 class="about-title">How?</h3>
+					<p class="about-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros praesent commodo ultricies vehicula ut.</p>
 				</div>
 			</div>
 		</div>
