@@ -1,5 +1,5 @@
 .header {
-	padding: 150px 0 130px;
+	padding: 150px 0 100px;
 	text-align: center;
 }
 
@@ -7,6 +7,13 @@
 	font-family: $font-family-secondary-bold;
 	font-size: 89px;
 	margin: 0;
+
+	.icon-16-flash {
+		color: $accent;
+		display: block;
+		margin: 0 0 20px;
+		font-size: 120px;
+	}
 }
 
 .header-title-js {
