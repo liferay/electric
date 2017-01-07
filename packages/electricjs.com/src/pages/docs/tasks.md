@@ -62,7 +62,7 @@ An Object Literal containing configuration options
 for [Remarkable](https://github.com/jonschlinkert/remarkable) which is
 used to render Markdown files.
 
-Exmaple:
+Example:
 
 ```js
 ssg.registerTasks({
@@ -84,7 +84,7 @@ list of options.
 
 The path that generated files are placed in.
 
-Exmaple:
+Example:
 
 ```js
 ssg.registerTasks({
@@ -103,7 +103,7 @@ Now all generated files will be placed in the `build` directory.
 
 The path where all source files are located.
 
-Exmaple:
+Example:
 
 ```js
 ssg.registerTasks({
@@ -121,7 +121,7 @@ Now `electric` will look inside the `web` directory for all source files.
 
 Array of `npm` modules that expose Metal components.
 
-Exmaple:
+Example:
 
 ```js
 electric.registerTasks({
@@ -143,7 +143,7 @@ in the project's `package.json`.
 
 String that is prefixed to every task exposed by `electric`.
 
-Exmaple:
+Example:
 
 ```js
 ssg.registerTasks({
