@@ -45,8 +45,10 @@
     "metal-component": "^2.5.1",
     "metal-soy": "^2.5.1",
     "remarkable": "^1.7.1",
+    "remove-markdown": "^0.1.0",
     "require-dir": "^0.3.1",
     "run-sequence": "^1.2.2",
+    "striptags": "^2.1.1",
     "through2": "^2.0.2"
   },
   "devDependencies": {
