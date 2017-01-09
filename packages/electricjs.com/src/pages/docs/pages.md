@@ -115,7 +115,7 @@ title: "Page"
 
 {lb}literal{rb}
 
-<pre
+<pre>
 	var example = function() {lb}
 		return 'Example js';
 	{rb}
