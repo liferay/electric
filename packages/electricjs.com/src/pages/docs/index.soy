@@ -34,19 +34,13 @@ title: "Documentation"
 				</div>
 			</div>
 			<div class="row">
-				<form class="docs-home-top-form" action="/docs/search.html" method="GET" enctype="multipart/form-data">
-					<div class="col-md-7 col-md-offset-3 col-xs-16">
-						<div class="form-group">
-							<div class="input-inner-addon input-inner-addon-right">
-								<input name="q" class="form-control" type="text" placeholder="Enter a search term here" autocomplete="off" required>
-								<span class="input-inner-icon-helper icon-16-magnifier"></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-16">
-						<button class="btn btn-accent btn-block" type="submit">Search</button>
-					</div>
-				</form>
+				<div class="container-hybrid docs-home-top">
+					{call ElectricSearch.render}
+						{param action: '/docs' /}
+						{param placeholder: 'Search Docs' /}
+						{param section: $site.index.children[0] /}
+					{/call}
+				</div>
 			</div>
 		</div>
 		<div class="docs-home-topics">
