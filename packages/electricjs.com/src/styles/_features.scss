@@ -1,11 +1,11 @@
 .features {
-	border-bottom: 5px solid rgba($primary, .1);
-	padding: 150px 0 70px;
+	padding: 90px 0 90px;
 }
 
 .feature {
 	text-align: center;
-	margin-bottom: 80px;
+	margin-top: 60px;
+	margin-bottom: 60px;
 
 	&:hover ,
 	&:focus {
@@ -19,7 +19,7 @@
 .feature-icon [class^="icon-16-"],
 .feature-icon [class*="icon-16-"] {
 	color: $accent;
-	font-size: 42px;
+	font-size: 38px;
 	position: relative;
 	top: 10px;
 	transition: color 0.3s ease-in-out;
@@ -36,4 +36,36 @@
 	font-size: 16px;
 	line-height: 26px;
 	margin: 0;
+}
+
+.flex-center-center {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center; 
+}
+
+.icon-container {
+	height: 96px;
+	position: relative; 
+}
+
+.features .row .feature .icon-container .feature-icon {
+	width: 84px;
+    height: 84px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -42px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(14, 20, 26, 0.2);
+}
+
+.feature-icon {
+	padding-bottom: 20px;
+}
+
+@media (min-width: $screen-sm-min) {
+	.feature:lastchild {
+		margin-bottom: 80px;
+	}
 }
