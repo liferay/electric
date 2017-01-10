@@ -1,4 +1,4 @@
-# [Electric.js](http://electricjs.com)
+# [Electric](http://electricjs.com)
 
 ###### Static site generator using soy templates and [metal.js](http://metaljs.com/).
 
