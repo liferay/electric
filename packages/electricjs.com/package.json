@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/Robert-Frampton/metal-ssg-docs"
+    "url": "https://github.com/liferay/electricjs.com"
   },
   "dependencies": {
     "highlight.js": "^9.8.0",
