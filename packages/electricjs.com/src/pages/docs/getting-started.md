@@ -48,11 +48,3 @@ npm i --save gulp electric
 ```
 
 </article>
-
-<article id="projects">
-
-## Projects Using Electric
-
-- [Electricjs.com](https://github.com/liferay/electricjs.com)
-
-</article>
