@@ -174,55 +174,6 @@
 	line-height: 24px;
 }
 
-.docs-content pre {
-	border: 0;
-	overflow: auto;
-	word-break: normal;
-	word-wrap: normal;
-}
-
-.docs-content code {
-	background: rgba($accent, 0.1);
-	border: 0px solid $accent;
-	color: $accent;
-	padding: 3px;
-	font-weight: 600;
-}
-
-.docs-content pre {
-	background: rgba($primary, .9);
-}
-
-.docs-content pre code {
-	background: transparent;
-	border: 0;
-	color: rgba(white, .9);
-	padding: 0;
-	white-space: inherit;
-}
-
-.docs-content {
-	.hljs-string, .hljs-value, .hljs-inheritance, .hljs-header, .hljs-name, .ruby .hljs-symbol, .xml .hljs-cdata {
-		color: #ffb700;
-	}
-
-	.hljs-number, .hljs-preprocessor, .hljs-pragma, .hljs-built_in, .hljs-literal, .hljs-constant {
-		color: #72ca57;
-	}
-
-	.hljs-keyword, .javascript .hljs-function, .hljs-params {
-		color: #039cf1;
-	}
-
-	.hljs-variable, .hljs-attribute, .hljs-tag, .hljs-regexp, .ruby .hljs-constant, .xml .hljs-tag .hljs-title, .xml .hljs-pi, .xml .hljs-doctype, .html .hljs-doctype, .css .hljs-id, .css .hljs-class, .css .hljs-pseudo {
-		color: #ff536b;
-	}
-
-	.hljs-function, .python .hljs-decorator, .python .hljs-title, .ruby .hljs-function .hljs-title, .ruby .hljs-title .hljs-keyword, .perl .hljs-sub, .javascript .hljs-title, .coffeescript .hljs-title {
-		color: rgba(white, .9);
-	}
-}
-
 /* Home - Top
 	 ========================================================================== */
 
