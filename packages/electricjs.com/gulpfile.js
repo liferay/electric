@@ -3,7 +3,6 @@
 const connect = require('gulp-connect');
 const ghPages = require('gulp-gh-pages');
 const gulp = require('gulp');
-const hljs = require('highlight.js');
 const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
 const electric = require('electric');
@@ -14,43 +13,7 @@ const REGEX_SOY_BOOKENDS = /(^[\s\S]*?){lb}|{rb}(?=[^{rb}]*$)([\s\S]*?$)/g;
 
 electric.registerTasks({
 	gulp: gulp,
-	plugins: ['electric-components'],
-	markdownOptions: {
-		highlight: function (str, lang) {
-			if (lang && hljs.getLanguage(lang)) {
-				try {
-					str = hljs.highlight(lang, str).value;
-				}
-				catch (err) {}
-			}
-			else {
-				try {
-					str = hljs.highlightAuto(str).value;
-				}
-				catch (err) {}
-			}
-
-			if (lang !== 'soy') {
-				str = '{literal}' + str + '{/literal}';
-			}
-			else {
-				str = str.replace(REGEX_SOY_BOOKENDS, function(match, g1, g2) {
-					if (g2) {
-						return '{rb}{literal}' + g2+ '{/literal}';
-					}
-					else {
-						return '{literal}' + g1 + '{/literal}{lb}';
-					}
-				});
-
-				str = str.replace(REGEX_SOY_ESCAPED_BRACES, function(match, g1) {
-					return '{rb}{literal}' + g1 + '{/literal}{lb}';
-				});
-			}
-
-			return str;
-		}
-	}
+	plugins: ['electric-components']
 });
 
 // CSS -------------------------------------------------------------------------
