@@ -7,7 +7,6 @@
     "url": "https://github.com/liferay/electricjs.com"
   },
   "dependencies": {
-    "electric-components": "^1.0.0",
     "westyle": "wedeploy/westyle#master"
   },
   "devDependencies": {

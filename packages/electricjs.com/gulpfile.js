@@ -13,8 +13,7 @@ const REGEX_SOY_BOOKENDS = /(^[\s\S]*?){lb}|{rb}(?=[^{rb}]*$)([\s\S]*?$)/g;
 
 electric.registerTasks({
 	gulp: gulp,
-	codeMirrorLanguages: ['css', 'javascript', 'soy'],
-	plugins: ['electric-components']
+	codeMirrorLanguages: ['css', 'javascript', 'soy']
 });
 
 // CSS -------------------------------------------------------------------------
