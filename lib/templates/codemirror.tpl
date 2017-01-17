@@ -9,7 +9,8 @@
 
 	for (var i = 0; i < code.length; i++) {lb}
 		var editor = CodeMirror(function(elt) {lb}
-			code[i].parentNode.replaceChild(elt, code[i]);
+			code[i].parentNode.append(elt);
+			code[i].style.display = 'none';
 		{rb}, {lb}
 			mode: code[i].getAttribute('data-mode') || '',
 			value: code[i].innerHTML
