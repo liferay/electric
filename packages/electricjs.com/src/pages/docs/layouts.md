@@ -14,7 +14,7 @@ All projects must have a `layouts/base.soy` file. This file is responsible for
 the HTML boilerplate of your site. Every page will be rendered with this layout.
 
 ```soy
-{lb}namespace base{rb}
+&#123;namespace base&#125;
 
 /**
  * @param content
@@ -22,25 +22,25 @@ the HTML boilerplate of your site. Every page will be rendered with this layout.
  * @param serialized
  * @param site
  */
-{lb}template .render private="true"{rb}
-<!DOCTYPE html>
+&#123;template .render private="true"&#125;
+&lt;!DOCTYPE html&gt;
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta content="minimum-scale=1.0, width=device-width" name="viewport">
-        <meta name="description" content="{lb}$page.description ?: ''{rb}">
+        <meta name="description" content="{$page.description ?: ''}">
 
-        <title>{lb}$page.title{rb} - {lb}$site.title{rb}</title>
+        <title>&#123;$page.title&#125; - &#123;$site.title&#125;</title>
     </head>
     <body>
-        <!-- inject:metal:js -->
+        &lt;!-- inject:metal:js --&gt;
             <div>
-                {lb}$content{rb}
+                &#123;$content&#125;
             </div>
-        <!-- endinject -->
+        &lt;!-- endinject --&gt;
     </body>
 </html>
-{lb}/template{rb}
+&#123;/template&#125;
 ```
 
 This layout can be editted to fit the needs of your project, but it must
@@ -70,7 +70,7 @@ Additional layouts can be created in the `layouts` folder of your project. These
 layouts are simply `soy` templates that can be implemented by individual pages.
 
 ```soy
-{lb}namespace docs{rb}
+&#123;namespace docs&#125;
 
 /**
  * @param content
@@ -78,19 +78,19 @@ layouts are simply `soy` templates that can be implemented by individual pages.
  * @param page
  * @param site
  */
-{lb}template .render{rb}
-    <div class="{lb}$elementClasses ?: 'main'{rb}">
+&#123;template .render&#125;
+    <div class="{$elementClasses ?: 'main'}">
         <div class="topper">
-            <h1>{lb}$site.title{rb}</h1>
+            <h1>{$site.title}</h1>
         </div>
 
         <div class="content">
-            <h2>{lb}$page.title{rb}</h2>
+            <h2>{$page.title}</h2>
 
-            {lb}$content{rb}
+            {$content}
         </div>
     </div>
-{lb}/template{rb}
+&#123;/template&#125;
 ```
 
 This template can be implemented by both `soy` and `markdown` files. The
@@ -104,18 +104,18 @@ description: "Page description."
 title: "Page"
 ---
 
-{lb}namespace page{rb}
+&#123;namespace page&#125;
 
 /**
  *
  */
-{lb}template .render{rb}
-    {lb}call docs.render data="all"{rb}
-        {lb}param content kind="html{rb}
+&#123;template .render&#125;
+    {call docs.render data="all"}
+        {param content kind="html}
             <span>Hello, World!</span>
-        {lb}/param{rb}
-    {lb}/call{rb}
-{lb}/template{rb}
+        {/param}
+    {/call}
+&#123;/template&#125;
 ```
 
 Sub layouts are rendered using soy's [call command](https://developers.google.com/closure/templates/docs/commands#call).

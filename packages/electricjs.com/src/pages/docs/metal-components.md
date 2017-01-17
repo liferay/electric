@@ -31,19 +31,19 @@ place them inside `src/components`.
 `MyComponent.soy`.
 
 ```soy
-{lb}namespace MyComponent{rb}
+&#123;namespace MyComponent&#125;
 
 /**
  *
  */
-{lb}template .render{rb}
+&#123;template .render&#125;
 	<div>Hello, World!</div>
-{lb}/template{rb}
+&#123;/template&#125;
 ```
 
 `MyComponent.js`.
 
-```js
+```javascript
 'use strict';
 
 import Component from 'metal-component';
@@ -80,16 +80,16 @@ description: "Page description."
 title: "Page"
 ---
 
-{lb}namespace page{rb}
+&#123;namespace page&#125;
 
 /**
  *
  */
-{lb}template .render{rb}
+&#123;template .render&#125;
 	<div>
-		{lb}call MyComponent.render /{rb}
+		{call MyComponent.render /}
 	</div>
-{lb}/template{rb}
+&#123;/template&#125;
 ```
 
 Now you should see 'MyComponent attached!' in the browser console.
@@ -115,19 +115,19 @@ description: "Page description."
 title: "Page"
 ---
 
-{lb}namespace page{rb}
+&#123;namespace page&#125;
 
 /**
  * @param site
  */
-{lb}template .render{rb}
+&#123;template .render&#125;
 	<div>
-		{lb}call ElectricNavigation.render{rb}
-			{lb}param depth: 1 /{rb}
-			{lb}param section: $site.index /{rb}
-		{lb}/call{rb}
+		{call ElectricNavigation.render}
+			{param depth: 1 /}
+			{param section: $site.index /}
+		{/call}
 	</div>
-{lb}/template{rb}
+&#123;/template&#125;
 ```
 
 This will render a list with all direct descendants of the index page.

@@ -12,7 +12,7 @@ weight: 2
 
 All tasks are registered in the project's `gulpfile.js`.
 
-```js
+```javascript
 const gulp = require('gulp');
 const electric = require('electric');
 
@@ -64,7 +64,7 @@ used to render Markdown files.
 
 Example:
 
-```js
+```javascript
 ssg.registerTasks({
 	gulp: gulp,
 	markdownOptions: {
@@ -86,7 +86,7 @@ The path that generated files are placed in.
 
 Example:
 
-```js
+```javascript
 ssg.registerTasks({
 	gulp: gulp,
 	pathDest: 'build'
@@ -105,7 +105,7 @@ The path where all source files are located.
 
 Example:
 
-```js
+```javascript
 ssg.registerTasks({
 	gulp: gulp,
 	pathSrc: 'web'
@@ -123,7 +123,7 @@ Array of `npm` modules that expose Metal components.
 
 Example:
 
-```js
+```javascript
 electric.registerTasks({
 	gulp: gulp,
 	plugins: ['electric-components']
@@ -145,7 +145,7 @@ String that is prefixed to every task exposed by `electric`.
 
 Example:
 
-```js
+```javascript
 ssg.registerTasks({
 	gulp: gulp,
 	taskPrefix: 'ssg:'

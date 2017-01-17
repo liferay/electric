@@ -40,14 +40,14 @@ description: "Page description."
 title: "Page"
 ---
 
-{lb}namespace page{rb}
+&#123;namespace page&#125;
 
 /**
  *
  */
-{lb}template .render{rb}
+&#123;template .render&#125;
     <span>Hello, World!</span>
-{lb}/template{rb}
+&#123;/template&#125;
 ```
 
 > Note: all `namespace` properties must be unique across all files within
@@ -59,7 +59,7 @@ Every page is passed a `site` and `page` param.
 
 The `page` param represents the front matter of the current file.
 
-```
+```soy
 {$page.title}
 {$page.description}
 ```
@@ -69,7 +69,7 @@ as `site.title` and `site.repo`. It also contains the structure of the entire
 site which can be used to generate navigation elements. This structure data is
 defined as the `site.index` property representing the index page of the project.
 
-```
+```soy
 {$site.title}
 {$site.index}
 ```
@@ -98,30 +98,6 @@ title: "Page"
 ---
 
 # Hello, World!
-```
-
-It's important to note that because markdown files are wrapped in soy templates,
-that some content may need to be sanitized of `soy` related syntax (such as
-curly braces).
-
-```soy
----
-description: "Page description."
-layout: "docs"
-title: "Page"
----
-
-# Hello, World!
-
-{lb}literal{rb}
-
-<pre>
-	var example = function() {lb}
-		return 'Example js';
-	{rb}
-</pre>
-
-{lb}/literal{rb}
 ```
 
 See [google's documentation](https://developers.google.com/closure/templates/docs/commands#specialcharacters) for more info.
