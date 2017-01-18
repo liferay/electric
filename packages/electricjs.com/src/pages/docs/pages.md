@@ -90,7 +90,7 @@ rendered along all `soy` pages.
 The `namespace` is also auto-generated based on the file path, so it does not
 need to be declared at the top of the file.
 
-```
+```markdown
 ---
 description: "Page description."
 layout: "docs"

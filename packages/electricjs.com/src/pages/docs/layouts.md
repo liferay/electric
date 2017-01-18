@@ -128,7 +128,7 @@ implement any of the global params (`site` or `page`).
 Markdown implementation doesn't require any `soy` code, rather it leverages the
 front matter `layout` property to determine the layout.
 
-```
+```markdown
 ---
 description: "Page description."
 layout: "docs"
@@ -136,7 +136,6 @@ title: "Page"
 ---
 
 # Hello, World!
-
 ```
 
 By specifying `layout: "docs"`, the generator will look for a soy template in
