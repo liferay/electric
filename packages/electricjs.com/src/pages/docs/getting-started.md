@@ -15,13 +15,13 @@ the fastest way to get an `electric` project up and running.
 
 Install dependencies.
 
-```
+```shell
 npm i -g gulp yo
 ```
 
 Install generator.
 
-```
+```shell
 npm i -g generator-electric
 ```
 
@@ -43,7 +43,7 @@ All dependencies are adding automatically when using the Yeoman Generator, but
 when creating a project from scratch, the following dependencies must be added
 to the project.
 
-```
+```shell
 npm i --save gulp electric
 ```
 

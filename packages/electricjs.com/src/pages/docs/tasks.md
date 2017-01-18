@@ -31,7 +31,7 @@ electric.registerTasks({
 
 To generate your distribution files, simple run the following command.
 
-```bash
+```shell
 gulp generate
 ```
 
