@@ -111,7 +111,7 @@ title: "Page"
  */
 &#123;template .render&#125;
     {call docs.render data="all"}
-        {param content kind="html}
+        {param content kind="html"}
             <span>Hello, World!</span>
         {/param}
     {/call}
