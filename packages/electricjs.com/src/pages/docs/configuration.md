@@ -1,9 +1,9 @@
 ---
-description: "Gulp tasks for site generating, and configuration options."
+description: "Configuration options for gulp tasks."
 icon: "gear"
 layout: "docs"
-title: "Tasks"
-weight: 2
+title: "Configuration"
+weight: 6
 ---
 
 <article id="registering">
