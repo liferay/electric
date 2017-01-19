@@ -30,7 +30,9 @@ test.cb('it should generate site.json file that matches pages folder structure',
 		var siteData = fs.readFileSync(path.join(sitePath, 'site.json'), config);
 		var targetSiteData = fs.readFileSync(path.join(sitePath, 'dist/site.json'), config);
 
-		t.is(siteData, targetSiteData);
+		var s1 = JSON.stringify(JSON.parse(siteData));
+		var s2 = JSON.stringify(JSON.parse(targetSiteData));
+		t.is(s1, s2);
 
 		t.end();
 	});
