@@ -30,13 +30,24 @@ the HTML boilerplate of your site. Every page will be rendered with this layout.
         <meta content="minimum-scale=1.0, width=device-width" name="viewport">
         <meta name="description" content="{$page.description ?: ''}">
 
-        <title>{$page.title&#125; - {$site.title}</title>
+        <title>{$page.title} - {$site.title}</title>
+
+        <!-- inject:css -->
+        <!-- endinject -->
+
+        <link rel="stylesheet" href="/styles/main.css">
+
+        <!-- inject:js -->
+        <!-- endinject -->
     </head>
     <body>
         <!-- inject:metal:js -->
             <div>
                 {$content}
             </div>
+        <!-- endinject -->
+
+        <!-- inject:codemirror:js -->
         <!-- endinject -->
     </body>
 </html>
@@ -47,18 +58,33 @@ This layout can be editted to fit the needs of your project, but it must
 use `base` as the `namespace`, and it must include
 the `{lb}$content{rb}` variable which renders the content of each page.
 
-### Metal Component Invocation
+### Inject Tags
 
-The `<!-- inject:metal:js -->` and `<!-- endinject -->` are not just comments,
-during the `generate` task they are replaced with the necessary code for
+Inside the `base.soy` template there are multiple inject tags that are used by
+electric to import resources and scripts.
+
+#### `inject:css`/`inject:js`
+
+These tags are used to inject `link` and `script` tags for all thirdparty
+resources located in `dist/vendor`.
+
+#### `inject:metal:js`
+
+During the `generate` task they are replaced with the necessary code for
 automatically invoking Metal components that have been implemented in your
 project's `soy` files.
 
-> Note: these tags only needed to be included in the `base` template.
+> Note: these tags only need to be included in the `base` template.
 
 The injected code is what implements the `serialized` param that is defined at
 the start of the template. `serialized` is stringified meta data that Metal
 consumes to render each page.
+
+#### `inject:codemirror:js`
+
+CodeMirror is responsible for Electric's built in syntax highlighting. This
+script locates all code examples and applies the appropriate syntax
+highlighting.
 
 </article>
 
