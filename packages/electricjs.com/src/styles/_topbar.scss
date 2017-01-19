@@ -39,6 +39,14 @@
 	margin: 0 10px;
 }
 
+.topbar-list .topbar-link {
+	color: rgba(255, 255, 255, .3);
+}
+
+.topbar-list .topbar-link:hover {
+	color: rgba(255, 255, 255, .6);
+}
+
 @media (min-width: $screen-sm-min) {
 	.topbar-logo-link {
 		.by {
