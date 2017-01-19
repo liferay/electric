@@ -39,7 +39,7 @@ test.cb.after(function(t) {
 	});
 });
 
-test.cb('it should bundle metal components', function(t) {
+test.skip('it should bundle metal components', function(t) {
 	runSequence('front-matter', 'metal', function() {
 		gulp.src('dist/js/**/*')
 			.pipe(gutil.buffer(function(err, files) {
