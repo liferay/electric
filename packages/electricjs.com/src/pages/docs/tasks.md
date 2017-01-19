@@ -53,6 +53,26 @@ them in the `dist` folder.
 
 An instance of [gulp](http://gulpjs.com/).
 
+#### codeMirrorLanguages
+
+- Required: `false`
+- Type: `Array<languageName>`
+- Default: `['xml', 'css', 'javascript']`
+
+An Array of langauge names for syntax highlighting.
+See [CodeMirror](https://codemirror.net/mode/index.html) for a list of available
+languages.
+
+#### codeMirrorTheme
+
+- Required: `false`
+- Type: `String`
+- Default: `'dracula'`
+
+Theme to be used by CodeMirror.
+See [CodeMirror](https://codemirror.net/demo/theme.html) for a list of available
+themes.
+
 #### markdownOptions
 
 - Required: `false`
