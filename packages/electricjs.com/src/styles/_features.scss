@@ -1,0 +1,51 @@
+.features {
+	padding: 90px 0 90px;
+}
+
+.feature {
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 60px;
+
+	&:hover ,
+	&:focus {
+		.feature-icon [class^="icon-16-"],
+		.feature-icon [class*="icon-16-"] {
+			color: rgba($accent, .7);
+		}
+	}
+}
+
+.feature-icon [class^="icon-16-"],
+.feature-icon [class*="icon-16-"] {
+	color: $accent;
+	font-size: 38px;
+	position: relative;
+	top: 10px;
+	transition: color 0.3s ease-in-out;
+}
+
+.feature-title {
+	font-family: $font-family-secondary-bold;
+	font-size: 32px;
+	margin: 20px 0;
+}
+
+.feature-description {
+	font-family: $font-family-sans-serif;
+	font-size: 16px;
+	line-height: 26px;
+	margin: 0;
+}
+
+.feature-graphic [class^="icon-16-"], 
+.feature-graphic [class*="icon-16-"] {
+	box-shadow: 0 2px 8px rgba($primary, .2);
+	border-radius: 50%;
+	font-size: 38px;
+	line-height: 84px;
+	color: $accent;
+	width: 84px;
+	display: block;
+	margin: auto;
+}

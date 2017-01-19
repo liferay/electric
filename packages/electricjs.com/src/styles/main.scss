@@ -2,26 +2,27 @@ $accent: #FFCC00;
 
 @import "node_modules/westyle/src/westyle";
 
-// Root
-@import "node_modules/westyle/src/templates/root";
+// General
 
-// Landing
-@import "node_modules/westyle/src/templates/landing";
+@import "topbar";
+@import "code";
+
+// Home
+
+@import "header";
+@import "about";
+@import "features";
+@import "highlights";
+@import "footer";
 
 // Docs
-@import "node_modules/westyle/src/templates/docs";
 
-// Guide
-@import "node_modules/westyle/src/templates/guide";
-
-// Search
-@import "node_modules/westyle/src/templates/search";
+@import "autocomplete";
+@import "docs";
+@import "guide";
+@import "search";
+@import "topics";
 
 // Updates
-@import "node_modules/westyle/src/templates/updates";
 
-// Blog
-@import "node_modules/westyle/src/templates/blog";
-
-// Tutorial
-@import "node_modules/westyle/src/templates/tutorial";
+@import "updates";

@@ -1,0 +1,47 @@
+.highlight {
+	margin: 150px 0;
+}
+
+.highlight-title {
+	font-family: $font-family-secondary-bold;
+	font-size: 48px;
+	margin: 20px 0;
+}
+
+.highlight-description {
+	font-family: $font-family-sans-serif;
+	font-size: 18px;
+	line-height: 28px;
+	margin: 0 0 20px;
+}
+
+.highlight-graphic {
+	border-radius: 50%;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.highlight-graphic [class^="icon-16-"], 
+.highlight-graphic [class*="icon-16-"] {
+	box-shadow: 0 2px 8px rgba($primary, .2);
+	border-radius: 50%;
+	font-size: 62px;
+	line-height: 137px;
+	color: $accent;
+	width: 140px;
+	display: block;
+	margin: auto;
+}
+
+@media (min-width: $screen-sm-min) {
+	.highlight-graphic [class^="icon-16-"], 
+	.highlight-graphic [class*="icon-16-"] {
+		font-size: 100px;
+		line-height: 220px;
+		width: 220px;
+	}
+
+	.highlight-graphic {
+		margin-top: 0px;
+	}
+}
