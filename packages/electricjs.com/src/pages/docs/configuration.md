@@ -3,7 +3,7 @@ description: "Configuration options for gulp tasks."
 icon: "gear"
 layout: "docs"
 title: "Configuration"
-weight: 6
+weight: 5
 ---
 
 <article id="registering">

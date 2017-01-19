@@ -3,7 +3,7 @@ description: "Creating pages in soy and markdown."
 icon: "code-file"
 layout: "docs"
 title: "Pages"
-weight: 5
+weight: 2
 ---
 
 <article id="front_matter">

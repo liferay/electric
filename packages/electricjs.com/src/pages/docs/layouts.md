@@ -3,7 +3,7 @@ description: "Documentation on base layout and sub layouts."
 icon: "code-file"
 layout: "docs"
 title: "Layouts"
-weight: 4
+weight: 3
 ---
 
 <article id="base">

@@ -3,7 +3,7 @@ description: "Creating and rendering Metal components."
 icon: "module"
 layout: "docs"
 title: "Metal Components"
-weight: 6
+weight: 4
 ---
 
 <article id="creating">
