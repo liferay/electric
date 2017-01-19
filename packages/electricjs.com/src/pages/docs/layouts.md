@@ -23,21 +23,21 @@ the HTML boilerplate of your site. Every page will be rendered with this layout.
  * @param site
  */
 &#123;template .render private="true"&#125;
-&lt;!DOCTYPE html&gt;
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta content="minimum-scale=1.0, width=device-width" name="viewport">
         <meta name="description" content="{$page.description ?: ''}">
 
-        <title>&#123;$page.title&#125; - &#123;$site.title&#125;</title>
+        <title>{$page.title&#125; - {$site.title}</title>
     </head>
     <body>
-        &lt;!-- inject:metal:js --&gt;
+        <!-- inject:metal:js -->
             <div>
-                &#123;$content&#125;
+                {$content}
             </div>
-        &lt;!-- endinject --&gt;
+        <!-- endinject -->
     </body>
 </html>
 &#123;/template&#125;
