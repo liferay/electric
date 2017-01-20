@@ -68,7 +68,7 @@ used to render Markdown files.
 Example:
 
 ```javascript
-ssg.registerTasks({
+electric.registerTasks({
 	gulp: gulp,
 	markdownOptions: {
 		breaks: true
@@ -90,7 +90,7 @@ The path that generated files are placed in.
 Example:
 
 ```javascript
-ssg.registerTasks({
+electric.registerTasks({
 	gulp: gulp,
 	pathDest: 'build'
 });
@@ -109,7 +109,7 @@ The path where all source files are located.
 Example:
 
 ```javascript
-ssg.registerTasks({
+electric.registerTasks({
 	gulp: gulp,
 	pathSrc: 'web'
 });
@@ -149,13 +149,13 @@ String that is prefixed to every task exposed by `electric`.
 Example:
 
 ```javascript
-ssg.registerTasks({
+electric.registerTasks({
 	gulp: gulp,
-	taskPrefix: 'ssg:'
+	taskPrefix: 'electric:'
 });
 ```
 
-The `generate` task will now be exposed as `ssg:generate`. This option allows
+The `generate` task will now be exposed as `electric:generate`. This option allows
 you to implement `electric` in conjunction with other packages that
 expose `gulp` tasks without the risk of overwriting previously defined tasks.
 
