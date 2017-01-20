@@ -104,7 +104,7 @@ The [electric-components](https://github.com/liferay/electric-components) packag
 contains a number of components that are compatible with the site meta data,
 such as navigation and search components.
 
-See [configuration](/docs/tasks.html#configuration) for information on
+See [configuration](/docs/configuration.html#options) for information on
 adding `plugins` to your project.
 
 These components are invoked the same way as your own components.

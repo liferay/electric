@@ -40,9 +40,9 @@ them in the `dist` folder.
 
 </article>
 
-<article id="configuration">
+<article id="options">
 
-## Configuration
+## Options
 
 ### `registerTasks`
 
