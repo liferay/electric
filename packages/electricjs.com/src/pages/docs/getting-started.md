@@ -38,7 +38,9 @@ Having issues getting the generator running? Check
 out [Yeoman's FAQs](http://yeoman.io/learning/faq.html) for troubleshooting
 tips.
 
-Build the site.
+### Build
+
+All `gulp` commands should be run from your project root.
 
 ```shell
 gulp
