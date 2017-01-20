@@ -6,6 +6,7 @@ const gulp = require('gulp');
 const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
 const electric = require('electric');
+const westyle = require('westyle');
 
 const REGEX_SOY_ESCAPED_BRACES = /{rb}([\s\S]*?){lb}/g;
 
