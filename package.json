@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/liferay/electric.js"
+    "url": "https://github.com/wedeploy/electric"
   },
   "keywords": [
     "metal.js",
@@ -21,7 +21,7 @@
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/liferay/electric.js/issues"
+    "url": "https://github.com/wedeploy/electric/issues"
   },
   "homepage": "http://electricjs.com",
   "dependencies": {
