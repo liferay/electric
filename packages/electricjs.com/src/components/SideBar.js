@@ -4,9 +4,9 @@ import Component from 'metal-component';
 import Soy from 'metal-soy';
 import Toggler from 'metal-toggler';
 
-import templates from './SideBar.soy';
+import templates from './Sidebar.soy';
 
-class SideBar extends Component {
+class Sidebar extends Component {
 	attached() {
 		new Toggler({
 			content: '.sidebar-toggler-content',
@@ -15,6 +15,6 @@ class SideBar extends Component {
 	}
 };
 
-Soy.register(SideBar, templates);
+Soy.register(Sidebar, templates);
 
-export default SideBar;
+export default Sidebar;
