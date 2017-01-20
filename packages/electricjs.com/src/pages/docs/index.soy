@@ -35,11 +35,19 @@ title: "Docs"
 			</div>
 			<div class="row">
 				<div class="container-hybrid">
-					{call ElectricSearch.render}
-						{param action: '/docs' /}
-						{param placeholder: 'Search Docs' /}
-						{param section: $site.index.children[0] /}
-					{/call}
+					<form action="/docs/search.html" method="GET" enctype="multipart/form-data">
+						<div class="row">
+							<div class="col-md-7 col-md-offset-3 col-xs-16">
+								{call ElectricSearchAutocomplete.render}
+									{param path: '/docs' /}
+									{param placeholder: 'Search Docs' /}
+								{/call}
+							</div>
+							<div class="col-md-3 col-xs-16">
+								<button class="btn btn-accent btn-block" type="submit">Search</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
