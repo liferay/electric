@@ -58,22 +58,22 @@ starting the `watch` task.
 
 Here is a basic example of an `electric` project.
 
-```bash
-|--gulpfile.js
-|--src/
-   |--site.json
-   |--layouts/
-      |--base.soy
-      |--docs.soy
-   |--pages/
-      |--index.soy
-      |--docs/
-         |--index.soy
-         |--create.soy
-         |--deploy.md
-         |--parent/
-            |--index.md
-            |--child.md
+```javascript
+.
+├── gulpfile.js
+└── src
+    ├── layouts
+    │   ├── base.soy
+    │   └── docs.soy
+    ├── pages
+    │   ├── docs
+    │   │   ├── create.md
+    │   │   ├── index.soy
+    │   │   └── parent
+    │   │       ├── child.md
+    │   │       └── index.md
+    │   └── index.soy
+    └── site.json
 ```
 
 </article>

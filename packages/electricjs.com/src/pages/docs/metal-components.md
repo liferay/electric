@@ -16,19 +16,20 @@ components and invoke them in your `soy` layouts and pages.
 Components can exist anywhere in the `src` directory, for this example we will
 place them inside `src/components`.
 
-```bash
-|--src/
-   |--layouts/
-	  |--base.soy
-	  |--docs.soy
-   |--pages/
-	  |--index.soy
-   |--components/
-	  |--MyComponent.soy
-	  |--MyComponent.js
+```javascript
+.
+└── src
+    ├── components
+    │   ├── MyComponent.js
+    │   └── MyComponent.soy
+    ├── layouts
+    │   ├── base.soy
+    │   └── docs.soy
+    └── pages
+        └── index.soy
 ```
 
-`MyComponent.soy`.
+`MyComponent.soy`
 
 ```soy
 &#123;namespace MyComponent&#125;
@@ -41,7 +42,7 @@ place them inside `src/components`.
 &#123;/template&#125;
 ```
 
-`MyComponent.js`.
+`MyComponent.js`
 
 ```javascript
 'use strict';
