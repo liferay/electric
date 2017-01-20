@@ -1,0 +1,87 @@
+// Header
+
+.header {
+	padding: 75px 0 0;
+
+	.icon-16-flash {
+		color: $accent;
+		display: block;
+		margin: 0 0 20px;
+		font-size: 90px;
+	}
+}
+
+@media (min-width: $screen-md-min) {
+	.header {
+		padding: 150px 0 0;
+	}
+}
+
+// About
+
+.about-title {
+	font-size: 48px;
+}
+
+.about-description {
+	font-size: 19px;
+	line-height: 28px;
+}
+
+.highlight-graphic {
+	border-radius: 50%;
+	text-align: center;
+	margin-top: 50px;
+}
+
+// Highlights
+
+.highlight-graphic [class^="icon-16-"], 
+.highlight-graphic [class*="icon-16-"] {
+	box-shadow: 0 2px 8px rgba($primary, .2);
+	border-radius: 50%;
+	font-size: 62px;
+	line-height: 137px;
+	color: $accent;
+	width: 140px;
+	display: block;
+	margin: auto;
+}
+
+@media (min-width: $screen-sm-min) {
+	.highlight-graphic [class^="icon-16-"], 
+	.highlight-graphic [class*="icon-16-"] {
+		font-size: 100px;
+		line-height: 220px;
+		width: 220px;
+	}
+
+	.highlight-graphic {
+		margin-top: 0px;
+	}
+}
+
+// Features
+
+.feature {
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 60px;
+
+	&:hover ,
+	&:focus {
+		.feature-icon [class^="icon-16-"],
+		.feature-icon [class*="icon-16-"] {
+			color: rgba($accent, .7);
+		}
+	}
+}
+
+.feature-icon [class^="icon-16-"],
+.feature-icon [class*="icon-16-"] {
+	color: $accent;
+	font-size: 38px;
+	position: relative;
+	top: 10px;
+	transition: color 0.3s ease-in-out;
+}
