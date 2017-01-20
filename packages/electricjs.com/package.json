@@ -7,7 +7,7 @@
     "url": "https://github.com/wedeploy/electricjs.com"
   },
   "dependencies": {
-    "westyle": "wedeploy/westyle#master"
+    "marble": "wedeploy/marble#master"
   },
   "devDependencies": {
     "electric": "^1.1.3",
