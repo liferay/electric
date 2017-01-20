@@ -1,19 +1,19 @@
 // Header
 
 .header {
-	padding: 75px 0 0;
+	padding: 100px 0 0;
 
 	.icon-16-flash {
 		color: $accent;
 		display: block;
 		margin: 0 0 20px;
-		font-size: 90px;
+		font-size: 120px;
 	}
 }
 
 @media (min-width: $screen-md-min) {
 	.header {
-		padding: 150px 0 0;
+		padding: 175px 0 0;
 	}
 }
 
