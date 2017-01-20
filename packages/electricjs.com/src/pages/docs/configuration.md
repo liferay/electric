@@ -23,23 +23,6 @@ electric.registerTasks({
 
 </article>
 
-<article id="tasks">
-
-## Available Tasks
-
-### Generate
-
-To generate your distribution files, simple run the following command.
-
-```shell
-gulp generate
-```
-
-This will render all `soy` and `markdown` files from `src` into HTML and place
-them in the `dist` folder.
-
-</article>
-
 <article id="options">
 
 ## Options
