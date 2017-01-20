@@ -25,7 +25,7 @@
   },
   "homepage": "http://electricjs.com",
   "dependencies": {
-    "codemirror": "^5.22.2",
+    "codemirror": "^5.23.0",
     "del": "^2.2.2",
     "electric-components": "^1.0.4",
     "front-matter": "^2.1.1",
