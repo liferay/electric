@@ -13,25 +13,40 @@ weight: 1
 The [Yeoman Generator](https://github.com/liferay/generator-electric) is
 the fastest way to get an `electric` project up and running.
 
-Install dependencies.
+### Install dependencies
 
 ```shell
 npm i -g gulp yo
 ```
 
-Install generator.
+### Install generator
 
 ```shell
 npm i -g generator-electric
 ```
 
-Run the generator with `yo electric` in the command line. This will prompt you
-for a project id and name, then it creates a folder in your current
-directory with your new `electric` project.
+### Run generator
+
+```shell
+yo electric
+```
+
+This will prompt you for a project id and name, then it creates a folder in your
+current directory with your new `electric` project.
 
 Having issues getting the generator running? Check
 out [Yeoman's FAQs](http://yeoman.io/learning/faq.html) for troubleshooting
 tips.
+
+Build the site.
+
+```shell
+gulp
+```
+
+This will run the default gulp task registered in your project's `gulpfile.js`,
+which includes generating your site, starting up a development server, and
+starting the `watch` task.
 
 </article>
 
@@ -42,18 +57,18 @@ tips.
 Here is a basic example of an `electric` project.
 
 ```bash
-|--gulpfile.js (registers tasks)
+|--gulpfile.js
 |--src/
    |--site.json
    |--layouts/
-      |--base.soy (required base template)
+      |--base.soy
       |--docs.soy
    |--pages/
-      |--index.soy (required index page)
+      |--index.soy
       |--docs/
          |--index.soy
-         |--create.soy (soy rendered to html)
-         |--deploy.md (markdown rendered to html)
+         |--create.soy
+         |--deploy.md
          |--parent/
             |--index.md
             |--child.md
