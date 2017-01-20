@@ -1,21 +1,21 @@
 $accent: #FFCC00;
 
-@import "node_modules/westyle/src/westyle";
+@import "westyle";
 
 // Root
-@import "node_modules/westyle/src/templates/root";
+@import "templates/root";
 
 // Landing
-@import "node_modules/westyle/src/templates/landing";
+@import "templates/landing";
 
 // Docs
-@import "node_modules/westyle/src/templates/docs";
+@import "templates/docs";
 
 // Guide
-@import "node_modules/westyle/src/templates/guide";
+@import "templates/guide";
 
 // Search
-@import "node_modules/westyle/src/templates/search";
+@import "templates/search";
 
 // Customization
 @import "all";

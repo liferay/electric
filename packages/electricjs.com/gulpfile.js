@@ -20,7 +20,9 @@ electric.registerTasks({
 
 gulp.task('css', () => {
 	return gulp.src('src/styles/**/*.scss')
-		.pipe(sass({includePaths: ['node_modules']}))
+		.pipe(sass({
+			includePaths: ['node_modules', westyle.src]
+		}))
 		.pipe(gulp.dest('dist/styles'));
 });
 
