@@ -102,18 +102,3 @@ so `pages/docs/index.soy` will be available at `/docs/`.
 See [pages](/docs/pages.html) for more information.
 
 </article>
-
-
-<article id="dependencies">
-
-## Project Dependencies
-
-All dependencies are adding automatically when using the Yeoman Generator, but
-when creating a project from scratch, the following dependencies must be added
-to the project.
-
-```shell
-npm i --save gulp electric
-```
-
-</article>
