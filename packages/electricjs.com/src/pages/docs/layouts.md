@@ -124,6 +124,8 @@ following example implements the `docs` layout.
 
 ### `soy` example.
 
+Sub layouts are rendered using soy's [call command](https://developers.google.com/closure/templates/docs/commands#call).
+
 ```soy
 ---
 description: "Page description."
@@ -143,8 +145,6 @@ title: "Page"
     {/call}
 &#123;/template&#125;
 ```
-
-Sub layouts are rendered using soy's [call command](https://developers.google.com/closure/templates/docs/commands#call).
 
 The `data="all"` property needs to be set if the layout in question needs to
 implement any of the global params (`site` or `page`).
