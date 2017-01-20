@@ -1,10 +1,10 @@
 {
-  "name": "electricjs-docs",
+  "name": "electricjs.com",
   "version": "0.0.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/liferay/electricjs.com"
+    "url": "https://github.com/wedeploy/electricjs.com"
   },
   "dependencies": {
     "westyle": "wedeploy/westyle#master"
