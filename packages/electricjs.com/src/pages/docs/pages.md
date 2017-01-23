@@ -1,6 +1,6 @@
 ---
 description: "Creating pages in soy and markdown."
-icon: "code-file"
+icon: "menu-content"
 layout: "docs"
 title: "Pages"
 weight: 2
