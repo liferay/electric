@@ -2,12 +2,9 @@
   "name": "electricjs.com",
   "version": "0.0.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wedeploy/electricjs.com"
-  },
+  "repository": "wedeploy/electricjs.com",
   "dependencies": {
-    "marble": "wedeploy/marble#master"
+    "marble": "^2.3.0"
   },
   "devDependencies": {
     "electric": "^1.1.3",
