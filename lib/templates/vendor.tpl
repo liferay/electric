@@ -2,7 +2,7 @@
 	CodeMirror.defaults.lineNumbers = true;
 	CodeMirror.defaults.matchBrackets = true;
 	CodeMirror.defaults.readOnly = true;
-	CodeMirror.defaults.theme = '<%= theme %>';
+	CodeMirror.defaults.theme = '<%= codeMirror.theme %>';
 	CodeMirror.defaults.viewportMargin = Infinity;
 
 	code = document.querySelectorAll('.code');
