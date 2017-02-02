@@ -2,8 +2,6 @@
 	{$content}
 </div>
 
-<script src="/js/bundle.js"></script>
-
 <script>
 	var data = JSON.parse({$serialized});
 

@@ -5,27 +5,58 @@
 	CodeMirror.defaults.theme = '<%= codeMirror.theme %>';
 	CodeMirror.defaults.viewportMargin = Infinity;
 
-	code = document.querySelectorAll('.code');
-
 	var REGEX_LB = /&#123;/g;
 
 	var REGEX_RB = /&#125;/g;
 
-	for (var i = 0; i < code.length; i++) {lb}
-		// Workaround for soy issue where namespace and template tags are
-		// rendered inside literal blocks
-		var text = code[i].innerText
-			.replace(REGEX_LB, '{lb}')
-			.replace(REGEX_RB, '{rb}');
+	function runCodeMirror() {lb}
+		var code = document.querySelectorAll('.code');
 
-		var editor = CodeMirror(function(elt) {lb}
-			var preEl = code[i].parentNode;
+		for (var i = 0; i < code.length; i++) {lb}
+			// Workaround for soy issue where namespace and template tags are
+			// rendered inside literal blocks
+			var text = code[i].innerText
+				.replace(REGEX_LB, '{lb}')
+				.replace(REGEX_RB, '{rb}');
 
-			preEl.parentNode.append(elt);
-			preEl.style.display = 'none';
-		{rb}, {lb}
-			mode: code[i].getAttribute('data-mode') || '',
-			value: text
-		{rb});
+			var editor = CodeMirror(function(elt) {lb}
+				var preEl = code[i].parentNode;
+
+				preEl.parentNode.append(elt);
+				preEl.style.display = 'none';
+			{rb}, {lb}
+				mode: code[i].getAttribute('data-mode') || '',
+				value: text
+			{rb});
+		{rb}
 	{rb}
+
+	function runGoogleAnalytics(path) {lb}
+		if (ga) {lb}
+			ga('set', 'page', path);
+			ga('send', 'pageview');
+		{rb}
+	{rb}
+
+	runCodeMirror();
+
+	document.addEventListener('DOMContentLoaded', function() {lb}
+		if (senna) {lb}
+			var app = senna.dataAttributeHandler.getApp();
+			app.on('endNavigate', function(event) {lb}
+				runCodeMirror();
+				runGoogleAnalytics(event.path);
+			{rb});
+		{rb}
+	{rb});
+
+	<% if (googleAnalytics) { %>
+		(function(i,s,o,g,r,a,m){lb}i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){lb}
+		(i[r].q=i[r].q||[]).push(arguments){rb},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		{rb})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', '<%= googleAnalytics %>', 'auto');
+		ga('send', 'pageview');
+	<% } %>
 </script>
