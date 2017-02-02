@@ -1,6 +1,6 @@
 {
   "name": "electric",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Static generator using soy templates and metal.js.",
   "main": "lib/index.js",
   "scripts": {
