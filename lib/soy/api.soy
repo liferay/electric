@@ -1,0 +1,274 @@
+{namespace ElectricApi}
+
+/**
+ * @param apiData
+ * @param? entityData
+ */
+{template .render}
+	<div>
+		<nav class="sidebar">
+			{call .navigation data="all" /}
+		</nav>
+
+		<div class="sidebar-offset">
+			<div class="container-hybrid docs-home-top">
+				{if $entityData}
+					{call .entity}
+						{param entityData: $entityData /}
+					{/call}
+				{/if}
+			</div>
+		</div>
+	</div>
+{/template}
+
+/**
+ * @param augments
+ */
+{template .augments}
+	<span>
+		{foreach $augmentation in $augments}
+			<span>{$augmentation.title} </span>
+
+			{if $augmentation.link}
+				<a href="/api/{$augmentation.link}.html">{$augmentation.name}</a>
+			{else}
+				<code>{$augmentation.name}</code>
+			{/if}
+		{/foreach}
+	</span>
+{/template}
+
+/**
+ * @param default
+ */
+{template .default}
+	<div class="entity-default">
+		<span>Default: <code>{$default}</code></span>
+	</div>
+{/template}
+
+/**
+ * @param description
+ */
+{template .description}
+	{if $description.type == 'html' or $description.type == 'text'}
+		{$description.value}
+	{elseif $description.type == 'inlineCode'}
+		<code>{$description.value}</code>
+	{elseif $description.children}
+		{foreach $child in $description.children}
+			{call .description}
+				{param description: $child /}
+			{/call}
+		{/foreach}
+	{/if}
+{/template}
+
+/**
+ * @param entityData
+ */
+{template .entity}
+	<section class="card entity" id="{$entityData.name}">
+		<div>
+			{call .entityName data="all" /}
+
+			<a
+				class="entity-link"
+				href="{$entityData.repo}/{$entityData.context.file}#L{$entityData.context.loc.start.line}-L{$entityData.context.loc.end.line}"
+			>
+				{$entityData.context.file}
+			</a>
+		</div>
+
+		{if $entityData.augments}
+			<div>
+				{call .augments}
+					{param augments: $entityData.augments /}
+				{/call}
+			</div>
+		{/if}
+
+		{if $entityData.description}
+			<div class="entity-description">
+				{call .description}
+					{param description: $entityData.description /}
+				{/call}
+			</div>
+		{/if}
+
+		{if $entityData.default}
+			{call .default}
+				{param default: $entityData.default /}
+			{/call}
+		{/if}
+
+		{if $entityData.params}
+			{call .params}
+				{param params: $entityData.params /}
+			{/call}
+		{/if}
+
+		{if $entityData.returns}
+			{call .returns}
+				{param returns: $entityData.returns /}
+			{/call}
+		{/if}
+
+		{if $entityData.members}
+			{foreach $instanceMember in $entityData.members.instance}
+				{call .entity}
+					{param entityData: $instanceMember /}
+					{param instance: true /}
+				{/call}
+			{/foreach}
+
+			{foreach $staticMember in $entityData.members.static}
+				{call .entity}
+					{param entityData: $staticMember /}
+					{param static: true /}
+				{/call}
+			{/foreach}
+		{/if}
+	</section>
+{/template}
+
+/**
+ * @param entityData
+ */
+{template .entityName}
+	<h1>
+		<a href="#{$entityData.name}">
+			{$entityData.name}
+
+			{if $entityData.kind == 'function' or $entityData.name == 'constructor'}
+				(
+					{if $entityData.params}
+						{call .inlineParams}
+							{param params: $entityData.params /}
+						{/call}
+					{/if}
+				)
+			{elseif $entityData.type}
+				<span class="entity-name-type">:{$entityData.type}</span>
+			{/if}
+		</a>
+	</h1>
+{/template}
+
+/**
+ * @param params
+ */
+{template .inlineParams}
+	<span>
+		{foreach $param in $params}
+			{$param.name}
+
+			{if not isLast($param)}
+				{', '}
+			{/if}
+		{/foreach}
+	</span>
+{/template}
+
+/**
+ * @param apiData
+ */
+{template .navigation}
+	<ul class="sidebar-list sidebar-list-api">
+		{foreach $entity in $apiData}
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="/api/{$entity.name}.html">{$entity.name}</a>
+			</li>
+		{/foreach}
+	</ul>
+{/template}
+
+/**
+ * @param param
+ */
+{template .param}
+	<tr>
+		<td>{$param.name}</td>
+		<td>
+			{if $param.type}
+				{call .type}
+					{param type: $param.type /}
+				{/call}
+			{/if}
+		</td>
+		<td>
+			{if $param.description}
+				{call .description}
+					{param description: $param.description /}
+				{/call}
+			{/if}
+		</td>
+	</tr>
+{/template}
+
+/**
+ * @param params
+ */
+{template .params}
+	<div class="entity-params">
+		<span>Parameters:</span>
+
+		<div class="datatable">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					{foreach $param in $params}
+						{call .param}
+							{param param: $param /}
+						{/call}
+					{/foreach}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{/template}
+
+/**
+ * @param returns
+ */
+{template .returns}
+	<div class="entity-returns">
+		{let $return: $returns[0] /}
+
+		<span>
+			Returns: <code>
+				{call .type}
+					{param type: $return.type /}
+				{/call}
+			</code>
+		</span>
+
+		{if $return.description}
+			<div>
+				{call .description}
+					{param description: $return.description /}
+				{/call}
+			</div>
+		{/if}
+	</div>
+{/template}
+
+/**
+ * @param type
+ */
+{template .type}
+	<span>
+		{if $type.expression}
+			{$type.expression.name}
+		{else}
+			{$type.name}
+		{/if}
+	</span>
+{/template}
