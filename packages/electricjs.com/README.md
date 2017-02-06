@@ -1,6 +1,4 @@
-# [electricjs.com](http://electricjs.com)
-
-[![Built with Electric](https://img.shields.io/badge/built%20with-electric-f3c302.svg?style=flat)](http://electricjs.com)
+# [electricjs.com](http://electricjs.com) [![Built with Electric](https://img.shields.io/badge/built%20with-electric-f3c302.svg?style=flat)](http://electricjs.com)
 
 > If you're looking for the source code of our static site generator, check the [electric](https://github.com/wedeploy/electric) repository.
 
