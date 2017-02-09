@@ -18,16 +18,16 @@
  */
 {template .updates}
 	<div class="row">
-		<div class="col-lg-10 col-lg-offset-3 col-md-16 col-md-offset-0">
+		<div class="col-lg-8 col-lg-offset-2 col-md-12 col-md-offset-0">
 			{if $updates}
 				{foreach $update in $updates}
 					<section class="update">
 						<div class="row update-row">
-							<div class="col-sm-3 {$update.major ? 'major' : 'minor'}-update update-timeline">
+							<div class="col-sm-2 {$update.major ? 'major' : 'minor'}-update update-timeline">
 								<div class="update-point">{$update.version}</div>
 							</div>
 
-							<div class="col-sm-13 update-features">
+							<div class="col-sm-10 update-features">
 								{call .features data="all"}
 									{param features: $update.features /}
 								{/call}
@@ -60,9 +60,11 @@
  * @param feature
  */
 {deltemplate ElectricUpdates.feature variant="'basic'"}
-	<div class="col-xs-16 col-sm-8 update-feature">
+	<div class="col-xs-12 col-sm-6 update-feature">
 		<div class="feature-topper">
-			<span class="feature-icon icon-16-{$feature.icon}"></span>
+			<svg class="lexicon-icon">
+				<use xlink:href="/vendor/lexicon/icons.svg#{$feature.icon}" />
+			</svg>
 
 			<h1 class="feature-header">{$feature.title}</h1>
 		</div>

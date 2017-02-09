@@ -8,7 +8,9 @@
 {template .render}
 	<div class="code-container{$elementClasses ? ' ' + $elementClasses: ''}">
 		<button class="btn btn-sm btn-copy">
-			<span class="icon-12-overlap"></span>
+			<svg class="lexicon-icon">
+				<use xlink:href="/vendor/lexicon/icons.svg#paste" />
+			</svg>
 		</button>
 
 		<pre><code class="code" data-mode="{$mode}" ref="code">{$code}</code></pre>
