@@ -1,0 +1,43 @@
+{
+  "name": "electric-quartz-components",
+  "version": "0.0.0",
+  "description": "Components that are compatible with Quartz for use with electric.js sites.",
+  "jsnext:main": "src/all/components.js",
+  "main": "lib/all/components.js",
+  "files": [
+    "lib",
+    "src",
+    "test"
+  ],
+  "scripts": {
+    "compile": "babel --presets metal -d lib/ src/",
+    "prepublish": "gulp soy && npm run compile",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wedeploy/electric-quartz-components"
+  },
+  "keywords": [
+    "components",
+    "electric",
+    "metal",
+    "soy"
+  ],
+  "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wedeploy/electric-quartz-components/issues"
+  },
+  "homepage": "http://electricjs.com",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-metal": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-metal": "^1.9.13",
+    "electric": "^1.0.0"
+  },
+  "dependencies": {
+    "electric-base-components": "~1.0.0"
+  }
+}
