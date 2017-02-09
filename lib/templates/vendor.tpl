@@ -23,7 +23,6 @@
 				var preEl = code[i].parentNode;
 
 				preEl.parentNode.append(elt);
-				preEl.style.display = 'none';
 			{rb}, {lb}
 				mode: code[i].getAttribute('data-mode') || '',
 				value: text
