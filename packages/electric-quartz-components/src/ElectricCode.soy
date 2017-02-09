@@ -1,0 +1,16 @@
+{namespace ElectricCode}
+
+/**
+ * @param code
+ * @param mode
+ * @param? elementClasses
+ */
+{template .render}
+	<div class="code-container{$elementClasses ? ' ' + $elementClasses: ''}">
+		<button class="btn btn-sm btn-copy">
+			<span class="icon-12-overlap"></span>
+		</button>
+
+		<pre><code class="code" data-mode="{$mode}" ref="code">{$code}</code></pre>
+	</div>
+{/template}

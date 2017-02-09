@@ -1,0 +1,24 @@
+{namespace ElectricSearchAutocomplete}
+
+/**
+ * @param? placeholder
+ */
+{template .render}
+	<div class="page-autocomplete">
+		<div class="form-group">
+			<div class="input-inner-addon input-inner-addon-right">
+				<input
+					autocomplete="off"
+					class="form-control"
+					name="q"
+					placeholder="{$placeholder ?: ''}"
+					ref="input"
+					required
+					type="text"
+				>
+
+				<span class="input-inner-icon-helper icon-16-magnifier"></span>
+			</div>
+		</div>
+	</div>
+{/template}

@@ -1,0 +1,78 @@
+{namespace ElectricUpdates}
+
+/**
+ * @param? featureVariant
+ * @param updates
+ */
+{template .render}
+	<div class="updates">
+		<div class="container">
+			{call .updates data="all" /}
+		</div>
+	</div>
+{/template}
+
+/**
+ * @param? featureVariant
+ * @param updates
+ */
+{template .updates}
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-3 col-md-16 col-md-offset-0">
+			{if $updates}
+				{foreach $update in $updates}
+					<section class="update">
+						<div class="row update-row">
+							<div class="col-sm-3 {$update.major ? 'major' : 'minor'}-update update-timeline">
+								<div class="update-point">{$update.version}</div>
+							</div>
+
+							<div class="col-sm-13 update-features">
+								{call .features data="all"}
+									{param features: $update.features /}
+								{/call}
+							</div>
+						</div>
+					</section>
+				{/foreach}
+			{/if}
+		</div>
+	</div>
+{/template}
+
+/**
+ * @param? featureVariant
+ * @param features
+ */
+{template .features}
+	{let $localFeatureVariant: $featureVariant ?: 'basic' /}
+
+	<div class="row">
+		{foreach $feature in $features}
+			{delcall ElectricUpdates.feature variant="$localFeatureVariant" data="all"}
+				{param feature: $feature /}
+			{/delcall}
+		{/foreach}
+	</div>
+{/template}
+
+/**
+ * @param feature
+ */
+{deltemplate ElectricUpdates.feature variant="'basic'"}
+	<div class="col-xs-16 col-sm-8 update-feature">
+		<div class="feature-topper">
+			<span class="feature-icon icon-16-{$feature.icon}"></span>
+
+			<h1 class="feature-header">{$feature.title}</h1>
+		</div>
+
+		<div class="feature-content">
+			<p class="feature-lead">{$feature.description}</p>
+
+			<div class="read-more">
+				<a href="{$feature.url}">Read more…</a>
+			</div>
+		</div>
+	</div>
+{/deltemplate}

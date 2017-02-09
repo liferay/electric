@@ -1,0 +1,10 @@
+{namespace ElectricReadingProgress}
+
+/**
+ * @param? elementClasses
+ */
+{template .render}
+	<div class="affix-top{$elementClasses ? ' ' + $elementClasses: ''}">
+		<div ref="readingContainer"></div>
+	</div>
+{/template}

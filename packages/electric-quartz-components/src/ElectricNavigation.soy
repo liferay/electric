@@ -1,0 +1,60 @@
+{namespace ElectricNavigation}
+
+/**
+ * @param section
+ * @param? anchorVariant
+ * @param? currentDepth
+ * @param? currentURL
+ * @param? depth
+ * @param? elementClasses
+ * @param? linkClasses
+ * @param? listItemActiveClasses
+ * @param? listItemClasses
+ */
+{template .render}
+	{let $localAnchorVariant: $anchorVariant ?: 'basic' /}
+	{let $localCurrentDepth: $currentDepth ?: 0 /}
+	{let $localListItemActiveClasses: $listItemActiveClasses ?: 'active' /}
+
+	{if $section.children}
+		<ul class="{$elementClasses ?: ''}">
+			{foreach $page in $section.children}
+				{if not $page.hidden}
+					<li class="{$listItemClasses ?: ''}{$page.active ? ' ' + $localListItemActiveClasses : ''}">
+						{delcall ElectricNavigation.anchor variant="$localAnchorVariant" data="all"}
+							{param page: $page /}
+						{/delcall}
+
+						{if not $depth or $localCurrentDepth + 1 < $depth}
+							{call ElectricNavigation.render}
+								{param anchorVariant: $localAnchorVariant /}
+								{param currentDepth: $localCurrentDepth + 1 /}
+								{param currentURL: $currentURL /}
+								{param depth: $depth /}
+								{param elementClasses: $elementClasses /}
+								{param linkClasses: $linkClasses /}
+								{param listItemActiveClasses: $listItemActiveClasses /}
+								{param listItemClasses: $listItemClasses /}
+								{param section: $page /}
+							{/call}
+						{/if}
+					</li>
+				{/if}
+			{/foreach}
+		</ul>
+	{/if}
+{/template}
+
+/**
+ * @param page
+ * @param? linkClasses
+ */
+{deltemplate ElectricNavigation.anchor variant="'basic'"}
+	{if $page.url or $page.redirect}
+		<a class="{$linkClasses ?: ''}" href="{$page.redirect ?: $page.url}">
+			<span>{$page.title ?: 'Missing'}</span>
+		</a>
+	{else}
+		<span class="{$linkClasses ?: ''}">{$page.title ?: 'Missing'}</span>
+	{/if}
+{/deltemplate}
