@@ -6,7 +6,7 @@
 {template .render}
 	<div class="page-autocomplete">
 		<div class="form-group">
-			<div class="input-inner-addon input-inner-addon-right">
+			<div class="input-group">
 				<input
 					autocomplete="off"
 					class="form-control"
@@ -17,7 +17,11 @@
 					type="text"
 				>
 
-				<span class="input-inner-icon-helper icon-16-magnifier"></span>
+				<span class="input-group-addon">
+					<svg class="lexicon-icon">
+						<use xlink:href="/vendor/lexicon/icons.svg#search" />
+					</svg>
+				</span>
 			</div>
 		</div>
 	</div>
