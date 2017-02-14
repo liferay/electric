@@ -73,11 +73,15 @@
 		<div>
 			{call .entityName data="all" /}
 
+			{let $loc: $entityData.context.loc /}
+
+			{let $filePath: $entityData.context.file + '#L' + $loc.start.line + ($loc.end.line != $loc.start.line ? '-L' + $loc.end.line : '') /}
+
 			<a
 				class="entity-link"
-				href="{$entityData.repo}/{$entityData.context.file}#L{$entityData.context.loc.start.line}-L{$entityData.context.loc.end.line}"
+				href="{$entityData.repo}/{$filePath}"
 			>
-				{$entityData.context.file}
+				{$filePath}
 			</a>
 		</div>
 
