@@ -1,8 +1,7 @@
 {
+  "private": true,
   "name": "electricjs.com",
   "version": "0.0.0",
-  "private": true,
-  "repository": "wedeploy/electricjs.com",
   "dependencies": {
     "marble": "~2.4.0"
   },
