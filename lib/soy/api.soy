@@ -69,7 +69,7 @@
  * @param entityData
  */
 {template .entity}
-	<section class="card entity" id="{$entityData.name}">
+	<section class="card entity" data-access="{$entityData.access ? $entityData.access : 'public'}" id="{$entityData.name}">
 		<div>
 			{call .entityName data="all" /}
 
@@ -143,6 +143,10 @@
 {template .entityName}
 	<h1>
 		<a href="#{$entityData.name}">
+			{if $entityData.access}
+				<span class="entity-access">{$entityData.access + ' '}</span>
+			{/if}
+
 			{$entityData.name}
 
 			{if $entityData.kind == 'function' or $entityData.name == 'constructor'}
