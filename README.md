@@ -18,6 +18,9 @@
   <img src="https://img.shields.io/npm/l/electric.svg" alt="License">
 </div>
 
+## Attention
+
+Electric is under development. It's usable and we're using in production already, but if you plan on using it right now, expect some UI changes and API breaks.
 
 ## Learn
 
