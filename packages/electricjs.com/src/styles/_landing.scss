@@ -85,3 +85,18 @@
 	top: 10px;
 	transition: color 0.3s ease-in-out;
 }
+
+// GitHub buttons
+
+.gh-btns {
+	background: rgba($primary, .07);
+	margin: 75px 0 0;
+	padding-bottom: 10px;
+	padding-top: 16px;
+}
+
+@media (min-width: $screen-md-min) {
+	.gh-btns {
+		margin-top: 140px;
+	}
+}
