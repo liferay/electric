@@ -5,7 +5,8 @@
 {namespace <%= namespace %>}
 
 /**
- *
+ * @param? page
+ * @param? site
  */
 {template .render}
 	{call <%= layout %>.render data="all"}
