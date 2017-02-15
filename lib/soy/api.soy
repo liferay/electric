@@ -2,6 +2,7 @@
 
 /**
  * @param apiData
+ * @param project
  * @param? entityData
  */
 {template .render}
@@ -13,7 +14,7 @@
 		<div class="sidebar-offset">
 			<div class="container-hybrid docs-home-top">
 				{if $entityData}
-					{call .entity}
+					{call .entity data="all"}
 						{param entityData: $entityData /}
 					{/call}
 				{/if}
@@ -26,7 +27,7 @@
  * @param augments
  */
 {template .augments}
-	<span>
+	<div class="entity-augments">
 		{foreach $augmentation in $augments}
 			<span>{$augmentation.title} </span>
 
@@ -36,7 +37,7 @@
 				<code>{$augmentation.name}</code>
 			{/if}
 		{/foreach}
-	</span>
+	</div>
 {/template}
 
 /**
@@ -67,30 +68,16 @@
 
 /**
  * @param entityData
+ * @param project
  */
 {template .entity}
 	<section class="card entity" data-access="{$entityData.access ? $entityData.access : 'public'}" id="{$entityData.name}">
-		<div>
-			{call .entityName data="all" /}
-
-			{let $loc: $entityData.context.loc /}
-
-			{let $filePath: $entityData.context.file + '#L' + $loc.start.line + ($loc.end.line != $loc.start.line ? '-L' + $loc.end.line : '') /}
-
-			<a
-				class="entity-link"
-				href="{$entityData.repo}/{$filePath}"
-			>
-				{$filePath}
-			</a>
-		</div>
+		{call .entityHeader data="all" /}
 
 		{if $entityData.augments}
-			<div>
-				{call .augments}
-					{param augments: $entityData.augments /}
-				{/call}
-			</div>
+			{call .augments}
+				{param augments: $entityData.augments /}
+			{/call}
 		{/if}
 
 		{if $entityData.description}
@@ -120,7 +107,7 @@
 		{/if}
 
 		{if $entityData.members}
-			{call .members}
+			{call .members data="all"}
 				{param members: $entityData.members /}
 			{/call}
 		{/if}
@@ -129,9 +116,30 @@
 
 /**
  * @param entityData
+ * @param project
+ */
+{template .entityHeader}
+	<div class="entity-header">
+		{call .entityName data="all" /}
+
+		{let $loc: $entityData.context.loc /}
+
+		{let $filePath: $entityData.context.file + '#L' + $loc.start.line + ($loc.end.line != $loc.start.line ? '-L' + $loc.end.line : '') /}
+
+		<a
+			class="entity-link"
+			href="https://github.com/{$project.user}/{$project.repo}/tree/{$project.ref}/{$filePath}"
+		>
+			{$filePath}
+		</a>
+	</div>
+{/template}
+
+/**
+ * @param entityData
  */
 {template .entityName}
-	<h1>
+	<h1 class="entity-name">
 		<a href="#{$entityData.name}">
 			{if $entityData.access}
 				<span class="entity-access">{$entityData.access + ' '}</span>
@@ -171,6 +179,7 @@
 
 /**
  * @param members
+ * @param project
  */
 {template .members}
 	<div class="entity-members">
@@ -178,7 +187,7 @@
 			<h2>Properties:</h2>
 
 			{foreach $property in $members.properties}
-				{call .entity}
+				{call .entity data="all"}
 					{param entityData: $property /}
 					{param instance: true /}
 				{/call}
@@ -189,7 +198,7 @@
 			<h2>Methods:</h2>
 
 			{foreach $method in $members.methods}
-				{call .entity}
+				{call .entity data="all"}
 					{param entityData: $method /}
 					{param instance: true /}
 				{/call}
@@ -200,7 +209,7 @@
 			<h2>Static:</h2>
 
 			{foreach $staticMember in $members.static}
-				{call .entity}
+				{call .entity data="all"}
 					{param entityData: $staticMember /}
 					{param static: true /}
 				{/call}
@@ -211,12 +220,27 @@
 
 /**
  * @param apiData
+ * @param project
  */
 {template .navigation}
-	<ul class="sidebar-list sidebar-list-api">
+	<div class="sidebar-search">
+		<div class="form-group">
+			<select class="form-control" onchange="location = this.value;">
+				{foreach $ref in $project.refs}
+					<option value="/api/{$ref}" {if $ref == $project.ref}selected{/if}>{$ref}</option>
+				{/foreach}
+			</select>
+		</div>
+
+		<div class="form-group">
+			<input class="form-control" name="query" placeholder="Search...">
+		</div>
+	</div>
+
+	<ul class="sidebar-list sidebar-list-1">
 		{foreach $entity in $apiData}
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="/api/{$entity.name}.html">{$entity.name}</a>
+				<a class="sidebar-link" href="/api/{$project.ref}/{$entity.name}.html">{$entity.name}</a>
 			</li>
 		{/foreach}
 	</ul>
