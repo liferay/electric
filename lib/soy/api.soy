@@ -120,19 +120,9 @@
 		{/if}
 
 		{if $entityData.members}
-			{foreach $instanceMember in $entityData.members.instance}
-				{call .entity}
-					{param entityData: $instanceMember /}
-					{param instance: true /}
-				{/call}
-			{/foreach}
-
-			{foreach $staticMember in $entityData.members.static}
-				{call .entity}
-					{param entityData: $staticMember /}
-					{param static: true /}
-				{/call}
-			{/foreach}
+			{call .members}
+				{param members: $entityData.members /}
+			{/call}
 		{/if}
 	</section>
 {/template}
@@ -177,6 +167,46 @@
 			{/if}
 		{/foreach}
 	</span>
+{/template}
+
+/**
+ * @param members
+ */
+{template .members}
+	<div class="entity-members">
+		{if $members.properties and $members.properties.length}
+			<h2>Properties:</h2>
+
+			{foreach $property in $members.properties}
+				{call .entity}
+					{param entityData: $property /}
+					{param instance: true /}
+				{/call}
+			{/foreach}
+		{/if}
+
+		{if $members.methods and $members.methods.length}
+			<h2>Methods:</h2>
+
+			{foreach $method in $members.methods}
+				{call .entity}
+					{param entityData: $method /}
+					{param instance: true /}
+				{/call}
+			{/foreach}
+		{/if}
+
+		{if $members.static and $members.static.length}
+			<h2>Static:</h2>
+
+			{foreach $staticMember in $members.static}
+				{call .entity}
+					{param entityData: $staticMember /}
+					{param static: true /}
+				{/call}
+			{/foreach}
+		{/if}
+	</div>
 {/template}
 
 /**
