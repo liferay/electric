@@ -7,6 +7,8 @@
  */
 {template .render}
 	<div>
+		<script src="/js/api-bundle.js"></script>
+
 		<nav class="sidebar">
 			{call .navigation data="all" /}
 		</nav>
@@ -20,6 +22,18 @@
 				{/if}
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			new metal.APIAutocomplete({lb}
+				dataSource: '/api/{$project.ref}/API.json',
+				project: {lb}
+					ref: {$project.ref},
+					repo: {$project.repo},
+					user: {$project.user}
+				{rb},
+				input: document.querySelector('input[name="query"]')
+			{rb});
+		</script>
 	</div>
 {/template}
 
@@ -233,7 +247,7 @@
 		</div>
 
 		<div class="form-group">
-			<input class="form-control" name="query" placeholder="Search...">
+			<input autocomplete="off" class="form-control" name="query" placeholder="Search...">
 		</div>
 	</div>
 
