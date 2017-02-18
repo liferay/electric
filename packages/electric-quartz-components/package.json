@@ -1,6 +1,6 @@
 {
   "name": "electric-quartz-components",
-  "version": "0.0.2",
+  "version": "2.0.0-alpha.0",
   "description": "Components that are compatible with Quartz for use with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
