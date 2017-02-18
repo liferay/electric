@@ -38,6 +38,6 @@
     "electric": "^1.0.0"
   },
   "dependencies": {
-    "electric-base-components": "~1.0.0"
+    "electric-base-components": "alpha"
   }
 }
