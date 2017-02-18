@@ -27,7 +27,7 @@
   "dependencies": {
     "codemirror": "^5.23.0",
     "del": "^2.2.2",
-    "electric-marble-components": "~1.0.0",
+    "electric-marble-components": "alpha",
     "front-matter": "^2.1.1",
     "fs-extra": "^0.30.0",
     "gulp-data": "^1.2.1",
