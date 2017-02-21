@@ -24,6 +24,9 @@
     "url": "https://github.com/wedeploy/electric/issues"
   },
   "homepage": "http://electricjs.com",
+  "publishConfig": {
+    "tag": "alpha"
+  },
   "dependencies": {
     "codemirror": "^5.23.0",
     "del": "^2.2.2",
