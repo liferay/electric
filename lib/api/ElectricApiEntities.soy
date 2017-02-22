@@ -7,9 +7,11 @@
  */
 {template .render}
 	<div>
-		{call .accessFilter data="all" /}
+		{if $entityData}
+			{call .accessFilter data="all" /}
 
-		{call .entity data="all" /}
+			{call .entity data="all" /}
+		{/if}
 	</div>
 {/template}
 
