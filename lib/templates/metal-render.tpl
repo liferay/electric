@@ -9,9 +9,21 @@
 		window.prevElectricPageComponent = window.electricPageComponent;
 	{rb}
 
-	window.electricPageComponent = metal.Component.render(metal[data.page.componentName], {lb}
+	var getByPath = function(obj, path) {lb}
+		path = path.split('.');
+
+		for (var i = 0; i < path.length; i++) {lb}
+			obj = obj[path[i]];
+		{rb};
+
+		return obj;
+	{rb};
+
+	var page = getByPath(data.site, data.pageLocation);
+
+	window.electricPageComponent = metal.Component.render(metal[{$page.componentName}], {lb}
 		element: '#pageComponent',
-		page: data.page,
+		page: page,
 		site: data.site
 	{rb});
 </script>
