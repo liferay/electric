@@ -2,7 +2,9 @@
 
 /**
  * @param apiData
+ * @param filter
  * @param project
+ * @param serialized
  * @param? entityData
  */
 {template .render}
@@ -13,16 +15,20 @@
 
 		<div class="sidebar-offset">
 			<div class="container-hybrid docs-home-top">
-				{if $entityData}
-					{call .entity data="all"}
-						{param entityData: $entityData /}
-					{/call}
-				{/if}
+				<div class="entity-container" id="entityContainer">
+					{if $entityData}
+						{call ElectricApiEntities.render}
+							{param entityData: $entityData /}
+							{param filter: $filter /}
+							{param project: $project /}
+						{/call}
+					{/if}
+				</div>
 			</div>
 		</div>
 
 		<script type="text/javascript">
-			new metal.APIAutocomplete({lb}
+			new metal.ApiAutocomplete({lb}
 				dataSource: '/api/{$project.ref}/API.json',
 				project: {lb}
 					ref: {$project.ref},
@@ -30,6 +36,15 @@
 					user: {$project.user}
 				{rb},
 				input: document.querySelector('input[name="query"]')
+			{rb});
+
+			var serialized = JSON.parse({$serialized});
+
+			metal.Component.render(metal.ElectricApiEntities, {lb}
+				element: '#entityContainer',
+				entityData: serialized.entityData,
+				filter: serialized.filter,
+				project: serialized.project
 			{rb});
 		</script>
 	</div>
