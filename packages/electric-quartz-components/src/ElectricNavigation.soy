@@ -18,7 +18,9 @@
 
 	{if $section.children}
 		<ul class="{$elementClasses ?: ''}">
-			{foreach $page in $section.children}
+			{foreach $childId in $section.childIds}
+				{let $page: $section.children[$childId] /}
+
 				{if not $page.hidden}
 					<li class="{$listItemClasses ?: ''}{$page.active ? ' ' + $localListItemActiveClasses : ''}">
 						{delcall ElectricNavigation.anchor variant="$localAnchorVariant" data="all"}
