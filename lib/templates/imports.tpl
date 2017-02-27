@@ -1,3 +1,3 @@
-<% _.forEach(plugins, function(component) { %>
+<% _.forEach(metalComponents, function(component) { %>
 import '<%= component %>';
 <% }); %>
