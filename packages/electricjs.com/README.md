@@ -13,7 +13,7 @@ node -v && npm -v
 2. Install our global dependencies:
 
 	```sh
-[sudo] npm i -g gulp
+[sudo] npm i -g electric
 	```
 
 3. Install our local dependencies:
@@ -27,13 +27,13 @@ npm i
 * Build the site, serve it locally, and watch for any changes:
 
 	```
-gulp
+electric
 	```
 
 * Deploy to production (send build files to `wedeploy` branch):
 
 	```
-gulp deploy
+electric deploy
 	```
 
 ## License
