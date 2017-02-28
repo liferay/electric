@@ -21,9 +21,11 @@
 
 	var page = getByPath(data.site, data.pageLocation);
 
-	window.electricPageComponent = metal.Component.render(metal[{$page.componentName}], {lb}
-		element: '#pageComponent',
-		page: page,
-		site: data.site
-	{rb});
+	if (page) {
+		window.electricPageComponent = metal.Component.render(metal[{$page.componentName}], {lb}
+			element: '#pageComponent',
+			page: page,
+			site: data.site
+		{rb});
+	}
 </script>
