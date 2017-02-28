@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
-    "electric-marble-components": "^2.0.0-alpha.0",
+    "electric-marble-components": "alpha",
     "marble": "~2.4.0",
     "metal-toggler": "^2.0.0"
   }
