@@ -6,14 +6,14 @@ description: "List of articles documenting electric."
 {namespace pageDocsIndex}
 
 /**
- * @param site
+ * @param page
  */
 {template .render}
 	{call main.render data="all"}
 		{param elementClasses: 'docs' /}
 		{param content kind="html"}
 			{call Sidebar.render}
-				{param section: $site.index.children[0] /}
+				{param section: $page /}
 			{/call}
 
 			{call .topics data="all" /}
@@ -22,7 +22,7 @@ description: "List of articles documenting electric."
 {/template}
 
 /**
- * @param site
+ * @param page
  */
 {template .topics}
 	<div class="sidebar-offset">
@@ -64,7 +64,9 @@ description: "List of articles documenting electric."
 				<div class="row">
 					<div class="col-md-13 col-md-offset-3 col-xs-16">
 						<div class="row">
-							{foreach $topic in $site.index.children[0].children}
+							{foreach $childId in $page.childIds}
+								{let $topic: $page.children[$childId] /}
+
 								{if not $topic.hidden}
 									<div class="col-md-6 col-xs-16">
 										<a class="topic radial-out" href="{$topic.url}">

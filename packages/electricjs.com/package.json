@@ -1,17 +1,10 @@
 {
-  "private": true,
   "name": "electricjs.com",
   "version": "0.0.0",
-  "dependencies": {
-    "marble": "~2.4.0"
-  },
+  "private": true,
   "devDependencies": {
-    "electric": "~1.3.0",
-    "gulp": "^3.9.0",
-    "gulp-connect": "^5.0.0",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-sass": "^3.1.0",
-    "metal-toggler": "^2.0.0",
-    "run-sequence": "^1.2.2"
+    "electric-marble-components": "^2.0.0-alpha.0",
+    "marble": "~2.4.0",
+    "metal-toggler": "^2.0.0"
   }
 }

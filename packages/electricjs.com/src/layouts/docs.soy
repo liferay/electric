@@ -8,8 +8,8 @@
 	{call main.render data="all"}
 		{param elementClasses: 'docs' /}
 		{param content kind="html"}
-			{call Sidebar.render data="all"}
-				{param section: $site.index.children[0] /}
+			{call Sidebar.render}
+				{param section: $site.index.children['docs'] /}
 			{/call}
 
 			{call .guide data="all" /}
@@ -36,7 +36,7 @@
 					{$content}
 
 					{if $site.githubRepo}
-						{call .feedback data="all" /}
+						{call .contribute data="all" /}
 					{/if}
 				</div>
 
@@ -57,16 +57,13 @@
  * @param page
  * @param site
  */
-{template .feedback}
-	<div>
-		<div class="guide-github">
-			<div class="guide-github-img">
-				<span class="icon-16-github"></span>
-			</div>
-
-			<div class="guide-github-text">
-				<p>Contribute on Github! <a href="https://github.com/{$site.githubRepo}/tree/master/{$page.srcFilePath}" class="docs-github-link" target="_blank">Edit this section</a>.</p>
-			</div>
+{template .contribute}
+	<div class="guide-github">
+		<div class="guide-github-img">
+			<span class="icon-16-github"></span>
+		</div>
+		<div class="guide-github-text">
+			<p>Contribute on Github! <a href="https://github.com/{$site.githubRepo}/tree/master/{$page.srcFilePath}" class="docs-github-link" target="_blank">Edit this section</a>.</p>
 		</div>
 	</div>
 {/template}
