@@ -10,16 +10,15 @@ weight: 4
 
 ## Creating Components
 
-One of the major benefits of `electric` is the ability to create metal.js
-components and invoke them in your `soy` layouts and pages.
+One of the benefits of `electric` is the ability to create metal.js components
+and invoke them in your `soy` layouts and pages.
 
-Components can exist anywhere in the `src` directory, for this example we will
-place them inside `src/components`.
+Components should be placed in the the `src/partials` directory.
 
 ```javascript
 .
 └── src
-    ├── components
+    ├── partials
     │   ├── MyComponent.js
     │   └── MyComponent.soy
     ├── layouts
@@ -97,16 +96,18 @@ Now you should see 'MyComponent attached!' in the browser console.
 
 </article>
 
-<article id="metal_sgg_components">
+<article id="electric_components">
 
 ## Electric Components
 
-The [electric-components](https://github.com/liferay/electric-components) package
-contains a number of components that are compatible with the site meta data,
-such as navigation and search components.
+The [electric-components](https://github.com/wedeploy/electric-components) package
+contains a number of components that are compatible with electric site meta
+data, such as navigation and search components.
 
-See [configuration](/docs/configuration.html#options) for information on
-adding `plugins` to your project.
+Currently these components come in two themes.
+
+- Marble: [electric-marble-components](https://github.com/wedeploy/electric-marble-components)
+- Quartz: [electric-quartz-components](https://github.com/wedeploy/electric-quartz-components)
 
 These components are invoked the same way as your own components.
 
@@ -132,5 +133,7 @@ title: "Page"
 ```
 
 This will render a list with all direct descendants of the index page.
+
+See [configuration](/docs/configuration.html#options) for more information.
 
 </article>

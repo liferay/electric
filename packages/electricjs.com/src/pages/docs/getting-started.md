@@ -6,49 +6,33 @@ title: "Getting Started"
 weight: 1
 ---
 
-<article id="yeoman">
+<article id="electricCli">
 
-## Yeoman Generator
+## Electric CLI
 
-The [Yeoman Generator](https://github.com/liferay/generator-electric) is
-the fastest way to get an `electric` project up and running.
-
-### Install dependencies
+### Install
 
 ```shell
-npm i -g gulp yo
+npm i -g electric-cli
 ```
 
-### Install generator
+### Initialize Project
 
 ```shell
-npm i -g generator-electric
-```
-
-### Run generator
-
-```shell
-yo electric
+electric init
 ```
 
 This will prompt you for a project id and name, then it creates a folder in your
 current directory with your new `electric` project.
 
-Having issues getting the generator running? Check
-out [Yeoman's FAQs](http://yeoman.io/learning/faq.html) for troubleshooting
-tips.
-
-### Build
-
-All `gulp` commands should be run from your project root.
+### Run
 
 ```shell
-gulp
+electric run
 ```
 
-This will run the default gulp task registered in your project's `gulpfile.js`,
-which includes generating your site, starting up a development server, and
-starting the `watch` task.
+This will build your newly created project and start up a development server
+along with a watch task for quickly making changes.
 
 </article>
 
@@ -60,7 +44,7 @@ Here is a basic example of an `electric` project.
 
 ```javascript
 .
-├── gulpfile.js
+├── electric.config.js
 └── src
     ├── layouts
     │   ├── base.soy
@@ -80,6 +64,17 @@ Here is a basic example of an `electric` project.
 
 <article id="site_json">
 
+## electric.config.js
+
+This file provides configuration options to electric. It must always be located
+in the root directory of your project.
+
+See [configuration](/docs/configuration.html) for more information.
+
+</article>
+
+<article id="site_json">
+
 ## site.json
 
 This file contains meta data about your project. Any property can be added to
@@ -92,10 +87,10 @@ every page as a soy param.
 
 ## Layouts
 
-The file structure of `layouts` is flexible, as `soy` uses the `namespace` of
+The file structure of `layouts` is flexible, as soy uses the `namespace` of
 every file as an identifier.
 
-All layout files must be a `soy` template, and the only required layout is
+All layout files must be a soy template, and the only required layout is
 `base.soy`.
 
 See [layouts](/docs/layouts.html) for more information.
@@ -107,11 +102,11 @@ See [layouts](/docs/layouts.html) for more information.
 ## Pages
 
 Every file in `pages` with a `.soy` or `.md` extension is rendered to HTML
-during the `generate` task.
+during the `build` command.
 
 The file structure of `pages` determines the urls of your pages. For the above
 example, the `child.md` file will be located at `/docs/parent/child.html` after
-generating.
+building.
 
 Pages named `index` will be located at the path of it's parent directory,
 so `pages/docs/index.soy` will be available at `/docs/`.

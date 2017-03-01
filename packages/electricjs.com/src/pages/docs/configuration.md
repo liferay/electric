@@ -1,5 +1,5 @@
 ---
-description: "Configuration options for gulp tasks."
+description: "Configuration options for electric-cli tasks."
 icon: "gear"
 layout: "docs"
 title: "Configuration"
@@ -8,17 +8,24 @@ weight: 5
 
 <article id="registering">
 
-## Registering
+## electric.config.js
 
-All tasks are registered in the project's `gulpfile.js`.
+All options can be set in the `electric.config.js` file located in the root of
+your project. This file must export an Object, or a
+function that returns an Object.
 
 ```javascript
-const gulp = require('gulp');
-const electric = require('electric');
+module.exports = {
+	pathDest: 'build'
+};
 
-electric.registerTasks({
-	gulp: gulp
-});
+// or
+
+module.exports = function() {
+	return {
+		pathDest: 'build'
+	};
+};
 ```
 
 </article>
@@ -27,18 +34,8 @@ electric.registerTasks({
 
 ## Options
 
-### `registerTasks`
+### codeMirrorLanguages
 
-#### gulp
-
-- Required: `true`
-- Type: Gulp instance
-
-An instance of [gulp](http://gulpjs.com/).
-
-#### codeMirrorLanguages
-
-- Required: `false`
 - Type: `Array<languageName>`
 - Default: `['xml', 'css', 'javascript']`
 
@@ -46,9 +43,8 @@ An Array of langauge names for syntax highlighting.
 See [CodeMirror](https://codemirror.net/mode/index.html) for a list of available
 languages.
 
-#### codeMirrorTheme
+### codeMirrorTheme
 
-- Required: `false`
 - Type: `String`
 - Default: `'dracula'`
 
@@ -56,9 +52,15 @@ Theme to be used by CodeMirror.
 See [CodeMirror](https://codemirror.net/demo/theme.html) for a list of available
 themes.
 
-#### markdownOptions
+### deployOptions
 
-- Required: `false`
+- Type: `Object`
+- Default: `{lb} branch: 'wedeploy' {rb}`
+
+Configuration options used by the `deploy` command. See [gulp-gh-pages](https://www.npmjs.com/package/gulp-gh-pages#ghpages-options-) for further configuration options.
+
+### markdownOptions
+
 - Type: `Object`
 
 An Object Literal containing configuration options
@@ -68,20 +70,18 @@ used to render Markdown files.
 Example:
 
 ```javascript
-electric.registerTasks({
-	gulp: gulp,
+module.exports = {
 	markdownOptions: {
 		breaks: true
 	}
-});
+};
 ```
 
 See [Remarkable's documentation](https://github.com/jonschlinkert/remarkable#options) for
 list of options.
 
-#### pathDest
+### pathDest
 
-- Required: `false`
 - Type: `String`
 - Default: `dist`
 
@@ -90,17 +90,15 @@ The path that generated files are placed in.
 Example:
 
 ```javascript
-electric.registerTasks({
-	gulp: gulp,
+module.exports = {
 	pathDest: 'build'
-});
+};
 ```
 
 Now all generated files will be placed in the `build` directory.
 
-#### pathSrc
+### pathSrc
 
-- Required: `false`
 - Type: `String`
 - Default: `src`
 
@@ -109,54 +107,58 @@ The path where all source files are located.
 Example:
 
 ```javascript
-electric.registerTasks({
-	gulp: gulp,
+module.exports = {
 	pathSrc: 'web'
-});
+};
 ```
 
 Now `electric` will look inside the `web` directory for all source files.
 
-#### plugins
+### metalComponents
 
-- Required: `false`
 - Type: `Array<String>`
 
-Array of `npm` modules that expose Metal components.
+Array of `npm` modules that expose Metal components. These also must be added
+as `npm` dependencies in your package.json.
 
 Example:
 
 ```javascript
-electric.registerTasks({
-	gulp: gulp,
-	plugins: ['electric-components']
-});
+module.exports = {
+	metalComponents: ['electric-components']
+};
 ```
 
 The components found in the `electric-components` package will now be available
 to all `soy` files in your project.
 
-Note that every package listed in `plugins` must also be listed as a dependency
+Note that every package listed in `metalComponents` must also be listed as a dependency
 in the project's `package.json`.
 
-#### taskPrefix
+### staticSrc
 
-- Required: `false`
-- Type: `String`
+- Type: `Array<String>`
 
-String that is prefixed to every task exposed by `electric`.
+Array of glob patterns for static files found in the
+`options.pathSrc` directory. These glob patterns target anything that isn't
+part of the build system (pages, layouts, styles, etc.).
+
+Note: it is not recommended to overwrite this property.
+
+### vendorSrc
+
+- Type: `Array<String>`
+- Default: `[]`
+
+Array of glob patterns for .css and .js files that should be included in
+the `<head>` of your project.
 
 Example:
 
 ```javascript
-electric.registerTasks({
-	gulp: gulp,
-	taskPrefix: 'electric:'
-});
+module.exports = {
+	vendorSrc: ['node_modules/some-project/src/min.js']
+};
 ```
-
-The `generate` task will now be exposed as `electric:generate`. This option allows
-you to implement `electric` in conjunction with other packages that
-expose `gulp` tasks without the risk of overwriting previously defined tasks.
 
 </article>
