@@ -1,0 +1,5 @@
+<% if (frontMatter) { %>---
+<%= frontMatter %>
+---<% } %>
+
+<%= content %>
