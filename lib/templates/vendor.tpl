@@ -4,6 +4,7 @@
 	CodeMirror.defaults.readOnly = true;
 	CodeMirror.defaults.theme = '<%= codeMirror.theme %>';
 	CodeMirror.defaults.viewportMargin = Infinity;
+	CodeMirror.defaults.tabSize = 2;
 
 	var REGEX_LB = /&#123;/g;
 
