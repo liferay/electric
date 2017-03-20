@@ -2,8 +2,11 @@
 
 /**
  * @param? placeholder
+ * @param? spritesheet
  */
 {template .render}
+	{let $spritesheet_: $spritesheet ?: '/vendor/lexicon/icons.svg' /}
+
 	<div class="page-autocomplete">
 		<div class="form-group">
 			<div class="input-group">
@@ -19,7 +22,7 @@
 
 				<span class="input-group-addon">
 					<svg class="lexicon-icon">
-						<use xlink:href="/vendor/lexicon/icons.svg#search" />
+						<use xlink:href="{$spritesheet_}#search" />
 					</svg>
 				</span>
 			</div>

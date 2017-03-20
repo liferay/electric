@@ -5,11 +5,19 @@
  * @param? placeholder
  * @param? query
  * @param? results
+ * @param? spritesheet
  */
 {template .render}
+	{let $spritesheet_: $spritesheet ?: '/vendor/lexicon/icons.svg' /}
+
 	<div class="search">
-		{call .form data="all" /}
-		{call .results data="all" /}
+		{call .form data="all"}
+			{param spritesheet: $spritesheet_ /}
+		{/call}
+
+		{call .results data="all"}
+			{param spritesheet: $spritesheet_ /}
+		{/call}
 	</div>
 {/template}
 
@@ -17,6 +25,7 @@
  * @param? action
  * @param? placeholder
  * @param? query
+ * @param spritesheet
  */
 {template .form}
 	<form action="{$action}" method="GET" enctype="multipart/form-data">
@@ -29,7 +38,7 @@
 
 							<span class="input-group-addon">
 								<svg class="lexicon-icon">
-									<use xlink:href="/vendor/lexicon/icons.svg#search" />
+									<use xlink:href="{$spritesheet}#search" />
 								</svg>
 							</span>
 						</div>
@@ -47,6 +56,7 @@
 /**
  * @param? results
  * @param? query
+ * @param spritesheet
  */
 {template .results}
 	<div class="search-result-container">
@@ -62,7 +72,7 @@
 					{if $result.icon}
 						<div class="search-result-icon">
 							<svg class="lexicon-icon">
-								<use xlink:href="/vendor/lexicon/icons.svg#{$result.icon}" />
+								<use xlink:href="{$spritesheet}#{$result.icon}" />
 							</svg>
 						</div>
 					{/if}
