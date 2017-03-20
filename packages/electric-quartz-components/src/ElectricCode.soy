@@ -2,14 +2,17 @@
 
 /**
  * @param code
- * @param mode
  * @param? elementClasses
+ * @param mode
+ * @param? spritesheet
  */
 {template .render}
+	{let $spritesheet_: $spritesheet ?: '/vendor/lexicon/icons.svg' /}
+
 	<div class="code-container{$elementClasses ? ' ' + $elementClasses: ''}">
 		<button class="btn btn-sm btn-copy">
 			<svg class="lexicon-icon">
-				<use xlink:href="/vendor/lexicon/icons.svg#paste" />
+				<use xlink:href="{$spritesheet_}#paste" />
 			</svg>
 		</button>
 

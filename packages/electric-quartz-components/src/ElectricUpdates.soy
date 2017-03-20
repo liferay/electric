@@ -58,12 +58,15 @@
 
 /**
  * @param feature
+ * @param? spritesheet
  */
 {deltemplate ElectricUpdates.feature variant="'basic'"}
+	{let $spritesheet_: $spritesheet ?: '/vendor/lexicon/icons.svg' /}
+
 	<div class="col-xs-12 col-sm-6 update-feature">
 		<div class="feature-topper">
 			<svg class="lexicon-icon">
-				<use xlink:href="/vendor/lexicon/icons.svg#{$feature.icon}" />
+				<use xlink:href="{$spritesheet_}#{$feature.icon}" />
 			</svg>
 
 			<h1 class="feature-header">{$feature.title}</h1>
