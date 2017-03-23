@@ -3,7 +3,11 @@
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 
-import templates from './<%= soyName %>';
+<% _.forEach(imports, function(component) { %>
+import '<%= component %>';
+<% }); %>
+
+import templates from './<%= soyName %>.js';
 
 class <%= name %> extends Component {
 };
