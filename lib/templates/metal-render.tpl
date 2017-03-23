@@ -2,6 +2,8 @@
 	{$content}
 </div>
 
+<script src="/js/bundles/{$page.componentName}.js"></script>
+
 <script>
 	var data = JSON.parse({$serialized});
 
@@ -19,12 +21,10 @@
 		return obj;
 	{rb};
 
-	var component = metal[{$page.componentName}];
-
-	if (component && data.pageLocation) {lb}
+	if (window.pageComponent) {lb}
 		var page = getByPath(data.site, data.pageLocation);
 
-		window.electricPageComponent = metal.Component.render(component, {lb}
+		window.electricPageComponent = pageComponent.default.render(pageComponent.default, {lb}
 			element: '#pageComponent',
 			page: page,
 			site: data.site
