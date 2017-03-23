@@ -60,6 +60,8 @@
     "stream-series": "^0.1.1",
     "striptags": "^2.1.1",
     "through2": "^2.0.2",
+    "uglify-js": "^2.8.15",
+    "uglifyjs-webpack-plugin": "^0.3.1",
     "vinyl-source-stream": "^1.1.0",
     "webpack": "^2.2.1"
   },
