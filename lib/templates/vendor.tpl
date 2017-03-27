@@ -35,6 +35,7 @@
 				value: text
 			{rb});
 		{rb}
+		new metal.ElectricCodeTabs();
 	{rb}
 
 	function runGoogleAnalytics(path) {lb}
