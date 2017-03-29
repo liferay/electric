@@ -19,11 +19,15 @@
 		return obj;
 	{rb};
 
-	var page = getByPath(data.site, data.pageLocation);
+	var component = metal[{$page.componentName}];
 
-	window.electricPageComponent = metal.Component.render(metal[{$page.componentName}], {lb}
-		element: '#pageComponent',
-		page: page,
-		site: data.site
-	{rb});
+	if (component && data.pageLocation) {lb}
+		var page = getByPath(data.site, data.pageLocation);
+
+		window.electricPageComponent = metal.Component.render(component, {lb}
+			element: '#pageComponent',
+			page: page,
+			site: data.site
+		{rb});
+	{rb}
 </script>
