@@ -36,7 +36,9 @@
 			{rb});
 		{rb}
 
-		new metal.ElectricCodeTabs();
+		if (metal.ElectricCodeTabs) {lb}
+			new metal.ElectricCodeTabs();
+		{rb}
 	{rb}
 
 	function runGoogleAnalytics(path) {lb}
