@@ -36,8 +36,8 @@
 			{rb});
 		{rb}
 
-		if (metal.ElectricCodeTabs) {lb}
-			new metal.ElectricCodeTabs();
+		if (window.ElectricCodeTabs) {lb}
+			new window.ElectricCodeTabs();
 		{rb}
 	{rb}
 
@@ -55,7 +55,6 @@
 			var app = senna.dataAttributeHandler.getApp();
 			app.on('endNavigate', function(event) {lb}
 				disposePageComponent();
-				runCodeMirror();
 				runGoogleAnalytics(event.path);
 			{rb});
 		{rb}

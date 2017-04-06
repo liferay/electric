@@ -29,5 +29,9 @@
 			page: page,
 			site: data.site
 		{rb});
+
+		if (window.runCodeMirror) {lb}
+			runCodeMirror();
+		{rb}
 	{rb}
 </script>
