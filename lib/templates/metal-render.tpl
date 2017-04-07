@@ -2,7 +2,9 @@
 	{$content}
 </div>
 
-<script src="/js/bundles/{$page.componentName}.js"></script>
+{if $page.componentName}
+	<script src="/js/bundles/{$page.componentName}.js"></script>
+{/if}
 
 <script>
 	var data = JSON.parse({$serialized});
@@ -24,11 +26,13 @@
 	if (window.pageComponent) {lb}
 		var page = getByPath(data.site, data.pageLocation);
 
-		window.electricPageComponent = pageComponent.default.render(pageComponent.default, {lb}
-			element: '#pageComponent',
-			page: page,
-			site: data.site
-		{rb});
+		if (page) {lb}
+			window.electricPageComponent = pageComponent.default.render(pageComponent.default, {lb}
+				element: '#pageComponent',
+				page: page,
+				site: data.site
+			{rb});
+		{rb}
 
 		if (window.runCodeMirror) {lb}
 			runCodeMirror();
