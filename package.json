@@ -28,6 +28,9 @@
     "tag": "alpha"
   },
   "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-metal": "^4.1.0",
     "codemirror": "^5.23.0",
     "del": "^2.2.2",
     "front-matter": "^2.1.1",
@@ -63,7 +66,7 @@
     "uglify-js": "^2.8.15",
     "uglifyjs-webpack-plugin": "^0.3.1",
     "vinyl-source-stream": "^1.1.0",
-    "webpack": "^2.2.1"
+    "webpack": "^2.3.3"
   },
   "devDependencies": {
     "ava": "^0.16.0",
