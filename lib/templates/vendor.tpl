@@ -29,7 +29,7 @@
 			var editor = CodeMirror(function(elt) {lb}
 				var preEl = code[i].parentNode;
 
-				preEl.parentNode.append(elt);
+				preEl.parentNode.appendChild(elt);
 			{rb}, {lb}
 				mode: code[i].getAttribute('data-mode') || '',
 				value: text
