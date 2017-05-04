@@ -42,7 +42,7 @@
 	{rb}
 
 	function runGoogleAnalytics(path) {lb}
-		if (ga) {lb}
+		if (typeof ga === 'function') {lb}
 			ga('set', 'page', path);
 			ga('send', 'pageview');
 		{rb}
@@ -51,7 +51,7 @@
 	runCodeMirror();
 
 	document.addEventListener('DOMContentLoaded', function() {lb}
-		if (senna) {lb}
+		if (typeof senna !== 'undefined') {lb}
 			var app = senna.dataAttributeHandler.getApp();
 			app.on('endNavigate', function(event) {lb}
 				disposePageComponent();
