@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "babel-core": "^6.24.1",
-    "babel-loader": "^6.4.1",
+    "babel-loader": "^7.0.0",
     "babel-preset-metal": "^4.1.0",
     "codemirror": "^5.23.0",
     "del": "^2.2.2",
