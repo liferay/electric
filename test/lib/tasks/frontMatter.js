@@ -1,14 +1,14 @@
 'use strict';
 
-var fs = require('fs-extra');
-var gulp = require('gulp');
-var path = require('path');
-var test = require('ava');
+let fs = require('fs-extra');
+let gulp = require('gulp');
+let path = require('path');
+let test = require('ava');
 
-var runSequence = require('run-sequence').use(gulp);
+let runSequence = require('run-sequence').use(gulp);
 
-var registerTasks = require('../../../lib/index').registerTasks;
-var sitePath = path.join(__dirname, '../../fixture/sites/front-matter-site');
+let registerTasks = require('../../../lib/index').registerTasks;
+let sitePath = path.join(__dirname, '../../fixture/sites/front-matter-site');
 
 test.before(function() {
 	process.chdir(sitePath);
@@ -24,14 +24,20 @@ test.cb.after.always(function(t) {
 	});
 });
 
-test.cb('it should generate site.json file that matches pages folder structure', function(t) {
-	runSequence('front-matter', function() {
-		var config = {encoding: 'utf8'};
-		var siteData = fs.readFileSync(path.join(sitePath, 'site.json'), config);
-		var targetSiteData = fs.readFileSync(path.join(sitePath, 'dist/site.json'), config);
+test.cb(
+	'it should generate site.json file that matches pages folder structure',
+	function(t) {
+		runSequence('front-matter', function() {
+			let config = {encoding: 'utf8'};
+			let siteData = fs.readFileSync(path.join(sitePath, 'site.json'), config);
+			let targetSiteData = fs.readFileSync(
+				path.join(sitePath, 'dist/site.json'),
+				config
+			);
 
-		t.is(siteData, targetSiteData);
+			t.is(siteData, targetSiteData);
 
-		t.end();
-	});
-});
+			t.end();
+		});
+	}
+);

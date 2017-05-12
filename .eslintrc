@@ -6,6 +6,10 @@
   },
   "rules": {
     "comma-dangle": ["error", "never"],
-    "indent": ["error", "tab"]
+    "indent": ["error", "tab"],
+    "prefer-rest-params": 0,
+    "quotes": ["error", "single"],
+    "require-jsdoc": 1,
+    "valid-jsdoc": 1
   }
 }

@@ -1,13 +1,13 @@
 'use strict';
 
-var gulp = require('gulp');
-var path = require('path');
-var test = require('ava');
+let gulp = require('gulp');
+let path = require('path');
+let test = require('ava');
 
-var runSequence = require('run-sequence').use(gulp);
+let runSequence = require('run-sequence').use(gulp);
 
-var registerTasks = require('../lib/index').registerTasks;
-var sitePath = path.join(__dirname, 'fixture/sites/static-site');
+let registerTasks = require('../lib/index').registerTasks;
+let sitePath = path.join(__dirname, 'fixture/sites/static-site');
 
 test.before(function() {
 	process.chdir(sitePath);
@@ -24,7 +24,7 @@ test.cb.after.always(function(t) {
 });
 
 test('it should register tasks', function(t) {
-	var tasks = gulp.tasks;
+	let tasks = gulp.tasks;
 
 	t.truthy(tasks.clean);
 	t.truthy(tasks['front-matter']);
