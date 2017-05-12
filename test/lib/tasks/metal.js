@@ -54,7 +54,9 @@ test.cb('it should bundle metal components', function(t) {
 				let bundleContent = bundle.contents.toString();
 
 				t.true(
-					bundleContent.indexOf('this[\'metal\'][\'pageIndex\'] = pageIndex;') > -1
+					bundleContent.indexOf(
+						'this[\'metal\'][\'pageIndex\'] = pageIndex;'
+					) > -1
 				);
 				t.true(
 					bundleContent.indexOf(
