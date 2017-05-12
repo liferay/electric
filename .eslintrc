@@ -1,0 +1,11 @@
+{
+  "extends": ["liferay"],
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "indent": ["error", "tab"]
+  }
+}
