@@ -31,7 +31,10 @@ test('it should resolve file path and return array', function(t) {
 	);
 
 	t.deepEqual(
-		util.getFilePathArray(path.join(cwd, 'temp/pages/index.soy'), 'temp/pages'),
+		util.getFilePathArray(
+			path.join(cwd, 'temp/pages/index.soy'),
+			'temp/pages'
+		),
 		['index.soy']
 	);
 	t.deepEqual(
@@ -76,7 +79,9 @@ test('it should retrieve url from file path', function(t) {
 	);
 });
 
-test('it should get src file path resolved from root of project', function(t) {
+test('it should get src file path resolved from root of project', function(
+	t
+) {
 	let cwd = process.cwd();
 
 	t.is(
