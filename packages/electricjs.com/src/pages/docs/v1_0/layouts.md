@@ -74,7 +74,7 @@ During the `generate` task they are replaced with the necessary code for
 automatically invoking Metal components that have been implemented in your
 project's `soy` files.
 
-> Note: these tags only need to be included in the `base` template.
+Note: these tags only need to be included in the `base` template.
 
 The injected code is what implements the `serialized` param that is defined at
 the start of the template. `serialized` is stringified meta data that Metal

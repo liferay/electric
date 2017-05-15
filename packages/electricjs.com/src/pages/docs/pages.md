@@ -1,6 +1,6 @@
 ---
 description: "Creating pages in soy and markdown."
-icon: "menu-content"
+icon: "streams"
 layout: "docs"
 title: "Pages"
 weight: 2
@@ -50,7 +50,7 @@ title: "Page"
 &#123;/template&#125;
 ```
 
-> Note: all `namespace` properties must be unique across all files within
+Note: all `namespace` properties must be unique across all files within
 the `src` directory, and every soy file must define a `.render` template.
 
 ### Site/Page Data

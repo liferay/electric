@@ -50,7 +50,7 @@ title: "Page"
 &#123;/template&#125;
 ```
 
-> Note: all `namespace` properties must be unique across all files within
+Note: all `namespace` properties must be unique across all files within
 the `src` directory, and every soy file must define a `.render` template.
 
 ### Site/Page Data
