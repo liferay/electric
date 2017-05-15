@@ -13,7 +13,7 @@ weight: 3
 All projects must have a `layouts/base.soy` file. This file is responsible for
 the HTML boilerplate of your site. Every page will be rendered with this layout.
 
-```soy
+```text/x-soy
 &#123;namespace base&#125;
 
 /**
@@ -95,7 +95,7 @@ highlighting.
 Additional layouts can be created in the `layouts` folder of your project. These
 layouts are simply `soy` templates that can be implemented by individual pages.
 
-```soy
+```text/x-soy
 &#123;namespace docs&#125;
 
 /**
@@ -126,7 +126,7 @@ following example implements the `docs` layout.
 
 Sub layouts are rendered using soy's [call command](https://developers.google.com/closure/templates/docs/commands#call).
 
-```soy
+```text/x-soy
 ---
 description: "Page description."
 title: "Page"

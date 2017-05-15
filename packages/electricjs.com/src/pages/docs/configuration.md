@@ -14,7 +14,7 @@ All options can be set in the `electric.config.js` file located in the root of
 your project. This file must export an Object, or a
 function that returns an Object.
 
-```javascript
+```text/javascript
 module.exports = {
 	pathDest: 'build'
 };
@@ -69,7 +69,7 @@ used to render Markdown files.
 
 Example:
 
-```javascript
+```text/javascript
 module.exports = {
 	markdownOptions: {
 		breaks: true
@@ -89,7 +89,7 @@ The path that generated files are placed in.
 
 Example:
 
-```javascript
+```text/javascript
 module.exports = {
 	pathDest: 'build'
 };
@@ -106,7 +106,7 @@ The path where all source files are located.
 
 Example:
 
-```javascript
+```text/javascript
 module.exports = {
 	pathSrc: 'web'
 };
@@ -123,7 +123,7 @@ as `npm` dependencies in your package.json.
 
 Example:
 
-```javascript
+```text/javascript
 module.exports = {
 	metalComponents: ['electric-components']
 };
@@ -155,7 +155,7 @@ the `<head>` of your project.
 
 Example:
 
-```javascript
+```text/javascript
 module.exports = {
 	vendorSrc: ['node_modules/some-project/src/min.js']
 };

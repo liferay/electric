@@ -7,44 +7,9 @@
 {template .render}
 	<div class="{$elementClasses ?: 'main'}">
 		<main class="content">
-			{call .topbar data="all" /}
+			{call Topbar.render data="all" /}
 
 			{$content}
 		</main>
 	</div>
-{/template}
-
-/**
- * @param site
- */
-{template .topbar}
-	<nav class="topbar topbar-fixed">
-		{call .logo data="all" /}
-		{call .menu data="all" /}
-	</nav>
-{/template}
-
-/**
- * @param site
- */
-{template .logo}
-	<div class="topbar-logo">
-		<a class="topbar-logo-link" href="/">
-			<span class="topbar-logo-icon icon-16-flash"></span>
-			<span class="topbar-logo-text">{$site.title}</span>
-		</a>
-	</div>
-{/template}
-
-/**
- * @param site
- */
-{template .menu}
-	{call ElectricNavigation.render}
-		{param depth: 1 /}
-		{param elementClasses: 'topbar-list' /}
-		{param linkClasses: 'topbar-link' /}
-		{param listItemClasses: 'topbar-item' /}
-		{param section: $site.index /}
-	{/call}
 {/template}

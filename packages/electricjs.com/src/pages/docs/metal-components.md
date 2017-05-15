@@ -15,7 +15,7 @@ and invoke them in your `soy` layouts and pages.
 
 Components should be placed in the the `src/partials` directory.
 
-```javascript
+```text/javascript
 .
 └── src
     ├── partials
@@ -30,7 +30,7 @@ Components should be placed in the the `src/partials` directory.
 
 `MyComponent.soy`
 
-```soy
+```text/x-soy
 &#123;namespace MyComponent&#125;
 
 /**
@@ -43,7 +43,7 @@ Components should be placed in the the `src/partials` directory.
 
 `MyComponent.js`
 
-```javascript
+```text/javascript
 'use strict';
 
 import Component from 'metal-component';
@@ -74,7 +74,7 @@ needs to be rendered in a page/layout.
 To render a metal component in a page/layout, simply use the `call` command to
 render the `.render` template of the component.
 
-```soy
+```text/x-soy
 ---
 description: "Page description."
 title: "Page"
@@ -111,7 +111,7 @@ Currently these components come in two themes.
 
 These components are invoked the same way as your own components.
 
-```soy
+```text/x-soy
 ---
 description: "Page description."
 title: "Page"

@@ -12,13 +12,13 @@ weight: 1
 
 ### Install
 
-```shell
+```text/x-sh
 npm i -g electric-cli
 ```
 
 ### Initialize Project
 
-```shell
+```text/x-sh
 electric init
 ```
 
@@ -27,7 +27,7 @@ current directory with your new `electric` project.
 
 ### Run
 
-```shell
+```text/x-sh
 electric run
 ```
 
@@ -42,7 +42,7 @@ along with a watch task for quickly making changes.
 
 Here is a basic example of an `electric` project.
 
-```javascript
+```text/javascript
 .
 ├── electric.config.js
 └── src

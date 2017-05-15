@@ -34,7 +34,7 @@ functionality.
 
 All files ending with the `.soy` extension will be rendered as soy templates.
 
-```soy
+```text/x-soy
 ---
 description: "Page description."
 title: "Page"
@@ -59,7 +59,7 @@ Every page is passed a `site` and `page` param.
 
 The `page` param represents the front matter of the current file.
 
-```soy
+```text/x-soy
 {$page.title}
 {$page.description}
 ```
@@ -69,7 +69,7 @@ as `site.title` and `site.repo`. It also contains the structure of the entire
 site which can be used to generate navigation elements. This structure data is
 defined as the `site.index` property representing the index page of the project.
 
-```soy
+```text/x-soy
 {$site.title}
 {$site.index}
 ```
