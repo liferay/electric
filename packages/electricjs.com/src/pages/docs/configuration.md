@@ -145,6 +145,18 @@ part of the build system (pages, layouts, styles, etc.).
 
 Note: it is not recommended to overwrite this property.
 
+### uglifyBundle
+
+- Type: `boolean`
+- Default: `false`
+
+Determines if bundle files are both minified and uglified.
+
+When using `electric-cli`, this option defaults to `true` during
+the `deploy` task, and defaults to `false` during all others.
+
+Warning: enabling this option can significantly increase build times.
+
 ### vendorSrc
 
 - Type: `Array<String>`
