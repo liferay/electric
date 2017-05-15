@@ -2,6 +2,7 @@
 
 /**
  * @param section
+ * @param? searchPath
  */
 {template .render}
 	<nav class="sidebar">
@@ -18,7 +19,7 @@
 			<div class="sidebar-search">
 				{call ElectricSearchAutocomplete.render}
 					{param maxResults: 3 /}
-					{param path: '/docs/' /}
+					{param path: $searchPath ? $searchPath : '/docs/' /}
 					{param placeholder: 'Search Docs' /}
 				{/call}
 			</div>
