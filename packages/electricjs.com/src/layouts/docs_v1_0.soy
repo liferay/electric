@@ -13,7 +13,7 @@
 				{/call}
 				{call Sidebar.render}
 					{param searchPath: '/docs/v1_0/' /}
-					{param section: $site.index.children['docs'] /}
+					{param section: $site.index.children['docs'].children['v1_0'] /}
 				{/call}
 				{call .guide data="all" /}
 			</div>
