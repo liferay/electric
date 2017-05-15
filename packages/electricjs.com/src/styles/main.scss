@@ -15,5 +15,6 @@ $accent: #FFCC00;
 @import "templates/search";
 
 // Customization
-@import "all";
-@import "landing";
+@import "custom/all";
+@import "custom/docs";
+@import "custom/landing";
