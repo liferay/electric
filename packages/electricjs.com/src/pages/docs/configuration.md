@@ -59,6 +59,38 @@ themes.
 
 Configuration options used by the `deploy` command. See [gulp-gh-pages](https://www.npmjs.com/package/gulp-gh-pages#ghpages-options-) for further configuration options.
 
+### frontMatterHook
+
+- Type: `function`
+
+Allows modifications of your project's front-matter before it's passed to the
+templates.
+
+Example:
+
+```text/javascript
+module.exports = {
+	frontMatterHook: function(data) {
+		data.someValue = 'Hello, World!';
+
+		return data;
+	}
+};
+```
+
+In this example the property `someValue` will be accessible via
+the `$site` parameter in your pages/templates.
+
+```markdown
+---
+description: "Page description."
+layout: "docs"
+title: "Page"
+---
+
+{$site.someValue}
+```
+
 ### markdownOptions
 
 - Type: `Object`
@@ -79,6 +111,34 @@ module.exports = {
 
 See [Remarkable's documentation](https://github.com/jonschlinkert/remarkable#options) for
 list of options.
+
+### markdownRenderer
+
+- Type: `function|Remarkable`
+
+Allows complete customization over the markdown renderer. Value can either be
+instance of [Remarkable](https://github.com/jonschlinkert/remarkable) or a
+function which receives the default instance of `Remarkable` as an argument.
+
+Example:
+
+```text/javascript
+// New Remarkable instance
+module.exports = {
+	markdownRenderer: new Remarkable()
+};
+
+// Function
+module.exports = {
+	markdownRenderer: function(md) {
+		md.core.ruler.enable([
+			'abbr'
+		]);
+
+		return md;
+	}
+};
+```
 
 ### pathDest
 
@@ -134,6 +194,22 @@ to all `soy` files in your project.
 
 Note that every package listed in `metalComponents` must also be listed as a dependency
 in the project's `package.json`.
+
+### sassOptions
+
+- Type: `Object`
+
+Config object passed to [gulp-sass](https://www.npmjs.com/package/gulp-sass).
+
+Example:
+
+```text/javascript
+module.exports = {
+	sassOptions: {
+		includePaths: ['node_modules/some-package/scss']
+	}
+};
+```
 
 ### staticSrc
 
