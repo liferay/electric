@@ -2,6 +2,7 @@
 
 /**
  * @param section
+ * @param? searchExcludePath
  * @param? searchPath
  */
 {template .render}
@@ -18,6 +19,7 @@
 		<div class="sidebar-toggler-content toggler-collapsed">
 			<div class="sidebar-search">
 				{call ElectricSearchAutocomplete.render}
+					{param excludePath: $searchExcludePath /}
 					{param maxResults: 3 /}
 					{param path: $searchPath ? $searchPath : '/docs/' /}
 					{param placeholder: 'Search Docs' /}

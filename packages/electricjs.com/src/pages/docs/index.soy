@@ -16,6 +16,7 @@ description: "List of articles documenting electric."
 					{param elementClasses: 'topbar-docs' /}
 				{/call}
 				{call Sidebar.render}
+					{param searchExcludePath: '/docs/v1_0/' /}
 					{param section: $site.index.children['docs'] /}
 				{/call}
 				{call .topics data="all" /}
@@ -45,6 +46,7 @@ description: "List of articles documenting electric."
 							<div class="col-xs-14 col-xs-offset-1 col-md-10 col-md-offset-3 col-lg-6 col-lg-offset-5">
 								<div class="search">
 									{call ElectricSearchAutocomplete.render}
+										{param excludePath: '/docs/v1_0/' /}
 										{param maxResults: 3 /}
 										{param path: '/docs/' /}
 										{param placeholder: 'Search Docs' /}

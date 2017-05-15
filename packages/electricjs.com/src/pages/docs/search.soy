@@ -29,6 +29,7 @@ title: "Search"
 						<div class="container-hybrid">
 							{call ElectricSearch.render}
 								{param action: '/docs/search.html' /}
+								{param excludePath: '/docs/v1_0/' /}
 								{param path: '/docs/' /}
 								{param placeholder: 'Search Docs' /}
 							{/call}

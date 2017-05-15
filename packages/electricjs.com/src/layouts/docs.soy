@@ -12,6 +12,7 @@
 					{param elementClasses: 'topbar-docs' /}
 				{/call}
 				{call Sidebar.render}
+					{param searchExcludePath: '/docs/v1_0/' /}
 					{param section: $site.index.children['docs'] /}
 				{/call}
 				{call .guide data="all" /}
