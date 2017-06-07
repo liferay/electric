@@ -7,11 +7,8 @@ let test = require('ava');
 let runSequence = require('run-sequence').use(gulp);
 
 let registerTasks = require('../lib/index').registerTasks;
-let sitePath = path.join(__dirname, 'fixtures/sites/static-site');
 
 test.before(function() {
-	process.chdir(sitePath);
-
 	registerTasks({
 		gulp: gulp
 	});
