@@ -3,6 +3,7 @@
 let fs = require('fs');
 let path = require('path');
 let test = require('ava');
+let Vinyl = require('vinyl');
 
 let util = require('../../lib/util');
 
@@ -274,4 +275,23 @@ test('it should pass', function(t) {
 	util.sortChildren(siteJSON.index);
 
 	t.snapshot(siteJSON);
+});
+
+test('it should return string from markdown or soy file', function(t) {
+	t.is(util.stripCode(new Vinyl(
+		{
+			path: 'index.md',
+ 			contents: new Buffer(
+				'<article id="1"># bar</article>'
+			)
+		}
+	)).trim(), 'bar');
+	t.is(util.stripCode(new Vinyl(
+		{
+			path: 'index.soy',
+ 			contents: new Buffer(
+				'{namespace foo} \n /** \n * @param contents \n */ \n {template .render} \n<div>\n<h1>bar{$contents}</h1> \n </div> \n {/template}'
+			)
+		}
+	)).trim(), 'bar');
 });
