@@ -8,7 +8,7 @@ let util = require('../../lib/util');
 let initCwd = process.cwd();
 
 test.before(function() {
-	process.chdir(path.join(__dirname, '../fixture/sites/front-matter-site'));
+	process.chdir(path.join(__dirname, '../fixtures/sites/front-matter-site'));
 });
 
 test.after.always(function() {
@@ -141,40 +141,27 @@ test('it should sort by weight and then by title', function(t) {
 	let children = [
 		{
 			title: 'AAA',
-			weight: 3
+			weight: 3,
+			id: 0
 		},
 		{
 			title: 'BBB',
-			weight: 1
+			weight: 1,
+			id: 1
 		},
 		{
 			title: 'AAA',
-			weight: 2
+			weight: 2,
+			id: 2
 		},
 		{
 			title: 'AAA',
-			weight: 1
+			weight: 1,
+			id: 3
 		}
 	];
 
-	t.deepEqual(util.sortByWeight(children), [
-		{
-			title: 'AAA',
-			weight: 1
-		},
-		{
-			title: 'BBB',
-			weight: 1
-		},
-		{
-			title: 'AAA',
-			weight: 2
-		},
-		{
-			title: 'AAA',
-			weight: 3
-		}
-	]);
+	t.deepEqual(util.sortByWeight(children), [3, 1, 2, 0]);
 });
 
 test('it should pass', function(t) {
@@ -182,8 +169,5 @@ test('it should pass', function(t) {
 
 	util.sortChildren(siteJSON.index);
 
-	t.deepEqual(
-		siteJSON,
-		require(path.join(__dirname, '../fixture/json/sorted.json'))
-	);
+	t.snapshot(siteJSON);
 });

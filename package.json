@@ -76,7 +76,7 @@
     "webpack": "^2.3.3"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
+    "ava": "^0.19.1",
     "nyc": "^10.0.0"
   },
   "nyc": {
