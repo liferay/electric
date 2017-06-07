@@ -16,7 +16,7 @@ description: "Create beautiful documentation for your projects"
 			{call .highlights /}
 			{call .how /}
 			{call .features /}
-			{call .footer /}
+			{call Footer.render /}
 		{/param}
 	{/call}
 {/template}
@@ -175,22 +175,4 @@ description: "Create beautiful documentation for your projects"
 			</div>
 		</div>
 	</div>
-{/template}
-
-/**
- *
- */
-{template .footer}
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<p class="footer-description col-md-6 col-md-offset-2">
-					Copyright © 2017 <a href="https://liferay.com">Liferay, Inc</a>
-				</p>
-				<p class="footer-description col-md-6">
-					Powered by <a href="http://wedeploy.com">WeDeploy™</a>
-				</p>
-			</div>
-		</div>
-	</footer>
 {/template}
