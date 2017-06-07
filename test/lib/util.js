@@ -8,7 +8,7 @@ let util = require('../../lib/util');
 let initCwd = process.cwd();
 
 test.before(function() {
-	process.chdir(path.join(__dirname, '../fixture/sites/front-matter-site'));
+	process.chdir(path.join(__dirname, '../fixtures/sites/front-matter-site'));
 });
 
 test.after.always(function() {

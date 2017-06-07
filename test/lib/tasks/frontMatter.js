@@ -8,7 +8,7 @@ let test = require('ava');
 let runSequence = require('run-sequence').use(gulp);
 
 let registerTasks = require('../../../lib/index').registerTasks;
-let sitePath = path.join(__dirname, '../../fixture/sites/front-matter-site');
+let sitePath = path.join(__dirname, '../../fixtures/sites/front-matter-site');
 
 test.before(function() {
 	process.chdir(sitePath);

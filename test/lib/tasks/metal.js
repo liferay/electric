@@ -10,7 +10,7 @@ let test = require('ava');
 let runSequence = require('run-sequence').use(gulp);
 
 let registerTasks = require('../../../lib/index').registerTasks;
-let sitePath = path.join(__dirname, '../../fixture/sites/static-site');
+let sitePath = path.join(__dirname, '../../fixtures/sites/static-site');
 
 let initCwd = process.cwd();
 let tempDir = path.join(os.tmpdir(), 'metal');
