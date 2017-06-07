@@ -12,7 +12,7 @@ description: "Check all the sites created with Electric"
 	{call main.render data="all"}
 		{param content kind="html"}
 			{call .header data="all" /}
-			{call .showcase /}
+			{call .showcase data="all" /}
 			{call Footer.render /}
 		{/param}
 	{/call}
@@ -31,80 +31,25 @@ description: "Check all the sites created with Electric"
 {/template}
 
 /**
- *
+ * @param site
  */
 {template .showcase}
 	<div class="showcase">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8">
-					<div class="showcase-item">
-						<img class="showcase-img" src="/images/simple-slider.png" alt="Simple Slider">
-						<p class="showcase-title">Simple Slider</p>
-						<p class="showcase-description">An extremely lightweight JavaScript carousel micro library.<br><br>
-							<a href="http://ruyadorno.github.io/simple-slider/">Visit Site</a>
-						</p>
+				{foreach $showcase in $site.showcase}
+					<div class="col-sm-8">
+						<div class="showcase-item">
+							<img class="showcase-img" src="/images/{$showcase.image}.png" alt="{$showcase.title}">
+							<p class="showcase-title">{$showcase.title}</p>
+							<p class="showcase-description">{$showcase.description}<br><br>
+								<a href="{$showcase.site}">Visit Site</a>{if $showcase.repo} | <a href="{$showcase.repo}">Source Code</a>{/if}
+							</p>
+						</div>
 					</div>
-				</div>
-				<div class="col-sm-8">
-					<div class="showcase-item">
-						<img class="showcase-img" src="/images/wedeploy.png" alt="WeDeploy">
-						<p class="showcase-title">WeDeploy</p>
-						<p class="showcase-description">A modern deployment platform that lets you forget about infrastructure and dedicate your time to what really matters: building great apps.<br><br>
-							<a href="http://wedeploy.com/">Visit Site</a> | <a href="https://github.com/wedeploy/wedeploy.com">Source Code</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-8">
-					<div class="showcase-item">
-						<img class="showcase-img" src="/images/jonathanandmarissa.png" alt="Jonathan and Marissa">
-						<p class="showcase-title">Jonathan and Marissa</p>
-						<p class="showcase-description">A weeding site with RSVP, present list, and gallery capabilities. <br><br>
-							<a href="http://jonathanandmarissa.com/">Visit Site</a> | <a href="https://github.com/jonnilundy/jonathan-and-marissa">Source Code</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-8">
-					<div class="showcase-item">
-						<img class="showcase-img" src="/images/marble.png" alt="Marble">
-						<p class="showcase-title">Marble</p>
-						<p class="showcase-description">A CSS library for sleek, intuitive, and powerful UI components.<br><br>
-							<a href="http://marblecss.com/">Visit Site</a> | <a href="https://github.com/wedeploy/marblecss.com/">Source Code</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-8">
-					<div class="showcase-item">
-						<img class="showcase-img" src="/images/electric.png" alt="Electric">
-						<p class="showcase-title">Electric</p>
-						<p class="showcase-description">A Node.js static generator that allows you to create beautiful documentation for your projects.<br><br>
-							<a href="http://electricjs.com/">Visit Site</a> | <a href="https://github.com/electricjs/electricjs.com">Source Code</a>
-						</p>
-					</div>
-				</div>
+				{/foreach}
 			</div>
 		</div>
 	</div>
 {/template}
 
-/**
- *
- */
-{template .footer}
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<p class="footer-description col-md-6 col-md-offset-2">
-					Copyright © 2017 <a href="https://liferay.com">Liferay, Inc</a>
-				</p>
-				<p class="footer-description col-md-6">
-					Powered by <a href="http://wedeploy.com">WeDeploy™</a>
-				</p>
-			</div>
-		</div>
-	</footer>
-{/template}

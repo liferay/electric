@@ -1,5 +1,41 @@
 {
 	"title": "Electric",
 	"githubRepo": "wedeploy/electricjs.com",
-	"googleAnalytics": "UA-37033501-5"
+	"googleAnalytics": "UA-37033501-5",
+	"showcase": [
+		{
+			"title": "Simple Slider",
+			"description": "An extremely lightweight JavaScript carousel micro library.",
+			"site": "http://ruyadorno.github.io/simple-slider/",
+			"image": "simple-slider"
+		},
+		{
+			"title": "WeDeploy",
+			"description": "A modern deployment platform that lets you forget about infrastructure and dedicate your time to what really matters: building great apps.",
+			"site": "http://wedeploy.com/",
+			"repo": "https://github.com/wedeploy/wedeploy.com",
+			"image": "wedeploy"
+		},
+		{
+			"title": "Jonathan and Marissa",
+			"description": "A weeding site with RSVP, present list, and gallery capabilities.",
+			"site": "http://jonathanandmarissa.com/",
+			"repo": "https://github.com/jonnilundy/jonathan-and-marissa",
+			"image": "jonathanandmarissa"
+		},
+		{
+			"title": "Marble",
+			"description": "A CSS library for sleek, intuitive, and powerful UI components.",
+			"site": "http://marblecss.com/",
+			"repo": "https://github.com/wedeploy/marblecss.com/",
+			"image": "marble"
+		},
+		{
+			"title": "Electric",
+			"description": "A Node.js static generator that allows you to create beautiful documentation for your projects.",
+			"site": "http://electricjs.com/",
+			"repo": "https://github.com/electricjs/electricjs.com",
+			"image": "electric"
+		}
+	]
 }
