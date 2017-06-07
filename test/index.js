@@ -28,7 +28,6 @@ test('it should register tasks', function(t) {
 
 	t.truthy(tasks.clean);
 	t.truthy(tasks['front-matter']);
-	t.truthy(tasks.generate);
 	t.truthy(tasks.metal);
 	t.truthy(tasks.soyweb);
 });
