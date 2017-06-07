@@ -1,5 +1,6 @@
 'use strict';
 
+let fs = require('fs');
 let path = require('path');
 let test = require('ava');
 
@@ -13,6 +14,59 @@ test.before(function() {
 
 test.after.always(function() {
 	process.chdir(initCwd);
+});
+
+test('it should modify json object if type field is equal to blogs', function(t) {
+	let indexPage = {
+		children: {
+			'markdown-post': {
+				title: 'Markdown Post',
+				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+				date: 'February 02, 2017',
+				url: '/blog/markdown-post.html'
+			},
+			'soy-post': {
+				title: 'Soy Post',
+				description: 'Voluptas laboriosam qui dolor et cumque tempore.',
+				date: 'January 12, 2017',
+				url: '/blog/soy-post.html'
+			}
+		},
+		type: 'blog',
+		url: '/blog'
+	};
+
+	util.configureBlog(indexPage);
+
+	t.deepEqual(
+		indexPage,
+		{
+			children: {
+				'markdown-post': {
+					title: 'Markdown Post',
+					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+					date: 'February 02, 2017',
+					url: '/blog/markdown-post.html'
+				},
+				'soy-post': {
+					title: 'Soy Post',
+					description: 'Voluptas laboriosam qui dolor et cumque tempore.',
+					date: 'January 12, 2017',
+					url: '/blog/soy-post.html'
+				}
+			},
+			type: 'blog',
+			url: '/blog',
+			childIds: ['markdown-post', 'soy-post'],
+			redirect: '/blog/markdown-post.html'
+		}
+	);
+});
+
+test('it should generate namespace based on key', function(t) {
+	let bar = util.generateNamespace('foo');
+
+	t.deepEqual(util.generateNamespace('foo'), bar);
 });
 
 test('it should resolve file path and return array', function(t) {
@@ -65,6 +119,14 @@ test('it should get namespace from file contents', function(t) {
 	t.is(namespace, 'MyComponent');
 });
 
+test('it should retrive the page id from a filePath', function(t) {
+	let cwd = process.cwd();
+
+	t.is(util.getPageId(path.join(cwd, 'src/pages/docs/index.soy')), 'docs');
+	t.is(util.getPageId(path.join(cwd, 'src/pages/docs/index.md')), 'docs');
+	t.is(util.getPageId(path.join(cwd, 'src/pages/docs/index.html')), 'docs');
+});
+
 test('it should retrieve url from file path', function(t) {
 	let cwd = process.cwd();
 
@@ -77,6 +139,24 @@ test('it should retrieve url from file path', function(t) {
 		util.getPageURL(path.join(cwd, 'src/pages/docs/child.md')),
 		'/docs/child.html'
 	);
+});
+
+test('it should get the ref based on filepath', function(t) {
+	let REGEX_REF = /\/api\/(.*)\//;
+
+	t.is(util.getRefFromPath('/api/foo/'), 'foo');
+	t.is(util.getRefFromPath('/api/foo/bar'), 'foo');
+	t.is(util.getRefFromPath('/api/foo/bar/'), 'foo/bar');
+});
+
+test('it should return a JSON object of site data', function(t) {
+	let cwd = process.cwd();
+
+	let siteJSON = require(path.join(cwd, 'site.json'));
+
+	let siteData = JSON.parse(JSON.stringify(siteJSON));
+
+	t.deepEqual(util.getSiteData(''), siteData);
 });
 
 test('it should get src file path resolved from root of project', function(
@@ -135,6 +215,29 @@ test('it should set active state on appropriate pages', function(t) {
 	t.true(siteData.index.children[0].active);
 	t.true(siteData.index.children[0].children[1].active);
 	t.falsy(siteData.index.children[0].children[2].active);
+});
+
+test('it should sort JSON object by date and return string array', function(t) {
+	let children = {
+		'soy-post': {
+			title: 'Soy Post',
+			date: 'January 12, 2017'
+		},
+		'markdown-post': {
+			title: 'Markdown Post',
+			date: 'December 10, 2017'
+		},
+		'example-post': {
+			title: 'Example Post',
+			date: 'May 10, 2017'
+		}
+	};
+
+	t.deepEqual(util.sortByDate(children), [
+		'markdown-post',
+		'example-post',
+		'soy-post'
+	]);
 });
 
 test('it should sort by weight and then by title', function(t) {
