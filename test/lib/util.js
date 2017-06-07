@@ -295,3 +295,11 @@ test('it should return string from markdown or soy file', function(t) {
 		}
 	)).trim(), 'bar');
 });
+
+test('it should be watching if watch is called', function(t) {
+	t.falsy(util.isWatching());
+
+	util.watch();
+
+	t.truthy(util.isWatching());
+});
