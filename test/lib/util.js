@@ -277,7 +277,7 @@ test('it should pass', function(t) {
 	t.snapshot(siteJSON);
 });
 
-test('it should return string from markdown or soy file', function(t) {
+test('it should return a string from markdown or soy file', function(t) {
 	t.is(util.stripCode(new Vinyl(
 		{
 			path: 'index.md',
@@ -296,7 +296,7 @@ test('it should return string from markdown or soy file', function(t) {
 	)).trim(), 'bar');
 });
 
-test('it should be watching if watch is called', function(t) {
+test('it should return true after watch is called and false before', function(t) {
 	t.falsy(util.isWatching());
 
 	util.watch();
