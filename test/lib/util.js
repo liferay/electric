@@ -182,8 +182,5 @@ test('it should pass', function(t) {
 
 	util.sortChildren(siteJSON.index);
 
-	t.deepEqual(
-		siteJSON,
-		require(path.join(__dirname, '../fixture/json/sorted.json'))
-	);
+	t.snapshot(siteJSON);
 });

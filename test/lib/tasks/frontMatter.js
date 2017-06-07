@@ -30,15 +30,11 @@ test.cb(
 		runSequence('front-matter', function() {
 			let config = {encoding: 'utf8'};
 			let siteData = fs.readFileSync(
-				path.join(sitePath, 'site.json'),
-				config
-			);
-			let targetSiteData = fs.readFileSync(
 				path.join(sitePath, 'dist/site.json'),
 				config
 			);
 
-			t.is(siteData, targetSiteData);
+			t.snapshot(siteData);
 
 			t.end();
 		});
