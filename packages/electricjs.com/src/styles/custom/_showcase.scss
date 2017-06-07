@@ -1,0 +1,25 @@
+.showcase {
+	margin-top: 60px;
+}
+
+.showcase-item {
+	margin-bottom: 40px;
+}
+
+.showcase-title {
+	font-family: $font-primary;
+	font-weight: 700;
+	font-size: 36px;
+	margin: 0 20px;
+}
+
+.showcase-description {
+	font-family: $font-secondary;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0 20px;
+}
+
+.showcase-img {
+	max-width: 100%;
+}
