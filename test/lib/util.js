@@ -16,12 +16,15 @@ test.after.always(function() {
 	process.chdir(initCwd);
 });
 
-test('it should modify json object if type field is equal to blogs', function(t) {
+test('it should modify json object if type field is equal to blogs', function(
+	t
+) {
 	let indexPage = {
 		children: {
 			'markdown-post': {
 				title: 'Markdown Post',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+				description:
+					'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 				date: 'February 02, 2017',
 				url: '/blog/markdown-post.html'
 			},
@@ -38,29 +41,27 @@ test('it should modify json object if type field is equal to blogs', function(t)
 
 	util.configureBlog(indexPage);
 
-	t.deepEqual(
-		indexPage,
-		{
-			children: {
-				'markdown-post': {
-					title: 'Markdown Post',
-					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-					date: 'February 02, 2017',
-					url: '/blog/markdown-post.html'
-				},
-				'soy-post': {
-					title: 'Soy Post',
-					description: 'Voluptas laboriosam qui dolor et cumque tempore.',
-					date: 'January 12, 2017',
-					url: '/blog/soy-post.html'
-				}
+	t.deepEqual(indexPage, {
+		children: {
+			'markdown-post': {
+				title: 'Markdown Post',
+				description:
+					'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+				date: 'February 02, 2017',
+				url: '/blog/markdown-post.html'
 			},
-			type: 'blog',
-			url: '/blog',
-			childIds: ['markdown-post', 'soy-post'],
-			redirect: '/blog/markdown-post.html'
-		}
-	);
+			'soy-post': {
+				title: 'Soy Post',
+				description: 'Voluptas laboriosam qui dolor et cumque tempore.',
+				date: 'January 12, 2017',
+				url: '/blog/soy-post.html'
+			}
+		},
+		type: 'blog',
+		url: '/blog',
+		childIds: ['markdown-post', 'soy-post'],
+		redirect: '/blog/markdown-post.html'
+	});
 });
 
 test('it should generate namespace based on key', function(t) {
