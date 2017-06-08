@@ -183,8 +183,6 @@ test('it should retrieve url from file path', function(t) {
 });
 
 test('it should get the ref based on filepath', function(t) {
-	let REGEX_REF = /\/api\/(.*)\//;
-
 	t.is(util.getRefFromPath('/api/foo/'), 'foo');
 	t.is(util.getRefFromPath('/api/foo/bar'), 'foo');
 	t.is(util.getRefFromPath('/api/foo/bar/'), 'foo/bar');
