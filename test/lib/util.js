@@ -16,7 +16,9 @@ test.after.always(function() {
 	process.chdir(initCwd);
 });
 
-test('it should modify JSON object if type field is equal to \'blogs\'', function(t) {
+test("it should modify JSON object if type field is equal to 'blogs'", function(
+	t
+) {
 	let indexPage = {
 		children: {
 			'markdown-post': {
@@ -132,31 +134,25 @@ test('it should return a page based on url', function(t) {
 		url: '/blog'
 	};
 
-	t.deepEqual(
-		util.getPageByURL(indexPageWithURL, '/blog'),
-		{
-			children: {
-				'soy-post': {
-					title: 'Soy Post',
-					description: 'Voluptas laboriosam qui dolor et cumque tempore.',
-					date: 'January 12, 2017',
-					url: '/blog/soy-post.html'
-				}
-			},
-			type: 'blog',
-			url: '/blog'
-		}
-	);
+	t.deepEqual(util.getPageByURL(indexPageWithURL, '/blog'), {
+		children: {
+			'soy-post': {
+				title: 'Soy Post',
+				description: 'Voluptas laboriosam qui dolor et cumque tempore.',
+				date: 'January 12, 2017',
+				url: '/blog/soy-post.html'
+			}
+		},
+		type: 'blog',
+		url: '/blog'
+	});
 
-	t.deepEqual(
-		util.getPageByURL(indexPageWithURL, '/blog/soy-post.html'),
-		{
-			title: 'Soy Post',
-			description: 'Voluptas laboriosam qui dolor et cumque tempore.',
-			date: 'January 12, 2017',
-			url: '/blog/soy-post.html'
-		}
-	);
+	t.deepEqual(util.getPageByURL(indexPageWithURL, '/blog/soy-post.html'), {
+		title: 'Soy Post',
+		description: 'Voluptas laboriosam qui dolor et cumque tempore.',
+		date: 'January 12, 2017',
+		url: '/blog/soy-post.html'
+	});
 });
 
 test('it should retrive the page id from a filePath', function(t) {
@@ -255,7 +251,9 @@ test('it should set active state on appropriate pages', function(t) {
 	t.falsy(siteData.index.children[0].children[2].active);
 });
 
-test('it should sort JSON object by date and return string array', function(t) {
+test('it should sort JSON object by date and return string array', function(
+	t
+) {
 	let children = {
 		'soy-post': {
 			title: 'Soy Post',
@@ -314,25 +312,35 @@ test('it should pass', function(t) {
 });
 
 test('it should return a string from markdown or soy file', function(t) {
-	t.is(util.stripCode(new Vinyl(
-		{
-			path: 'index.md',
- 			contents: new Buffer(
-				'<article id="1"># bar</article>'
+	t.is(
+		util
+			.stripCode(
+				new Vinyl({
+					path: 'index.md',
+					contents: new Buffer('<article id="1"># bar</article>')
+				})
 			)
-		}
-	)).trim(), 'bar');
-	t.is(util.stripCode(new Vinyl(
-		{
-			path: 'index.soy',
- 			contents: new Buffer(
-				'{namespace foo} \n /** \n * @param contents \n */ \n {template .render} \n<div>\n<h1>bar{$contents}</h1> \n </div> \n {/template}'
+			.trim(),
+		'bar'
+	);
+	t.is(
+		util
+			.stripCode(
+				new Vinyl({
+					path: 'index.soy',
+					contents: new Buffer(
+						'{namespace foo} \n /** \n * @param contents \n */ \n {template .render} \n<div>\n<h1>bar{$contents}</h1> \n </div> \n {/template}'
+					)
+				})
 			)
-		}
-	)).trim(), 'bar');
+			.trim(),
+		'bar'
+	);
 });
 
-test('it should return true after watch is called and false before', function(t) {
+test('it should return true after watch is called and false before', function(
+	t
+) {
 	t.falsy(util.isWatching());
 
 	util.watch();
