@@ -1,7 +1,6 @@
 'use strict';
 
 let gulp = require('gulp');
-let path = require('path');
 let test = require('ava');
 
 let runSequence = require('run-sequence').use(gulp);

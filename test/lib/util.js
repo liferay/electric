@@ -1,6 +1,5 @@
 'use strict';
 
-let fs = require('fs');
 let path = require('path');
 let test = require('ava');
 let Vinyl = require('vinyl');
