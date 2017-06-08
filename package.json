@@ -4,9 +4,8 @@
   "description": "Static generator using soy templates and metal.js.",
   "main": "lib/index.js",
   "scripts": {
-    "format": "prettier --single-quote --no-bracket-spacing --print-width 78 --use-tabs --write \"{lib/**/*.js,test/**/*.js,*.js}\" && eslint --fix \"{lib/**/*.js,test/**/*.js,*.js}\"",
+    "format": "prettier --single-quote --no-bracket-spacing --print-width 78 --use-tabs --write \"{lib/**/*.js,test/**/*.js,*.js}\"",
     "lint": "eslint \"{lib/**/*.js,test/**/*.js,*.js}\"",
-    "prepublish": "npm run format",
     "test": "nyc ava test"
   },
   "repository": {
