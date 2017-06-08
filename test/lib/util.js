@@ -17,9 +17,7 @@ test.after.always(function() {
 	process.chdir(initCwd);
 });
 
-test('it should modify json object if type field is equal to blogs', function(
-	t
-) {
+test('it should modify JSON object if type field is equal to \'blogs\'', function(t) {
 	let indexPage = {
 		children: {
 			'markdown-post': {
@@ -119,6 +117,47 @@ test('it should get namespace from file contents', function(t) {
 	});
 
 	t.is(namespace, 'MyComponent');
+});
+
+test('it should return a page based on url', function(t) {
+	let indexPageWithURL = {
+		children: {
+			'soy-post': {
+				title: 'Soy Post',
+				description: 'Voluptas laboriosam qui dolor et cumque tempore.',
+				date: 'January 12, 2017',
+				url: '/blog/soy-post.html'
+			}
+		},
+		type: 'blog',
+		url: '/blog'
+	};
+
+	t.deepEqual(
+		util.getPageByURL(indexPageWithURL, '/blog'),
+		{
+			children: {
+				'soy-post': {
+					title: 'Soy Post',
+					description: 'Voluptas laboriosam qui dolor et cumque tempore.',
+					date: 'January 12, 2017',
+					url: '/blog/soy-post.html'
+				}
+			},
+			type: 'blog',
+			url: '/blog'
+		}
+	);
+
+	t.deepEqual(
+		util.getPageByURL(indexPageWithURL, '/blog/soy-post.html'),
+		{
+			title: 'Soy Post',
+			description: 'Voluptas laboriosam qui dolor et cumque tempore.',
+			date: 'January 12, 2017',
+			url: '/blog/soy-post.html'
+		}
+	);
 });
 
 test('it should retrive the page id from a filePath', function(t) {
