@@ -6,7 +6,7 @@
   "scripts": {
     "format": "prettier --single-quote --no-bracket-spacing --print-width 78 --use-tabs --write \"{lib/**/*.js,test/**/*.js,*.js}\"",
     "lint": "eslint \"{lib/**/*.js,test/**/*.js,*.js}\"",
-    "test": "nyc ava test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -76,6 +76,7 @@
   },
   "devDependencies": {
     "ava": "^0.19.1",
+    "jest": "^20.0.4",
     "nyc": "^10.0.0"
   },
   "nyc": {

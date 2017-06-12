@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it sort children correctly 1`] = `
+Object {
+  "index": Object {
+    "childIds": Array [
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+    ],
+    "children": Array [
+      Object {
+        "childIds": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "children": Array [
+          Object {
+            "description": "Child1 Page1.",
+            "srcFilePath": "src/pages/child1/page1.soy",
+            "title": "Child1 Page1",
+            "url": "/child1/page1.html",
+            "weight": 2,
+          },
+          Object {
+            "description": "Child1 Page3.",
+            "srcFilePath": "src/pages/child1/page3.soy",
+            "title": "Child1 Page3",
+            "url": "/child1/page3.html",
+            "weight": 3,
+          },
+          Object {
+            "description": "Child1 Page2.",
+            "srcFilePath": "src/pages/child1/page2.soy",
+            "title": "Child1 Page2",
+            "url": "/child1/page2.html",
+            "weight": 4,
+          },
+          Object {
+            "description": "Child1 Page4.",
+            "srcFilePath": "src/pages/child1/page4.soy",
+            "title": "Child1 Page4",
+            "url": "/child1/page4.html",
+            "weight": 5,
+          },
+          Object {
+            "childIds": Array [
+              undefined,
+              undefined,
+            ],
+            "children": Array [
+              Object {
+                "description": "Child2 Page1.",
+                "srcFilePath": "src/pages/child1/child2/page1.soy",
+                "title": "Child2 Page1",
+                "url": "/child1/child2/page1.html",
+              },
+              Object {
+                "description": "Child2 Page2.",
+                "srcFilePath": "src/pages/child1/child2/page2.soy",
+                "title": "Child2 Page2",
+                "url": "/child1/child2/page2.html",
+              },
+            ],
+            "description": "Child2.",
+            "srcFilePath": "src/pages/child1/child2/index.soy",
+            "title": "Child2",
+            "url": "/child1/child2",
+          },
+        ],
+        "description": "Child1.",
+        "srcFilePath": "src/pages/child1/index.soy",
+        "title": "Child1",
+        "url": "/child1",
+        "weight": 1,
+      },
+      Object {
+        "description": "Page4.",
+        "srcFilePath": "src/pages/page4.soy",
+        "title": "Page4",
+        "url": "/page4.html",
+        "weight": 2,
+      },
+      Object {
+        "description": "Page3.",
+        "srcFilePath": "src/pages/page3.soy",
+        "title": "Page3",
+        "url": "/page3.html",
+        "weight": 3,
+      },
+      Object {
+        "description": "Page2.",
+        "srcFilePath": "src/pages/page2.soy",
+        "title": "Page2",
+        "url": "/page2.html",
+        "weight": 4,
+      },
+      Object {
+        "description": "Page1.",
+        "srcFilePath": "src/pages/page1.soy",
+        "title": "Page1",
+        "url": "/page1.html",
+        "weight": 5,
+      },
+    ],
+    "description": "Index.",
+    "srcFilePath": "src/pages/index.soy",
+    "title": "Index",
+    "url": "/.",
+    "weight": 1,
+  },
+  "title": "front-matter-site",
+}
+`;
