@@ -13,10 +13,8 @@ weight: 1
 ### Install
 
 ```text/x-sh
-npm i -g electric-cli@alpha
+npm i -g electric-cli
 ```
-
-The `@alpha` tag is only necesarry until `v2.0.0` is officially released.
 
 ### Initialize Project
 
