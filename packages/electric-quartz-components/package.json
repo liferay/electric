@@ -30,9 +30,6 @@
     "url": "https://github.com/wedeploy/electric-quartz-components/issues"
   },
   "homepage": "http://electricjs.com",
-  "publishConfig": {
-    "tag": "alpha"
-  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-metal": "^4.1.0",
