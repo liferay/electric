@@ -4,10 +4,11 @@ var marble = require('marble');
 
 module.exports = {
 	codeMirrorLanguages: [
-		'xml',
 		'css',
 		'javascript',
-		'soy'
+		'shell',
+		'soy',
+		'xml'
 	],
 	metalComponents: ['electric-marble-components'],
 	sassOptions: {
