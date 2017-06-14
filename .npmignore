@@ -1,0 +1,5 @@
+**/__tests__/**/*
+.nyc_output
+.temp
+coverage
+node_modules
