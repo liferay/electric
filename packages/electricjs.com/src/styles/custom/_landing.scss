@@ -1,19 +1,17 @@
 // Header
 
 .header {
-	padding: 100px 0 0;
+	padding: 20px 0 0;
+
+	@media (min-width: $screen-md-min) {
+		padding: 80px 0 0;
+	}
 
 	.icon-16-flash {
 		color: $accent;
 		display: block;
 		margin: 0 0 20px;
-		font-size: 120px;
-	}
-}
-
-@media (min-width: $screen-md-min) {
-	.header {
-		padding: 175px 0 0;
+		font-size: 160px;
 	}
 }
 
@@ -36,7 +34,7 @@
 
 // Highlights
 
-.highlight-graphic [class^="icon-16-"], 
+.highlight-graphic [class^="icon-16-"],
 .highlight-graphic [class*="icon-16-"] {
 	box-shadow: 0 2px 8px rgba($primary, .2);
 	border-radius: 50%;
@@ -49,7 +47,7 @@
 }
 
 @media (min-width: $screen-sm-min) {
-	.highlight-graphic [class^="icon-16-"], 
+	.highlight-graphic [class^="icon-16-"],
 	.highlight-graphic [class*="icon-16-"] {
 		font-size: 100px;
 		line-height: 220px;
