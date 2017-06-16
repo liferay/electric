@@ -38,7 +38,7 @@ description: "Check all the sites created with Electric"
 		<div class="container">
 			<div class="row">
 				{foreach $showcase in $site.showcase}
-					<div class="col-sm-8">
+					<div class="col-xs-16 col-md-8">
 						<div class="showcase-item">
 							<img class="showcase-img" src="/images/{$showcase.image}.png" alt="{$showcase.title}">
 							<p class="showcase-title">{$showcase.title}</p>
@@ -52,4 +52,3 @@ description: "Check all the sites created with Electric"
 		</div>
 	</div>
 {/template}
-

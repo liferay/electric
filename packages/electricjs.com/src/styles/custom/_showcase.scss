@@ -1,5 +1,10 @@
 .showcase {
 	margin-top: 60px;
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .showcase-item {

@@ -4,6 +4,19 @@
 	"googleAnalytics": "UA-37033501-5",
 	"showcase": [
 		{
+			"title": "Liferay Community",
+			"description": "A place for the Liferay community to discover open source projects and stay updated with the latest announcements.",
+			"site": "https://community.liferay.com/",
+			"image": "liferay-community"
+		},
+		{
+			"title": "Lexicon",
+			"description": "A a set of principles, patterns and tools created to provide a common design framework for crafting user interfaces.",
+			"site": "http://lexicondesign.io/",
+			"repo": "https://github.com/liferay/lexicon-site",
+			"image": "lexicon"
+		},
+		{
 			"title": "Simple Slider",
 			"description": "An extremely lightweight JavaScript carousel micro library.",
 			"site": "http://ruyadorno.github.io/simple-slider/",
