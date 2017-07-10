@@ -10,7 +10,7 @@
 	var data = JSON.parse({$serialized});
 
 	if (window.electricPageComponent) {lb}
-		window.prevElectricPageComponent = window.electricPageComponent;
+		window.electricPageComponent.dispose();
 	{rb}
 
 	var getByPath = function(obj, path) {lb}

@@ -11,12 +11,6 @@
 
 	var REGEX_RB = /&#125;/g;
 
-	function disposePageComponent() {lb}
-		if (window.prevElectricPageComponent) {lb}
-			window.prevElectricPageComponent.dispose();
-		{rb}
-	{rb}
-
 	function runCodeMirror() {lb}
 		var code = document.querySelectorAll('.code');
 
@@ -55,7 +49,6 @@
 		if (typeof senna !== 'undefined') {lb}
 			var app = senna.dataAttributeHandler.getApp();
 			app.on('endNavigate', function(event) {lb}
-				disposePageComponent();
 				runGoogleAnalytics(event.path);
 			{rb});
 		{rb}
