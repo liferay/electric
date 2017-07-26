@@ -11,7 +11,7 @@
 		},
 		{
 			"title": "Lexicon",
-			"description": "A a set of principles, patterns and tools created to provide a common design framework for crafting user interfaces.",
+			"description": "A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces.",
 			"site": "http://lexicondesign.io/",
 			"repo": "https://github.com/liferay/lexicon-site",
 			"image": "lexicon"
@@ -31,7 +31,7 @@
 		},
 		{
 			"title": "Jonathan and Marissa",
-			"description": "A weeding site with RSVP, present list, and gallery capabilities.",
+			"description": "A wedding site with RSVP, present list, and gallery capabilities.",
 			"site": "http://jonathanandmarissa.com/",
 			"repo": "https://github.com/jonnilundy/jonathan-and-marissa",
 			"image": "jonathanandmarissa"
