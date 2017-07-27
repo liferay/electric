@@ -1,40 +1,44 @@
 <script>
-	CodeMirror.defaults.lineNumbers = true;
-	CodeMirror.defaults.matchBrackets = true;
-	CodeMirror.defaults.readOnly = 'nocursor';
-	CodeMirror.defaults.tabindex = -1;
-	CodeMirror.defaults.tabSize = 2;
-	CodeMirror.defaults.theme = '<%= codeMirror.theme %>';
-	CodeMirror.defaults.viewportMargin = Infinity;
+	<% if (codeMirror) { %>
+		CodeMirror.defaults.lineNumbers = true;
+		CodeMirror.defaults.matchBrackets = true;
+		CodeMirror.defaults.readOnly = 'nocursor';
+		CodeMirror.defaults.tabindex = -1;
+		CodeMirror.defaults.tabSize = 2;
+		CodeMirror.defaults.theme = '<%= codeMirror.theme %>';
+		CodeMirror.defaults.viewportMargin = Infinity;
 
-	var REGEX_LB = /&#123;/g;
+		var REGEX_LB = /&#123;/g;
 
-	var REGEX_RB = /&#125;/g;
+		var REGEX_RB = /&#125;/g;
 
-	function runCodeMirror() {lb}
-		var code = document.querySelectorAll('.code');
+		function runCodeMirror() {lb}
+			var code = document.querySelectorAll('.code');
 
-		for (var i = 0; i < code.length; i++) {lb}
-			// Workaround for soy issue where namespace and template tags are
-			// rendered inside literal blocks
-			var text = code[i].innerText
-				.replace(REGEX_LB, '{lb}')
-				.replace(REGEX_RB, '{rb}');
+			for (var i = 0; i < code.length; i++) {lb}
+				// Workaround for soy issue where namespace and template tags are
+				// rendered inside literal blocks
+				var text = code[i].innerText
+					.replace(REGEX_LB, '{lb}')
+					.replace(REGEX_RB, '{rb}');
 
-			var editor = CodeMirror(function(elt) {lb}
-				var preEl = code[i].parentNode;
+				var editor = CodeMirror(function(elt) {lb}
+					var preEl = code[i].parentNode;
 
-				preEl.parentNode.appendChild(elt);
-			{rb}, {lb}
-				mode: code[i].getAttribute('data-mode') || '',
-				value: text
-			{rb});
+					preEl.parentNode.appendChild(elt);
+				{rb}, {lb}
+					mode: code[i].getAttribute('data-mode') || '',
+					value: text
+				{rb});
+			{rb}
+
+			if (window.ElectricCodeTabs) {lb}
+				new window.ElectricCodeTabs();
+			{rb}
 		{rb}
 
-		if (window.ElectricCodeTabs) {lb}
-			new window.ElectricCodeTabs();
-		{rb}
-	{rb}
+		runCodeMirror();
+	<% } %>
 
 	function runGoogleAnalytics(path) {lb}
 		if (typeof ga === 'function') {lb}
@@ -42,8 +46,6 @@
 			ga('send', 'pageview');
 		{rb}
 	{rb}
-
-	runCodeMirror();
 
 	document.addEventListener('DOMContentLoaded', function() {lb}
 		if (typeof senna !== 'undefined') {lb}
