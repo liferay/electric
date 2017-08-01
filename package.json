@@ -48,6 +48,7 @@
     "gulp-pluck": "0.0.3",
     "gulp-sass": "^3.1.0",
     "gulp-soynode": "^1.5.3",
+    "gulp-token-replace": "^1.0.4",
     "gulp-util": "^3.0.7",
     "http-server": "^0.9.0",
     "lodash": "^4.16.6",
