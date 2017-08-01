@@ -3,39 +3,37 @@
 exports[`it should generate glob.rss file 1`] = `
 "<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?><rss xmlns:dc=\\"http://purl.org/dc/elements/1.1/\\" xmlns:content=\\"http://purl.org/rss/1.0/modules/content/\\" xmlns:atom=\\"http://www.w3.org/2005/Atom\\" version=\\"2.0\\" xmlns:geo=\\"http://www.w3.org/2003/01/geo/wgs84_pos#\\">
     <channel>
-        <title><![CDATA[rss-generator-site]]></title>
-        <description><![CDATA[This is the description of your blogs RSS feed]]></description>
-        <link>https://027ffbd9.ngrok.io</link>
+        <title><![CDATA[Blog]]></title>
+        <description><![CDATA[Discover all the latest about our project.]]></description>
+        <link>https://yoursite.com</link>
         <image>
-            <url>example.png</url>
-            <title>rss-generator-site</title>
-            <link>https://027ffbd9.ngrok.io</link>
+            <url>https://yoursite.com/images/example.png</url>
+            <title>Blog</title>
+            <link>https://yoursite.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <atom:link href=\\"https://027ffbd9.ngrok.io/blog/rss/blog.xml\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
+        <atom:link href=\\"https:/yoursite.com/blog/rss.xml\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
         <copyright><![CDATA[2017]]></copyright>
         <language><![CDATA[English]]></language>
-        <managingEditor><![CDATA[Name of person who manages]]></managingEditor>
-        <webMaster><![CDATA[Name of person who manages]]></webMaster>
+        <managingEditor><![CDATA[Name of person who manages feed content]]></managingEditor>
+        <webMaster><![CDATA[Name of person who manages feed availability]]></webMaster>
         <ttl>60</ttl>
         <item>
             <title><![CDATA[Markdown Post]]></title>
             <description><![CDATA[This blog is super duper cool.]]></description>
-            <link>https://027ffbd9.ngrok.io/blog/markdown-post.html</link>
-            <guid isPermaLink=\\"true\\">https://027ffbd9.ngrok.io/blog/markdown-post.html</guid>
-            <category><![CDATA[cats]]></category>
-            <category><![CDATA[dogs]]></category>
+            <link>https://yoursite.com/blog/markdown-post.html</link>
+            <guid isPermaLink=\\"true\\">https://yoursite.com/blog/markdown-post.html</guid>
             <dc:creator><![CDATA[Ryan Garant]]></dc:creator>
             <pubDate>Thu, 02 Feb 2017 08:00:00 GMT</pubDate>
             <geo:lat>51.503364</geo:lat>
             <geo:long>-0.127625</geo:long>
-            <enclosure url=\\"https://027ffbd9.ngrok.io/images/example.png\\" length=\\"0\\" type=\\"image/png\\"/>
+            <enclosure url=\\"https://yoursite.com/images/example.png\\" length=\\"0\\" type=\\"image/png\\"/>
         </item>
         <item>
             <title><![CDATA[Soy Post]]></title>
             <description><![CDATA[This soy post was made from electric boilerplates.]]></description>
-            <link>https://027ffbd9.ngrok.io/blog/soy-post.html</link>
-            <guid isPermaLink=\\"true\\">https://027ffbd9.ngrok.io/blog/soy-post.html</guid>
+            <link>https://yoursite.com/blog/soy-post.html</link>
+            <guid isPermaLink=\\"true\\">https://yoursite.com/blog/soy-post.html</guid>
             <dc:creator><![CDATA[Joe Doe]]></dc:creator>
             <pubDate>Thu, 12 Jan 2017 08:00:00 GMT</pubDate>
         </item>

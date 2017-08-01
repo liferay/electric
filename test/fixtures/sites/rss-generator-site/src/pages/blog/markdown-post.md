@@ -4,8 +4,7 @@ description: "This blog is super duper cool."
 date: "February 02, 2017"
 author: "Ryan Garant"
 layout: "blog"
-image: "/images/example.png"
-categories: ["cats", "dogs"]
+image: "https://yoursite.com/images/example.png"
 lat: 51.5033640
 long: -0.1276250
 ---
