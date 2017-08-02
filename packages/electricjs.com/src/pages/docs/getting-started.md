@@ -64,7 +64,7 @@ Here is a basic example of an `electric` project.
 
 </article>
 
-<article id="site_json">
+<article id="electric_config">
 
 ## electric.config.js
 
