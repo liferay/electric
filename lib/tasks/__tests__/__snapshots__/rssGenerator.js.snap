@@ -12,7 +12,7 @@ exports[`it should generate glob.rss file 1`] = `
             <link>https://yoursite.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <atom:link href=\\"https:/yoursite.com/blog/rss.xml\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
+        <atom:link href=\\"https://yoursite.com/blog/rss.xml\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
         <copyright><![CDATA[2017]]></copyright>
         <language><![CDATA[English]]></language>
         <managingEditor><![CDATA[Name of person who manages feed content]]></managingEditor>
