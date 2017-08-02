@@ -34,6 +34,8 @@ electric run
 This will build your newly created project and start up a development server
 along with a watch task for quickly making changes.
 
+You can also modify the default port `8888` by running `electric run -p 3000`. 
+
 </article>
 
 <article id="structure">
