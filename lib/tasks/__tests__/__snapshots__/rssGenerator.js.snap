@@ -24,7 +24,6 @@ exports[`it should generate glob.rss file 1`] = `
             <link>https://yoursite.com/blog/markdown-post.html</link>
             <guid isPermaLink=\\"true\\">https://yoursite.com/blog/markdown-post.html</guid>
             <dc:creator><![CDATA[Ryan Garant]]></dc:creator>
-            <pubDate>Thu, 02 Feb 2017 08:00:00 GMT</pubDate>
             <geo:lat>51.503364</geo:lat>
             <geo:long>-0.127625</geo:long>
             <enclosure url=\\"https://yoursite.com/images/example.png\\" length=\\"0\\" type=\\"image/png\\"/>
@@ -35,7 +34,6 @@ exports[`it should generate glob.rss file 1`] = `
             <link>https://yoursite.com/blog/soy-post.html</link>
             <guid isPermaLink=\\"true\\">https://yoursite.com/blog/soy-post.html</guid>
             <dc:creator><![CDATA[Joe Doe]]></dc:creator>
-            <pubDate>Thu, 12 Jan 2017 08:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>"
