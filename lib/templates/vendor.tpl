@@ -2,7 +2,7 @@
 	<% if (codeMirror) { %>
 		CodeMirror.defaults.lineNumbers = true;
 		CodeMirror.defaults.matchBrackets = true;
-		CodeMirror.defaults.readOnly = 'nocursor';
+		CodeMirror.defaults.readOnly = true;
 		CodeMirror.defaults.tabindex = -1;
 		CodeMirror.defaults.tabSize = 2;
 		CodeMirror.defaults.theme = '<%= codeMirror.theme %>';
