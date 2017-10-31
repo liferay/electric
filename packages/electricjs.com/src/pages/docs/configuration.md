@@ -57,7 +57,7 @@ themes.
 - Type: `Object`
 - Default: `{lb} branch: 'wedeploy' {rb}`
 
-Configuration options used by the `deploy` command. See [gulp-gh-pages](https://www.npmjs.com/package/gulp-gh-pages#ghpages-options-) for further configuration options.
+Configuration options used by the `deploy` command. See [gh-pages](https://www.npmjs.com/package/gh-pages#options) for further configuration options.
 
 ### frontMatterHook
 
