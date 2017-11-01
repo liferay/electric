@@ -3,7 +3,7 @@
 </div>
 
 {if $page.componentName}
-	<script src="/js/bundles/{$page.componentName}.js"></script>
+	<script src="${url}/js/bundles/{$page.componentName}.js"></script>
 {/if}
 
 <script>
