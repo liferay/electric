@@ -28,7 +28,7 @@
 
 		if (page) {lb}
 			window.electricPageComponent = pageComponent.default.render(pageComponent.default, {lb}
-				element: '#pageComponent',
+				element: '#pageComponent > *',
 				page: page,
 				site: data.site
 			{rb});
