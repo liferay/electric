@@ -40,7 +40,7 @@ description: "Check all the sites created with Electric"
 				{foreach $showcase in $site.showcase}
 					<div class="col-xs-16 col-md-8">
 						<div class="showcase-item">
-							<img class="showcase-img" src="/images/{$showcase.image}.png" alt="{$showcase.title}">
+							<div class="showcase-img-wrapper"><img class="showcase-img" src="/images/{$showcase.image}.jpg" alt="{$showcase.title}"></div>
 							<p class="showcase-title">{$showcase.title}</p>
 							<p class="showcase-description">{$showcase.description}<br><br>
 								<a href="{$showcase.site}">Visit Site</a>{if $showcase.repo} | <a href="{$showcase.repo}">Source Code</a>{/if}

@@ -25,6 +25,12 @@
 	margin: 0 20px;
 }
 
+.showcase-img-wrapper {
+	padding: 12px 22px 32px;
+}
+
 .showcase-img {
+	border-radius: 3px;
+	box-shadow: 0 10px 24px rgba(0,0,0,.5);
 	max-width: 100%;
 }
