@@ -12,9 +12,16 @@
 		{
 			"title": "Lexicon",
 			"description": "A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces.",
-			"site": "http://lexicondesign.io/",
+			"site": "https://lexicondesign.io/",
 			"repo": "https://github.com/liferay/lexicon-site",
 			"image": "lexicon"
+		},
+		{
+			"title": "Clay",
+			"description": "Clay is Liferay's web implementation of Lexicon Experience Language. Built with Bootstrap as a foundation, it's comprised of HTML, CSS, and JS.",
+			"site": "https://claycss.com/",
+			"repo": "https://github.com/liferay/claycss.com",
+			"image": "clay"
 		},
 		{
 			"title": "Simple Slider",
@@ -25,7 +32,7 @@
 		{
 			"title": "WeDeploy",
 			"description": "A modern deployment platform that lets you forget about infrastructure and dedicate your time to what really matters: building great apps.",
-			"site": "http://wedeploy.com/",
+			"site": "https://wedeploy.com/",
 			"repo": "https://github.com/wedeploy/wedeploy.com",
 			"image": "wedeploy"
 		},
@@ -39,14 +46,14 @@
 		{
 			"title": "Marble",
 			"description": "A CSS library for sleek, intuitive, and powerful UI components.",
-			"site": "http://marblecss.com/",
+			"site": "https://marblecss.com/",
 			"repo": "https://github.com/wedeploy/marblecss.com/",
 			"image": "marble"
 		},
 		{
 			"title": "Electric",
 			"description": "A Node.js static generator that allows you to create beautiful documentation for your projects.",
-			"site": "http://electricjs.com/",
+			"site": "https://electricjs.com/",
 			"repo": "https://github.com/electricjs/electricjs.com",
 			"image": "electric"
 		}
