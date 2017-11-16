@@ -2,36 +2,10 @@
   "private": true,
   "scripts": {
     "start": "lerna bootstrap -- --no-optional --no-package-lock",
-    "publish": "lerna publish",
-    "test": "lerna run soy && jest",
-    "format": "npm run prettier -- --write",
-    "prettier": "prettier-eslint packages/electric-*/src/*.js packages/electric-*/src/**/*.js"
+    "publish": "lerna publish"
   },
   "devDependencies": {
-    "babel-jest": "^21.2.0",
-    "babel-preset-metal": "^4.0.0",
-    "chai": "^4.1.2",
-    "eslint": "^4.11.0",
-    "eslint-config-liferay": "^2.0.10",
-    "jest": "^21.2.1",
-    "lerna": "^2.5.1",
-    "metal": "^2.14.0",
-    "metal-dom": "^2.14.0",
-    "prettier-eslint-cli": "^4.4.0",
-    "regenerator-runtime": "^0.11.0",
-    "sinon": "^4.1.2"
-  },
-  "jest": {
-    "testMatch": [
-      "**/test/*.js"
-    ],
-    "transformIgnorePatterns": [
-      "<rootDir>.*(node_modules)(?!.*electric.*).*$"
-    ],
-    "testPathIgnorePatterns": [
-      "generator-electric"
-    ],
-    "resolver": "./jest-electric-lerna-resolver"
+    "lerna": "^2.5.1"
   },
   "workspaces": [
     "packages/*"
