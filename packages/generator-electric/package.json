@@ -1,0 +1,39 @@
+{
+  "name": "generator-electric",
+  "version": "2.1.1",
+  "description": "Yeoman generator for creating documentation sites using electric.js.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --single-quote --no-bracket-spacing --print-width 78 --use-tabs --write generators/**/*.js && eslint --fix generators/**/*.js",
+    "lint": "eslint generators/**/*.js",
+    "test": "test"
+  },
+  "repository": "https://github.com/electricjs/electric/tree/master/packages/generator-electric",
+  "keywords": [
+    "electric",
+    "generator",
+    "metal",
+    "site",
+    "soy",
+    "static",
+    "yeoman",
+    "yeoman-generator"
+  ],
+  "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/electricjs/electric/issues"
+  },
+  "homepage": "http://electricjs.com",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "lodash": "^4.17.2",
+    "update-notifier": "^1.0.2",
+    "yeoman-generator": "^0.24.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-liferay": "^1.0.1",
+    "prettier": "^1.3.1"
+  }
+}
