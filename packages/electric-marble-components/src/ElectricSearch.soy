@@ -1,0 +1,68 @@
+{namespace ElectricSearch}
+
+/**
+ * @param? action
+ * @param? placeholder
+ * @param? query
+ * @param? results
+ */
+{template .render}
+	<div class="search">
+		{call .form data="all" /}
+		{call .results data="all" /}
+	</div>
+{/template}
+
+/**
+ * @param? action
+ * @param? placeholder
+ * @param? query
+ */
+{template .form}
+	<form class="docs-home-top-form" action="{$action}" method="GET" enctype="multipart/form-data">
+		<div class="row">
+			<div class="col-md-7 col-md-offset-3 col-xs-16">
+				<div class="form-group">
+					<div class="input-inner-addon input-inner-addon-right">
+						<input autocomplete="off" class="form-control" name="q" onInput="handleInput_" placeholder="{$placeholder}" value="{$query}" type="text">
+
+						<span class="input-inner-icon-helper icon-16-magnifier"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-xs-16">
+				<button class="btn btn-accent btn-block" type="submit">Search</button>
+			</div>
+		</div>
+	</form>
+{/template}
+
+/**
+ * @param? results
+ * @param? query
+ */
+{template .results}
+	<div class="search-result-container">
+		{if $query}
+			<p class="search-result-summary">
+				Showing {length($results)} results for <strong>"{$query}"</strong>
+			</p>
+		{/if}
+
+		{if $results}
+			{foreach $result in $results}
+				<div class="search-result">
+					{if $result.icon}
+						<div class="search-result-icon">
+							<span class="icon-16-{$result.icon}"></span>
+						</div>
+					{/if}
+
+					<a class="search-result-link" href="{$result.url}">{$result.title}</a>
+					<p class="search-result-text">{$result.description}</p>
+				</div>
+			{/foreach}
+		{/if}
+	</div>
+{/template}

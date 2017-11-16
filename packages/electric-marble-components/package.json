@@ -1,0 +1,40 @@
+{
+  "name": "electric-marble-components",
+  "version": "3.0.2",
+  "description": "Components that are compatible with Marble for use with electric.js sites.",
+  "jsnext:main": "src/all/components.js",
+  "main": "lib/all/components.js",
+  "files": [
+    "lib",
+    "src",
+    "test"
+  ],
+  "scripts": {
+    "compile": "babel --presets metal -d lib/ src/",
+    "prepublish": "gulp soy && npm run compile",
+    "test": "gulp test"
+  },
+  "repository": "https://github.com/electricjs/electric/tree/master/packages/electric-marble-components",
+  "keywords": [
+    "components",
+    "electric",
+    "metal",
+    "soy"
+  ],
+  "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wedeploy/electric-marble-components/issues"
+  },
+  "homepage": "http://electricjs.com",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-metal": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-metal": "^1.9.13"
+  },
+  "dependencies": {
+    "electric-base-components": "^2.0.0",
+    "metal-toggler": "^2.2.0"
+  }
+}
