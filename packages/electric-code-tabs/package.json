@@ -1,0 +1,42 @@
+{
+  "name": "electric-code-tabs",
+  "version": "1.0.0-alpha.3",
+  "description": "Renders code mirror on Electric",
+  "license": "BSD",
+  "repository": "https://github.com/electricjs/electric/tree/master/packages/electric-code-tabs",
+  "engines": {
+    "node": ">=0.12.0",
+    "npm": ">=3.0.0"
+  },
+  "main": "lib/ElectricCodeTabs.js",
+  "jsnext:main": "src/ElectricCodeTabs.js",
+  "files": [
+    "lib",
+    "src",
+    "test"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "compile": "babel --presets metal -d lib/ src/",
+    "prepublish": "gulp soy && npm run compile",
+    "start": "http-server . -p 4000",
+    "test": "gulp test",
+    "watch": "gulp build:watch"
+  },
+  "keywords": [
+    "metal"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "metal-tabs": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-preset-metal": "^4.0.0",
+    "codemirror": "^5.25.0",
+    "gulp": "^3.8.11",
+    "gulp-metal": "^1.0.0",
+    "http-server": "^0.9.0",
+    "marble": "~2.7.0"
+  }
+}
