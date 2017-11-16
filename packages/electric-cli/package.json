@@ -1,0 +1,27 @@
+{
+  "name": "electric-cli",
+  "version": "2.2.0",
+  "description": "CLI for creating and building electric sites.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/electricjs/electric/tree/master/packages/electric-cli",
+  "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
+  "license": "ISC",
+  "bin": {
+    "electric": "bin/electric.js",
+    "el": "bin/electric.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "electric": "^2.2.0",
+    "generator-electric": "^2.0.4",
+    "gulp": "^3.9.1",
+    "pretty-hrtime": "^1.0.3",
+    "require-dir": "^0.3.1",
+    "run-sequence": "^1.2.2",
+    "update-notifier": "^2.1.0",
+    "yargs": "^6.6.0"
+  }
+}
