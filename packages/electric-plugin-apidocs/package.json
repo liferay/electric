@@ -1,0 +1,33 @@
+{
+  "name": "electric-plugin-apidocs",
+  "version": "1.0.7",
+  "description": "Plugin for Electric that generates api docs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/electricjs/electric/tree/master/packages/electric-plugin-apidocs",
+  "keywords": [
+    "electric",
+    "apidocs",
+    "plugin"
+  ],
+  "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/electricjs/electric-plugin-apidocs/issues"
+  },
+  "homepage": "https://github.com/electricjs/electric-plugin-apidocs#readme",
+  "dependencies": {
+    "electric": "^2.0.0-alpha.10",
+    "github-download": "^0.5.0",
+    "gulp-data": "^1.2.1",
+    "gulp-documentation": "^3.1.0",
+    "gulp-filter": "^5.0.0",
+    "gulp-soynode": "^1.5.4",
+    "gulp-util": "^3.0.8",
+    "lodash": "^4.17.4",
+    "stream-series": "^0.1.1",
+    "through2": "^2.0.3"
+  }
+}

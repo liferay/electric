@@ -1,0 +1,223 @@
+{namespace ElectricApi}
+
+/**
+ * @param apiData
+ * @param filter
+ * @param project
+ * @param? entityData
+ */
+{template .render}
+	<div class="api">
+		{call .script /}
+
+		<nav class="sidebar">
+			{call .navigation data="all" /}
+		</nav>
+
+		<div class="sidebar-offset">
+			{call topbar.render data="all"}
+				{param elementClasses: 'topbar-docs-main' /}
+				{param subheader kind="html"}
+					{call .versionDropdown data="all" /}
+				{/param}
+			{/call}
+
+			<div class="container-hybrid docs-home-top">
+				<div class="entity-container" id="entityContainer">
+					{if $entityData and $entityData.name}
+						{call ElectricApiEntities.render}
+							{param entityData: $entityData /}
+							{param filter: $filter /}
+							{param project: $project /}
+						{/call}
+					{/if}
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			new window.ApiAutocomplete({lb}
+				dataSource: '/api/{$project.ref}/API.json',
+				maxResults: 4,
+				project: {lb}
+					ref: {$project.ref},
+					repo: {$project.repo},
+					user: {$project.user}
+				{rb},
+				input: document.querySelector('input[name="query"]')
+			{rb});
+		</script>
+	</div>
+{/template}
+
+/**
+ * @param apiData
+ * @param project
+ */
+{template .navigation}
+	<div class="sidebar-search">
+		<div class="form-group">
+			<input autocomplete="off" class="form-control" name="query" placeholder="Search...">
+		</div>
+	</div>
+
+	<ul class="sidebar-list sidebar-list-1">
+		{foreach $entity in $apiData}
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="/api/{$project.ref}/{$entity.name}.html">{$entity.name}</a>
+			</li>
+		{/foreach}
+	</ul>
+{/template}
+
+/**
+ *
+ */
+{template .script}
+	<script type="text/javascript">
+		function ApiAutocomplete(config) {lb}
+			this.data = config.data;
+			this.dataSource = config.dataSource;
+			this.input = config.input;
+			this.maxResults = config.maxResults;
+			this.project = config.project;
+
+			this.autocomplete = new metal.Autocomplete({lb}
+				autoBestAlign: false,
+				data: this.search_.bind(this),
+				format: this.format_.bind(this),
+				inputElement: this.input,
+				select: function(event) {lb}
+					window.location = event.url;
+				{rb}
+			{rb});
+		{rb}
+
+		ApiAutocomplete.prototype = {lb}
+			disposed: function() {lb}
+				var autocomplete = this.autocomplete;
+
+				if (autocomplete) {lb}
+					autocomplete.dispose();
+				{rb}
+			{rb},
+
+			format_: function(data) {lb}
+				var url = this.formatURL_(data);
+
+				return {lb}
+					textPrimary: '<a class="autocomplete-link" href="' + url + '">' +
+						'<div class="autocomplete-result">' +
+							'<p class="autocomplete-title">' + data.name + '</p>' +
+							'<p class="autocomplete-text">' + data.memberof + '</p>' +
+						'</div>' +
+					'</a>',
+					url: url
+				{rb};
+			{rb},
+
+			formatURL_: function(data) {lb}
+				var memberof = data.memberof;
+				var name = data.name;
+
+				var url = '/api/' + this.project.ref + '/' + memberof || name + '.html';
+
+				if (memberof && name !== memberof) {lb}
+					url += '#' + name;
+				{rb}
+
+				return url;
+			{rb},
+
+			matchesQuery_: function(entity, query) {lb}
+				var name = entity.name;
+
+				name = name ? name.toLowerCase() : '';
+
+				return name.indexOf(query) > -1;
+			{rb},
+
+			filterResults_: function(data, query) {lb}
+				var instance = this;
+				var results = [];
+
+				data.forEach(function(entity) {lb}
+					if (instance.matchesQuery_(entity, query)) {lb}
+						results.push(entity);
+					{rb}
+
+					if (entity.members) {lb}
+						results = results.concat(instance.filterResults_(entity.members.instance, query));
+						results = results.concat(instance.filterResults_(entity.members.static, query));
+					{rb}
+				{rb});
+
+				return results;
+			{rb},
+
+			search_: function(query) {lb}
+				var instance = this;
+
+				return metal.Promise.resolve(this.data)
+					.then(function(data) {lb}
+						if (data) {lb}
+							return data;
+						{rb}
+						else {lb}
+							return metal.Ajax.request(instance.dataSource)
+						{rb}
+					{rb})
+					.then(function(data) {lb}
+						if (data.response) {lb}
+							data = JSON.parse(data.response);
+
+							instance.data = data;
+						{rb}
+
+						var results = [];
+
+						if (data && query) {lb}
+							results = instance.filterResults_(data, query.toLowerCase());
+
+							if (results.length > instance.maxResults) {lb}
+								results = results.slice(0, instance.maxResults);
+							{rb}
+						{rb}
+
+						return results;
+					{rb});
+			{rb}
+		{rb};
+
+		window.ApiAutocomplete = ApiAutocomplete;
+	</script>
+{/template}
+
+/**
+ * @param project
+ */
+{template .versionDropdown}
+	<div class="dropdown version-dropdown">
+		<a class="btn btn-link">{$project.ref}<span class="icon-12-arrow-down-short"></span></a>
+
+		<ul class="dropdown-menu">
+			{foreach $ref in $project.refs}
+				<li><a href="/api/{$ref}">{$ref}</a></li>
+			{/foreach}
+		</ul>
+	</div>
+
+	<script>
+		var dropdown = document.querySelector('.version-dropdown');
+
+		metal.dom.delegate(dropdown, 'click', '.btn', function(event) {lb}
+			metal.dom.toggleClasses(dropdown, 'open');
+		{rb});
+
+		metal.dom.on(document, 'click', function(event) {lb}
+			if (!dropdown.contains(event.target)) {lb}
+				metal.dom.removeClasses(dropdown, 'open');
+			{rb}
+		{rb});
+	</script>
+{/template}
