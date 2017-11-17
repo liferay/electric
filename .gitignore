@@ -6,3 +6,5 @@ dist
 temp
 build
 lib
+.idea/electric.iml
+.idea/inspectionProfiles/Project_Default.xml
