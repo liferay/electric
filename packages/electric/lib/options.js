@@ -53,6 +53,8 @@ function normalizeOptions(options) {
 	options = applyConfigFile(options);
 
 	options = applyEnv(options);
+	
+	options.scssSrc = options.scssSrc || 'styles';
 
 	let basePath = options.basePath || '';
 
