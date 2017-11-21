@@ -12,6 +12,7 @@ module.exports = function(options) {
 	gulp.task(taskPrefix + 'server', function() {
 		httpServer
 			.createServer({
+				cache: -1,
 				root: options.pathDest
 			})
 			.listen(port);
