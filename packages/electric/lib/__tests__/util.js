@@ -71,12 +71,14 @@ test("it should create a pre-organized object for the topbar navigation", () => 
 				blog: {
 					title: 'Blog',
 					url: '/blog/',
+					active: true,
 					redirect: '/blog/markdown-post.html'
 				},
 				docs: {
 					title: 'Docs',
 					url: '/docs/',
-					active: true
+					target: '_blank',
+					type: 'button'
 				},
 			}
 		}
@@ -87,12 +89,14 @@ test("it should create a pre-organized object for the topbar navigation", () => 
 	expectedSiteData.topbar = [
 		{
 			href: '/blog/markdown-post.html',
-			label: 'Blog'
+			label: 'Blog',
+			active: true
 		},
 		{
 			href: '/docs/',
 			label: 'Docs',
-			selected: true
+			target: '_blank',
+			type: 'button'
 		}
 	];
 

@@ -45,6 +45,8 @@ const util = {
 					href: page.redirect || page.url,
 					label: page.title,
 					selected: page.active,
+					target: page.target,
+					type: page.type,
 					variant: page.topbarVariant
 				});
 			}
