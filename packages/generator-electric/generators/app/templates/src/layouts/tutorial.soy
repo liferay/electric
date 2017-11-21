@@ -32,7 +32,14 @@
  */
 {template .tutorials}
 	<div class="sidebar-offset">
-		{call Topbar.render data="all" /}
+		{call Topbar.render}
+			{param items: $site.topbar /}
+			{param isLight: true /}
+			{param logo: [
+				'text': $site.title,
+				'icon': 'icon-16-hammer'
+			] /}
+		{/call}
 
 		<div class="container">
 			<h6 class="tutorial-title">

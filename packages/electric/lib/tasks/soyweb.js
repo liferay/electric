@@ -150,6 +150,7 @@ module.exports = function(options) {
 		const url = util.getPageURL(file.path, path.join(TEMP_DIR_SITE, 'pages'));
 
 		util.setActive(siteData.index, url);
+		util.configureTopbar(siteData);
 
 		const page = _.omit(util.getPageByURL(siteData.index, url), ['content']);
 

@@ -3,7 +3,7 @@
 var marble = require('marble');
 
 module.exports = {
-	metalComponents: ['electric-marble-components'],
+	metalComponents: ['electric-marble-components', 'marble-topbar'],
 	sassOptions: {
 		includePaths: ['node_modules', marble.src]
 	},

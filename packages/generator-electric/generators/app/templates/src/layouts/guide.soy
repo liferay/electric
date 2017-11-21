@@ -8,8 +8,14 @@
 	<div class="main">
 		<main class="guide">
 			<div class="docs">
-				{call Topbar.render data="all"}
+				{call Topbar.render}
+					{param items: $site.topbar /}
 					{param elementClasses: 'topbar-docs' /}
+					{param isLight: true /}
+					{param logo: [
+						'text': $site.title,
+						'icon': 'icon-16-hammer'
+					] /}
 				{/call}
 				{call Sidebar.render}
 					{param section: $site.index.children['docs'] /}

@@ -33,6 +33,26 @@ const util = {
 		});
 	},
 
+	configureTopbar: function(siteData) {
+		let topbar = [];
+		let page = {};
+
+		siteData.index.childIds.forEach(function(childId) {
+			page = siteData.index.children[childId];
+
+			if (!page.hidden) {
+				topbar.push({
+					href: page.redirect || page.url,
+					label: page.title,
+					selected: page.active,
+					variant: page.topbarVariant
+				});
+			}
+		});
+
+		siteData.topbar = topbar;
+	},
+
 	forEachType: function(indexPage, type, modifier) {
 		const children = indexPage.children;
 
