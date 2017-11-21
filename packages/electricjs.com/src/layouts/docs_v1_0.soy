@@ -9,7 +9,12 @@
 		<main class="guide">
 			<div class="docs">
 				{call Topbar.render data="all"}
-					{param elementClasses: 'topbar-docs' /}
+					{param items: $site.topbar /}
+					{param style: 'topbar-light topbar-docs' /}
+					{param logo: [
+						'text': $site.title,
+						'icon': 'icon-16-flash'
+					] /}
 				{/call}
 				{call Sidebar.render}
 					{param searchPath: '/docs/v1_0/' /}

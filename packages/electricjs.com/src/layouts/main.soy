@@ -2,12 +2,20 @@
 
 /**
  * @param content
+ * @param site
  * @param? elementClasses
  */
 {template .render}
 	<div class="{$elementClasses ?: 'main'}">
 		<main class="content">
-			{call Topbar.render data="all" /}
+			{call Topbar.render data="all"}
+				{param items: $site.topbar /}
+				{param style: 'topbar-light' /}
+				{param logo: [
+					'text': $site.title,
+					'icon': 'icon-16-flash'
+				] /}
+			{/call}
 
 			{$content}
 		</main>
