@@ -12,8 +12,13 @@ description: "Everything you need to know to get started."
 	<div class="main">
 		<main class="content">
 			<div class="docs">
-				{call Topbar.render data="all"}
-					{param elementClasses: 'topbar-docs' /}
+				{call Topbar.render}
+					{param items: $site.topbar /}
+					{param style: 'topbar-light topbar-docs' /}
+					{param logo: [
+						'text': $site.title,
+						'icon': 'icon-16-hammer'
+					] /}
 				{/call}
 				{call Sidebar.render}
 					{param section: $site.index.children['docs'] /}
@@ -31,7 +36,7 @@ description: "Everything you need to know to get started."
  */
 {template .topics}
 	<div class="sidebar-offset">
-		
+
 		<div class="container-hybrid docs-home-top">
 			<div class="row">
 				<div class="col-xs-16">

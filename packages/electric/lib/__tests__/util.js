@@ -63,6 +63,44 @@ test("it should modify JSON object if type field is equal to 'blogs'", () => {
 	});
 });
 
+test("it should create a pre-organized object for the topbar navigation", () => {
+	const siteData = {
+		index: {
+			childIds: ['blog', 'docs'],
+			children: {
+				blog: {
+					title: 'Blog',
+					url: '/blog/',
+					redirect: '/blog/markdown-post.html'
+				},
+				docs: {
+					title: 'Docs',
+					url: '/docs/',
+					active: true
+				},
+			}
+		}
+	};
+
+	let expectedSiteData = siteData;
+
+	expectedSiteData.topbar = [
+		{
+			href: '/blog/markdown-post.html',
+			label: 'Blog'
+		},
+		{
+			href: '/docs/',
+			label: 'Docs',
+			selected: true
+		}
+	];
+
+	util.configureBlog(siteData);
+
+	expect(siteData).toEqual(expectedSiteData);
+});
+
 test('it should generate namespace based on key', () => {
 	const bar = util.generateNamespace('foo');
 

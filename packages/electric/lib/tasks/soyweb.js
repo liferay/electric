@@ -61,7 +61,6 @@ module.exports = function(options) {
 			.src(srcPath, {
 				base: path.join(TEMP_DIR_SITE, 'pages')
 			})
-			.pipe(frontMatter())
 			.on('error', handleError)
 			.pipe(
 				soynode({
@@ -135,6 +134,9 @@ module.exports = function(options) {
 				})
 			)
 			.pipe(tokenReplace(options))
+			.pipe(frontMatter({
+				remove: true
+			}))
 			.pipe(gulp.dest(TEMP_DIR_SITE));
 	});
 
@@ -150,6 +152,7 @@ module.exports = function(options) {
 		const url = util.getPageURL(file.path, path.join(TEMP_DIR_SITE, 'pages'));
 
 		util.setActive(siteData.index, url);
+		util.configureTopbar(siteData);
 
 		const page = _.omit(util.getPageByURL(siteData.index, url), ['content']);
 
