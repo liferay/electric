@@ -53,8 +53,6 @@ function normalizeOptions(options) {
 	options = applyConfigFile(options);
 
 	options = applyEnv(options);
-	
-	options.scssSrc = options.scssSrc || 'styles';
 
 	let basePath = options.basePath || '';
 
@@ -99,6 +97,7 @@ function normalizeOptions(options) {
 		},
 		options.rss
 	);
+	options.scssSrc = options.scssSrc || 'styles';
 	options.skipBundle = options.skipBundle || false;
 	options.taskPrefix = options.taskPrefix || '';
 	options.uglifyBundle = options.uglifyBundle || false;
