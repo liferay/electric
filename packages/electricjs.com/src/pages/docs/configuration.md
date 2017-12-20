@@ -45,9 +45,7 @@ Example:
 
 ```text/javascript
 module.exports = {
-	basePath: {
-		branch: '/base-path'
-	}
+	basePath: '/base-path'
 };
 ```
 
@@ -69,9 +67,7 @@ require the following config.
 
 ```text/javascript
 module.exports = {
-	basePath: {
-		branch: '/project-name'
-	},
+	basePath: '/project-name',
 	deployOptions: {
 		branch: 'gh-pages'
 	}
