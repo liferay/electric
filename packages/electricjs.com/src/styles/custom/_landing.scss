@@ -98,3 +98,16 @@
 		margin-top: 140px;
 	}
 }
+
+// Metal icon
+.icon-16-metal {
+	position: relative;
+}
+
+.logo-metal {
+	width: 24px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
