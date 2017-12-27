@@ -91,6 +91,7 @@ function normalizeOptions(options) {
 	options.pathSrc = options.pathSrc || 'src';
 	options.plugins = options.plugins || [];
 	options.port = options.port || 8888;
+	options.resolveModules = options.resolveModules || ['node_modules'];
 	options.rss = _.assign(
 		{
 			enabled: false

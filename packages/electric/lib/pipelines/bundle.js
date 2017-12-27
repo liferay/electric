@@ -10,6 +10,7 @@ function bundle(options) {
 	options = options || {};
 
 	const entries = options.entryPoints || {};
+	const modules = options.modules || ['node_modules'];
 	const uglify = options.uglify || false;
 
 	return through.obj(
@@ -71,7 +72,10 @@ function bundle(options) {
 						library: 'pageComponent',
 						path: path.join(process.cwd(), options.dest, 'js', 'bundles')
 					},
-					plugins: plugins
+					plugins: plugins,
+					resolve: {
+						modules: modules
+					}
 				},
 				function(err) {
 					cb(err);
