@@ -4486,9 +4486,9 @@ gulp-ignore@^2.0.1:
     gulp-match "^1.0.3"
     through2 "^2.0.1"
 
-gulp-inject@^4.1.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/gulp-inject/-/gulp-inject-4.3.0.tgz#a67a5899a6c7ecf9c7c7f1ceb9f061f1c6f4b898"
+gulp-inject@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/gulp-inject/-/gulp-inject-4.1.0.tgz#cfed04f384b513d4b31458ffce6b934914a0d33b"
   dependencies:
     arrify "^1.0.1"
     escape-string-regexp "^1.0.5"
