@@ -2,10 +2,10 @@
 
 const _ = require('lodash');
 const combiner = require('stream-combiner');
+const es = require('event-stream');
 const gulp = require('gulp');
 const inject = require('gulp-inject');
 const path = require('path');
-const series = require('stream-series');
 
 function baseInject(options) {
 	const util = options.util;
@@ -26,7 +26,7 @@ function baseInject(options) {
 	);
 
 	return combiner(
-		inject(series(bundleSrc, vendorSrc), {
+		inject(es.merge(bundleSrc, vendorSrc), {
 			addPrefix: options.basePath,
 			addRootSlash: !options.basePath,
 			ignorePath: pathDest
