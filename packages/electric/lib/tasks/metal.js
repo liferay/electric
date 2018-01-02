@@ -157,6 +157,7 @@ module.exports = function(options) {
 					bundle({
 						dest: pathDest,
 						entryPoints: options.entryPoints,
+						modules: options.resolveModules,
 						uglify: options.uglifyBundle
 					})
 				);
