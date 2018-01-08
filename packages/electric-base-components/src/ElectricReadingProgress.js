@@ -24,9 +24,13 @@ class ElectricReadingProgress extends Component {
 		if (articleContainer) {
 			const articles = articleContainer.querySelectorAll(articleSelector);
 
-			const articleIds = [].map.call(articles, article => {
-				return `#${article.id}`;
-			});
+			const articleIds = [].reduce.call(articles, (result, article) => {
+				if (article.querySelector(titleSelector)) {
+					result.push(`#${article.id}`);
+				}
+
+				return result;
+			}, []);
 
 			this.progress = new ReadingProgress({
 				items: articleIds,
