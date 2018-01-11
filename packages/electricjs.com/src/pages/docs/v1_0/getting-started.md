@@ -116,6 +116,6 @@ generating.
 Pages named `index` will be located at the path of it's parent directory,
 so `pages/docs/index.soy` will be available at `/docs/`.
 
-See [pages](/docs/pages.html) for more information.
+See [pages](/docs/v1_0/pages.html) for more information.
 
 </article>
