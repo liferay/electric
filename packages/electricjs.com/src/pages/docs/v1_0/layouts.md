@@ -167,7 +167,7 @@ title: "Page"
 By specifying `layout: "docs"`, the generator will look for a soy template in
 the layouts directory with the `docs` namespace.
 
-See the section on [configuration](/docs/configuration.html#options) for
+See the section on [configuration](/docs/v1_0/configuration.html#options) for
 info on configuring the markdown engine.
 
 </article>
