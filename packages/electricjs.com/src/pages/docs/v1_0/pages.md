@@ -1,6 +1,6 @@
 ---
 description: "Creating pages in soy and markdown."
-icon: "menu-content"
+icon: "streams"
 layout: "docsVOne"
 title: "Pages"
 weight: 2
