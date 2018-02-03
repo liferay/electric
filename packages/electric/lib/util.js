@@ -28,8 +28,6 @@ const util = {
 			const children = page.children;
 
 			page.childIds = util.sortByDate(children);
-
-			page.redirect = children[page.childIds[0]].url;
 		});
 	},
 
