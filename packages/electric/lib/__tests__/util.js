@@ -58,8 +58,7 @@ test("it should modify JSON object if type field is equal to 'blogs'", () => {
 		},
 		type: 'blog',
 		url: '/blog',
-		childIds: ['markdown-post', 'soy-post'],
-		redirect: '/blog/markdown-post.html'
+		childIds: ['markdown-post', 'soy-post']
 	});
 });
 
@@ -71,8 +70,7 @@ test("it should create a pre-organized object for the topbar navigation", () => 
 				blog: {
 					title: 'Blog',
 					url: '/blog/',
-					active: true,
-					redirect: '/blog/markdown-post.html'
+					active: true
 				},
 				docs: {
 					title: 'Docs',
