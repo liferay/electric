@@ -1,6 +1,6 @@
 {
   "name": "generator-electric",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Yeoman generator for creating documentation sites using electric.js.",
   "main": "index.js",
   "scripts": {

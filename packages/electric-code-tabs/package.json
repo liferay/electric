@@ -1,6 +1,6 @@
 {
   "name": "electric-code-tabs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Renders code mirror on Electric",
   "license": "BSD",
   "repository": "https://github.com/electricjs/electric/tree/master/packages/electric-code-tabs",
