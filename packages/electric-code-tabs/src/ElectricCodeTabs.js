@@ -114,6 +114,7 @@ CodeTabs.STATE = {
 	 */
   dictionary: {
     value: {
+    	'text/x-sh': 'cURL',
     	'text/html': 'HTML',
     	'text/x-java': 'Java',
     	'application/json': 'JSON'
