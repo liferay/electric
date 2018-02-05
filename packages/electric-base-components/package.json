@@ -1,6 +1,6 @@
 {
   "name": "electric-base-components",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Components that are compatible with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
