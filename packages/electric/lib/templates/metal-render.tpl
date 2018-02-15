@@ -1,41 +1,41 @@
 <div id="pageComponent">
-	{$content}
+	<%= content %>
 </div>
 
-{if $page.componentName}
-	<script src="${basePath}/js/bundles/{$page.componentName}.js"></script>
-{/if}
+<% if (page.componentName) { %>
+	<script src="<%= basePath %>/js/bundles/<%= page.componentName %>.js"></script>
+<% } %>
 
 <script>
-	var data = JSON.parse({$serialized});
+	var data = JSON.parse(`<%= serialized %>`);
 
-	if (window.electricPageComponent) {lb}
+	if (window.electricPageComponent) {
 		window.electricPageComponent.dispose();
-	{rb}
+	}
 
-	var getByPath = function(obj, path) {lb}
+	var getByPath = function(obj, path) {
 		path = path.split('.');
 
-		for (var i = 0; i < path.length; i++) {lb}
+		for (var i = 0; i < path.length; i++) {
 			obj = obj[path[i]];
-		{rb};
+		};
 
 		return obj;
-	{rb};
+	};
 
-	if (window.pageComponent) {lb}
+	if (window.pageComponent) {
 		var page = getByPath(data.site, data.pageLocation);
 
-		if (page) {lb}
-			window.electricPageComponent = pageComponent.default.render(pageComponent.default, {lb}
+		if (page) {
+			window.electricPageComponent = pageComponent.default.render(pageComponent.default, {
 				element: '#pageComponent > *',
 				page: page,
 				site: data.site
-			{rb});
-		{rb}
+			});
+		}
 
-		if (window.runCodeMirror) {lb}
+		if (window.runCodeMirror) {
 			runCodeMirror();
-		{rb}
-	{rb}
+		}
+	}
 </script>

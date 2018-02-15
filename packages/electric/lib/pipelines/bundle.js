@@ -20,7 +20,7 @@ function bundle(options) {
 			}
 
 			if (file.isBuffer()) {
-				const name = path.basename(file.path, path.extname(file.path));
+				const name = require(file.path).default.name;
 
 				entries[name] = file.path;
 			}
@@ -56,14 +56,6 @@ function bundle(options) {
 							{
 								loader: path.join(__dirname, '../loader.js'),
 								test: /\.soy$/
-							},
-							{
-								exclude: [/node_modules/, /\.soy.js$/],
-								loader: require.resolve('babel-loader'),
-								options: {
-									presets: [require.resolve('babel-preset-metal')]
-								},
-								test: /\.js$/
 							}
 						]
 					},

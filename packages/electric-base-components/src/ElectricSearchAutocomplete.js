@@ -9,14 +9,14 @@ class ElectricSearchAutocomplete extends ElectricSearchBase {
 	attached() {
 		const {element} = this;
 
-		const {input} = this.refs;
+		const {autocompleteInput} = this.refs;
 
-		if (input) {
+		if (autocompleteInput) {
 			this.autocomplete = new Autocomplete({
 				autoBestAlign: false,
 				data: this.search_.bind(this),
 				format: this.format_.bind(this),
-				inputElement: input,
+				inputElement: autocompleteInput,
 				select: ({url}) => {
 					window.location = url;
 				}
