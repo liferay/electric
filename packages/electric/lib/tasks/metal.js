@@ -9,6 +9,7 @@ const frontMatter = require('gulp-front-matter');
 const fs = require('fs-extra');
 const globby = require('globby');
 const path = require('path');
+const replace = require('gulp-replace');
 const {Component} = require('metal-component');
 
 // Instantiate jsdom globals
@@ -23,6 +24,18 @@ const handleError = require('../handle_error');
 const layout = require('../pipelines/layout');
 const markdown = require('../pipelines/markdown');
 const tokenReplace = require('../pipelines/token_replace');
+
+const ELECTRIC_BODY = 'electricbody';
+
+const ELECTRIC_HEAD = 'electrichead';
+
+const ELECTRIC_HTML = 'electrichtml';
+
+const ELECTRIC_BODY_REGEX = new RegExp(ELECTRIC_BODY, 'g');
+
+const ELECTRIC_HEAD_REGEX = new RegExp(ELECTRIC_HEAD, 'g');
+
+const ELECTRIC_HTML_REGEX = new RegExp(ELECTRIC_HTML, 'g');
 
 const TEMP_DIR = '.temp/task/metal';
 
@@ -62,6 +75,9 @@ module.exports = function(options) {
 				base: pathSrc
 			})
 			.pipe(baseInject(options))
+			.pipe(replace('body', ELECTRIC_BODY))
+			.pipe(replace('head', ELECTRIC_HEAD))
+			.pipe(replace('html', ELECTRIC_HTML))
 			.pipe(gulp.dest(TEMP_DIR_SITE));
 	});
 
@@ -247,7 +263,7 @@ module.exports = function(options) {
 						if (ref) {
 							data = getAPIData(file, siteDataClone, ref);
 						} else {
-							data = getPageData(file, siteData);
+							data = getPageData(file, siteDataClone);
 
 							data.page.componentName = component.default.name;
 						}
@@ -261,7 +277,7 @@ module.exports = function(options) {
 						);
 
 						const contents = data.page.layout === false ? componentString :
-							wrapContent(Component.renderToString(baseComponent.base, {
+							replaceProtectedTags(Component.renderToString(baseComponent.base, {
 								content: componentString,
 								page: data.page,
 								serialized: data.serialized,
@@ -353,7 +369,11 @@ module.exports = function(options) {
 		};
 	}
 
-	function wrapContent(content) {
-		return '<!DOCTYPE html><html>' + content + '</html>';
+	function replaceProtectedTags(content) {
+		content = content.replace(ELECTRIC_BODY_REGEX, 'body')
+			.replace(ELECTRIC_HEAD_REGEX, 'head')
+			.replace(ELECTRIC_HTML_REGEX, 'html');
+
+		return '<!DOCTYPE html>' + content;
 	}
 };
