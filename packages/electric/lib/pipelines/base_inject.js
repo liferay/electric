@@ -43,18 +43,7 @@ function baseInject(options) {
 			removeTags: true,
 			starttag: '<!-- inject:vendor:js -->',
 			transform: function(filePath, file) {
-				const data = {
-					codeMirror: false,
-					googleAnalytics: siteData.googleAnalytics
-				};
-
-				if (options.codeMirror) {
-					data.codeMirror = {
-						theme: options.codeMirrorTheme
-					};
-				}
-
-				return _.template(file.contents.toString())(data);
+				return file.contents.toString();
 			}
 		})
 	);
