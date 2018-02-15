@@ -208,26 +208,35 @@ module.exports = function(options) {
 				.pipe(
 					data(function(file) {
 						const component = require(file.path);
-						const data = getPageData(file, siteData);
 
-						data.page.componentName = component.default.name;
+						let data;
 
-						const content = Component.renderToString(component.default, {
+						const ref = util.getRefFromPath(file.path);
+						const siteDataClone = _.cloneDeep(siteData);
+
+						if (ref) {
+							data = getAPIData(file, siteDataClone, ref);
+						} else {
+							data = getPageData(file, siteData);
+
+							data.page.componentName = component.default.name;
+						}
+
+						const componentString = Component.renderToString(component.default, {
 							page: data.page,
 							pageLocation: data.pageLocation,
 							site: data.site
 						});
 
-						file.contents = new Buffer(
-							baseTemplate({
-								basePath: options.basePath,
-								content: content,
-								page: data.page,
-								serialized: data.serialized,
-								site: data.site
-							})
-						);
+						const contents = data.page.fullPage ? componentString : baseTemplate({
+							basePath: options.basePath,
+							content: componentString,
+							page: data.page,
+							serialized: data.serialized,
+							site: data.site
+						});
 
+						file.contents = new Buffer(contents);
 						file.path = file.path.replace(path.extname(file.path), '.html');
 
 						return file;
@@ -258,8 +267,6 @@ module.exports = function(options) {
 	});
 
 	function getPageData(file, siteData) {
-		siteData = _.cloneDeep(siteData);
-
 		const url = util.getPageURL(file.path, path.join(TEMP_DIR_SITE, 'pages'));
 
 		util.setActive(siteData.index, url);
@@ -274,6 +281,40 @@ module.exports = function(options) {
 			pageLocation: pageLocation,
 			serialized: JSON.stringify({
 				pageLocation: pageLocation,
+				site: siteData
+			}),
+			site: siteData
+		};
+	}
+
+	function getAPIData(file, siteData, ref) {
+		const apiData = require(path.join(
+			process.cwd(),
+			TEMP_DIR_SITE,
+			'pages/api',
+			ref,
+			'API.json'
+		));
+
+		const refProject = _.assign({}, options.apiConfig.project, {
+			ref: ref
+		});
+
+		const fileName = path.basename(file.path, path.extname(file.path));
+		const entityData =
+			_.find(apiData, function(entity) {
+				return entity.name === fileName;
+			}) || {};
+
+		return {
+			apiData: apiData,
+			entityData: entityData,
+			page: {
+				title: entityData.name || 'API'
+			},
+			project: refProject,
+			serialized: JSON.stringify({
+				pageLocation: '',
 				site: siteData
 			}),
 			site: siteData
