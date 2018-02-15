@@ -1,7 +1,7 @@
 {
-  "name": "electric-quartz-components",
+  "name": "electric-clay-components",
   "version": "2.0.0",
-  "description": "Components that are compatible with Quartz for use with electric.js sites.",
+  "description": "Components that are compatible with Clay for use with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
   "files": [
@@ -14,10 +14,7 @@
     "prepublish": "gulp soy && npm run compile",
     "test": "gulp test"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wedeploy/electric-quartz-components"
-  },
+  "repository": "https://github.com/electricjs/electric/tree/master/packages/electric-clay-components",
   "keywords": [
     "components",
     "electric",
@@ -27,7 +24,7 @@
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wedeploy/electric-quartz-components/issues"
+    "url": "https://github.com/electricjs/electric/issues"
   },
   "homepage": "http://electricjs.com",
   "devDependencies": {
