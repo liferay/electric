@@ -41,21 +41,24 @@ module.exports = function(options) {
 
 	gulp.task(taskPrefix + 'metal', function(cb) {
 		runSequence(
-			[taskPrefix + 'metal:prep:partials', taskPrefix + 'metal:prep:layouts'],
+			[
+				taskPrefix + 'metal:prep:partials',
+				taskPrefix + 'metal:prep:layouts',
+				taskPrefix + 'metal:prep:scripts'
+			],
 			taskPrefix + 'metal:prep:base-layout',
 			taskPrefix + 'metal:prep:pages',
 			taskPrefix + 'metal:prep:page-components',
 			taskPrefix + 'metal:render:soy',
 			taskPrefix + 'metal:prep:transpile',
-			taskPrefix + 'metal:render:bundles',
-			taskPrefix + 'metal:render:html',
+			[taskPrefix + 'metal:render:bundles', taskPrefix + 'metal:render:html'],
 			cb
 		);
 	});
 
 	gulp.task(taskPrefix + 'metal:prep:base-layout', function() {
 		return gulp
-			.src(path.join(pathSrc, 'layouts/base.tpl'), {
+			.src(path.join(pathSrc, 'layouts/base.soy'), {
 				base: pathSrc
 			})
 			.pipe(baseInject(options))
@@ -165,6 +168,28 @@ module.exports = function(options) {
 			.pipe(gulp.dest(TEMP_DIR_SITE));
 	});
 
+	gulp.task(taskPrefix + 'metal:prep:scripts', function() {
+		const siteData = util.getSiteData(pathDest);
+
+		const templateData = {
+			codeMirror: false,
+			googleAnalytics: siteData.googleAnalytics
+		};
+
+		if (options.codeMirror) {
+			templateData.codeMirror = {
+				theme: options.codeMirrorTheme
+			};
+		}
+
+		return gulp.src(path.join(__dirname, '../templates/scripts/*'))
+			.pipe(data(function(file) {
+				file.contents = new Buffer(_.template(file.contents)(templateData));
+				file.path = file.path.replace('.tpl', '.js');
+			}))
+			.pipe(gulp.dest(path.join(pathDest, 'js/electric')));
+	});
+
 	gulp.task(taskPrefix + 'metal:prep:transpile', function() {
 		return gulp.src(path.join(TEMP_DIR_SITE, '**/*.js'))
 			.pipe(babel({
@@ -195,8 +220,13 @@ module.exports = function(options) {
 	gulp.task(
 		taskPrefix + 'metal:render:html',
 		function() {
-			const baseTemplate = _.template(fs.readFileSync(path.join(TEMP_DIR_SITE, 'layouts/base.tpl')));
 			const siteData = util.getSiteData(pathDest);
+
+			siteData.basePath = options.basePath;
+
+			const baseComponent = require(
+				path.join(process.cwd(), TEMP_DIR_SITE, 'layouts/base.soy.js')
+			);
 
 			return gulp
 				.src([
@@ -222,19 +252,21 @@ module.exports = function(options) {
 							data.page.componentName = component.default.name;
 						}
 
-						const componentString = Component.renderToString(component.default, {
-							page: data.page,
-							pageLocation: data.pageLocation,
-							site: data.site
-						});
+						const componentString = Component.renderToString(
+							component.default, {
+								page: data.page,
+								pageLocation: data.pageLocation,
+								site: data.site
+							}
+						);
 
-						const contents = data.page.fullPage ? componentString : baseTemplate({
-							basePath: options.basePath,
-							content: componentString,
-							page: data.page,
-							serialized: data.serialized,
-							site: data.site
-						});
+						const contents = data.page.layout === false ? componentString :
+							wrapContent(Component.renderToString(baseComponent.base, {
+								content: componentString,
+								page: data.page,
+								serialized: data.serialized,
+								site: data.site
+							}));
 
 						file.contents = new Buffer(contents);
 						file.path = file.path.replace(path.extname(file.path), '.html');
@@ -282,7 +314,7 @@ module.exports = function(options) {
 			serialized: JSON.stringify({
 				pageLocation: pageLocation,
 				site: siteData
-			}),
+			}).replace(/'/g, "\\'"),
 			site: siteData
 		};
 	}
@@ -319,5 +351,9 @@ module.exports = function(options) {
 			}),
 			site: siteData
 		};
+	}
+
+	function wrapContent(content) {
+		return '<!DOCTYPE html><html>' + content + '</html>';
 	}
 };
