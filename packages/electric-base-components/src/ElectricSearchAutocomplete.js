@@ -1,26 +1,28 @@
 'use strict';
 
 import Autocomplete from 'metal-autocomplete';
-import core from 'metal';
+import {isServerSide} from 'metal';
 
 import ElectricSearchBase from './ElectricSearchBase';
 
 class ElectricSearchAutocomplete extends ElectricSearchBase {
 	attached() {
-		const {element} = this;
+		if (!isServerSide()) {
+			const {element} = this;
 
-		const {autocompleteInput} = this.refs;
+			const {input} = this.refs;
 
-		if (autocompleteInput) {
-			this.autocomplete = new Autocomplete({
-				autoBestAlign: false,
-				data: this.search_.bind(this),
-				format: this.format_.bind(this),
-				inputElement: autocompleteInput,
-				select: ({url}) => {
-					window.location = url;
-				}
-			});
+			if (input) {
+				this.autocomplete = new Autocomplete({
+					autoBestAlign: false,
+					data: this.search_.bind(this),
+					format: this.format_.bind(this),
+					inputElement: input,
+					select: ({url}) => {
+						window.location = url;
+					}
+				});
+			}
 		}
 	}
 
