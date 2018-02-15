@@ -12,55 +12,55 @@
 
 		var REGEX_RB = /&#125;/g;
 
-		function runCodeMirror() {lb}
+		function runCodeMirror() {
 			var code = document.querySelectorAll('.code');
 
-			for (var i = 0; i < code.length; i++) {lb}
+			for (var i = 0; i < code.length; i++) {
 				// Workaround for soy issue where namespace and template tags are
 				// rendered inside literal blocks
 				var text = code[i].innerText
-					.replace(REGEX_LB, '{lb}')
-					.replace(REGEX_RB, '{rb}');
+					.replace(REGEX_LB, '{')
+					.replace(REGEX_RB, '}');
 
-				var editor = CodeMirror(function(elt) {lb}
+				var editor = CodeMirror(function(elt) {
 					var preEl = code[i].parentNode;
 
 					preEl.parentNode.appendChild(elt);
-				{rb}, {lb}
+				}, {
 					mode: code[i].getAttribute('data-mode') || '',
 					value: text
-				{rb});
-			{rb}
+				});
+			}
 
-			if (window.ElectricCodeTabs) {lb}
+			if (window.ElectricCodeTabs) {
 				new window.ElectricCodeTabs();
-			{rb}
-		{rb}
+			}
+		}
 
 		runCodeMirror();
 	<% } %>
 
-	function runGoogleAnalytics(path) {lb}
-		if (typeof ga === 'function') {lb}
+	function runGoogleAnalytics(path) {
+		if (typeof ga === 'function') {
 			ga('set', 'page', path);
 			ga('send', 'pageview');
-		{rb}
-	{rb}
+		}
+	}
 
-	document.addEventListener('DOMContentLoaded', function() {lb}
-		if (typeof senna !== 'undefined') {lb}
+	document.addEventListener('DOMContentLoaded', function() {
+		if (typeof senna !== 'undefined') {
 			var app = senna.dataAttributeHandler.getApp();
-			app.on('endNavigate', function(event) {lb}
+			app.on('endNavigate', function(event) {
 				runGoogleAnalytics(event.path);
-			{rb});
-		{rb}
-	{rb});
+			});
+		}
+	});
 
-	<% if (googleAnalytics) { %>
-		(function(i,s,o,g,r,a,m){lb}i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){lb}
-		(i[r].q=i[r].q||[]).push(arguments){rb},i[r].l=1*new Date();a=s.createElement(o),
+	<% if (false) { %>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		{rb})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 		ga('create', '<%= googleAnalytics %>', 'auto');
 		ga('send', 'pageview');

@@ -3,7 +3,7 @@
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 
-import templates from './SocialButtons.soy';
+import templates from './SocialButtons.soy.js';
 
 class SocialButtons extends Component {
     rendered() {

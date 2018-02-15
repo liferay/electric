@@ -29,17 +29,18 @@ function baseInject(options) {
 		inject(es.merge(bundleSrc, vendorSrc), {
 			addPrefix: options.basePath,
 			addRootSlash: !options.basePath,
-			ignorePath: pathDest
+			ignorePath: pathDest,
+			removeTags: true
 		}),
 		inject(gulp.src(path.join(__dirname, '../templates/metal-render.tpl')), {
+			removeTags: true,
 			starttag: '<!-- inject:metal:js -->',
 			transform: function(filePath, file) {
-				return _.template(file.contents.toString())({
-					basePath: options.basePath
-				});
+				return file.contents.toString();
 			}
 		}),
 		inject(gulp.src(path.join(__dirname, '../templates/vendor.tpl')), {
+			removeTags: true,
 			starttag: '<!-- inject:vendor:js -->',
 			transform: function(filePath, file) {
 				const data = {

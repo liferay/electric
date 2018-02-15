@@ -1,6 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
+const babel = require('gulp-babel');
 const compileSoy = require('metal-tools-soy/lib/pipelines/compileSoy');
 const data = require('gulp-data');
 const filter = require('gulp-filter');
@@ -8,7 +9,14 @@ const frontMatter = require('gulp-front-matter');
 const fs = require('fs-extra');
 const globby = require('globby');
 const path = require('path');
+const {Component} = require('metal-component');
 
+// Instantiate jsdom globals
+// Note: this can be removed once the Marble components have been
+// updated to work with SSR
+require('jsdom-global')();
+
+const baseInject = require('../pipelines/base_inject');
 const bundle = require('../pipelines/bundle');
 const getTemplate = require('../get_template');
 const handleError = require('../handle_error');
@@ -34,11 +42,24 @@ module.exports = function(options) {
 	gulp.task(taskPrefix + 'metal', function(cb) {
 		runSequence(
 			[taskPrefix + 'metal:prep:partials', taskPrefix + 'metal:prep:layouts'],
+			taskPrefix + 'metal:prep:base-layout',
 			taskPrefix + 'metal:prep:pages',
 			taskPrefix + 'metal:prep:page-components',
-			taskPrefix + 'metal:render:globals',
+			taskPrefix + 'metal:render:soy',
+			taskPrefix + 'metal:prep:transpile',
+			taskPrefix + 'metal:render:bundles',
+			taskPrefix + 'metal:render:html',
 			cb
 		);
+	});
+
+	gulp.task(taskPrefix + 'metal:prep:base-layout', function() {
+		return gulp
+			.src(path.join(pathSrc, 'layouts/base.tpl'), {
+				base: pathSrc
+			})
+			.pipe(baseInject(options))
+			.pipe(gulp.dest(TEMP_DIR_SITE));
 	});
 
 	gulp.task(taskPrefix + 'metal:prep:page-components', function() {
@@ -110,7 +131,7 @@ module.exports = function(options) {
 					const componentPath = path.join(
 						TEMP_DIR_SITE,
 						path.dirname(filePath),
-						namespace + '.js'
+						path.basename(filePath, path.extname(filePath)) + '.js'
 					);
 
 					fs.outputFileSync(componentPath, componentContents);
@@ -144,9 +165,16 @@ module.exports = function(options) {
 			.pipe(gulp.dest(TEMP_DIR_SITE));
 	});
 
+	gulp.task(taskPrefix + 'metal:prep:transpile', function() {
+		return gulp.src(path.join(TEMP_DIR_SITE, '**/*.js'))
+			.pipe(babel({
+				presets: [require('babel-preset-env')]
+			}))
+			.pipe(gulp.dest(TEMP_DIR_SITE));
+	});
+
 	gulp.task(
-		taskPrefix + 'metal:render:globals',
-		[taskPrefix + 'metal:render:soy'],
+		taskPrefix + 'metal:render:bundles',
 		function() {
 			return gulp
 				.src([
@@ -161,6 +189,51 @@ module.exports = function(options) {
 						uglify: options.uglifyBundle
 					})
 				);
+		}
+	);
+
+	gulp.task(
+		taskPrefix + 'metal:render:html',
+		function() {
+			const baseTemplate = _.template(fs.readFileSync(path.join(TEMP_DIR_SITE, 'layouts/base.tpl')));
+			const siteData = util.getSiteData(pathDest);
+
+			return gulp
+				.src([
+					path.join(TEMP_DIR_SITE, 'pages/**/*.js'),
+					'!' + path.join(TEMP_DIR_SITE, '**/*.soy.js')
+				], {
+					read: false
+				})
+				.pipe(
+					data(function(file) {
+						const component = require(file.path);
+						const data = getPageData(file, siteData);
+
+						data.page.componentName = component.default.name;
+
+						const content = Component.renderToString(component.default, {
+							page: data.page,
+							pageLocation: data.pageLocation,
+							site: data.site
+						});
+
+						file.contents = new Buffer(
+							baseTemplate({
+								basePath: options.basePath,
+								content: content,
+								page: data.page,
+								serialized: data.serialized,
+								site: data.site
+							})
+						);
+
+						file.path = file.path.replace(path.extname(file.path), '.html');
+
+						return file;
+					})
+				)
+				.pipe(gulp.dest(pathDest));
 		}
 	);
 
@@ -183,4 +256,27 @@ module.exports = function(options) {
 			)
 			.pipe(gulp.dest(TEMP_DIR_SITE));
 	});
+
+	function getPageData(file, siteData) {
+		siteData = _.cloneDeep(siteData);
+
+		const url = util.getPageURL(file.path, path.join(TEMP_DIR_SITE, 'pages'));
+
+		util.setActive(siteData.index, url);
+		util.configureTopbar(siteData);
+
+		const page = _.omit(util.getPageByURL(siteData.index, url), ['content']);
+
+		const pageLocation = util.getTreeLocation(page.srcFilePath);
+
+		return {
+			page: page,
+			pageLocation: pageLocation,
+			serialized: JSON.stringify({
+				pageLocation: pageLocation,
+				site: siteData
+			}),
+			site: siteData
+		};
+	}
 };

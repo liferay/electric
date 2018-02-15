@@ -13,7 +13,7 @@ module.exports = function(options) {
 	});
 
 	gulp.task(taskPrefix + 'build', function(cb) {
-		const compileTasks = [taskPrefix + 'soyweb'];
+		const compileTasks = [];
 
 		if (!options.skipBundle) {
 			compileTasks.push(taskPrefix + 'metal');
