@@ -1,5 +1,6 @@
 'use strict';
 
+import {isServerSide} from 'metal';
 import Affix from 'metal-affix';
 import Component from 'metal-component';
 import core from 'metal';
@@ -8,6 +9,10 @@ import ReadingProgress from 'metal-reading-progress';
 
 class ElectricReadingProgress extends Component {
 	attached() {
+		if (isServerSide()) {
+			return;
+		}
+
 		this.renderReadingProgress_();
 	}
 

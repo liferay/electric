@@ -7,22 +7,24 @@ import ElectricSearchBase from './ElectricSearchBase';
 
 class ElectricSearchAutocomplete extends ElectricSearchBase {
 	attached() {
-		if (!isServerSide()) {
-			const {element} = this;
+		if (isServerSide()) {
+			return;
+		}
 
-			const {input} = this.refs;
+		const {element} = this;
 
-			if (input) {
-				this.autocomplete = new Autocomplete({
-					autoBestAlign: false,
-					data: this.search_.bind(this),
-					format: this.format_.bind(this),
-					inputElement: input,
-					select: ({url}) => {
-						window.location = url;
-					}
-				});
-			}
+		const {input} = this.refs;
+
+		if (input) {
+			this.autocomplete = new Autocomplete({
+				autoBestAlign: false,
+				data: this.search_.bind(this),
+				format: this.format_.bind(this),
+				inputElement: input,
+				select: ({url}) => {
+					window.location = url;
+				}
+			});
 		}
 	}
 
