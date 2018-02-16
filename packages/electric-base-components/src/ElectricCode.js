@@ -1,11 +1,16 @@
 'use strict';
 
+import {isServerSide} from 'metal';
 import Clipboard from 'metal-clipboard';
 import Component from 'metal-component';
 import Tooltip from 'metal-tooltip';
 
 class ElectricCode extends Component {
 	attached() {
+		if (isServerSide()) {
+			return;
+		}
+
 		const selector = '.code-container .btn-copy';
 
 		if (!window.electricClipboardTooltip) {

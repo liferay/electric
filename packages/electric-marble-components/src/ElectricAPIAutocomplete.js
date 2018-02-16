@@ -1,5 +1,6 @@
 'use strict';
 
+import {isServerSide} from 'metal';
 import Ajax from 'metal-ajax';
 import Autocomplete from 'metal-autocomplete';
 import Component from 'metal-component';
@@ -8,6 +9,10 @@ import Promise from 'metal-promise';
 
 class ElectricAPIAutocomplete extends Component {
 	attached() {
+		if (isServerSide()) {
+			return;
+		}
+
 		this.autocomplete = new Autocomplete({
 			autoBestAlign: false,
 			data: this.search_.bind(this),

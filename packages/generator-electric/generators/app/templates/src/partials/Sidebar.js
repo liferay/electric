@@ -1,5 +1,6 @@
 'use strict';
 
+import {isServerSide} from 'metal';
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 import Toggler from 'metal-toggler';
@@ -8,14 +9,22 @@ import templates from './Sidebar.soy.js';
 
 class Sidebar extends Component {
 	attached() {
-		this._toggler = new Toggler({
+		if (isServerSide()) {
+			return;
+		}
+
+		this.toggler = new Toggler({
 			content: '.sidebar-toggler-content',
 			header: '.sidebar-header'
 		});
 	}
 
 	disposed() {
-		this._toggler.dispose();
+		const {toggler} = this;
+
+		if (toggler) {
+			this.toggler.dispose();
+		}
 	}
 };
 

@@ -1,11 +1,16 @@
 'use strict';
 
+import {isServerSide} from 'metal';
 import core from 'metal';
 
 import ElectricSearchBase from './ElectricSearchBase';
 
 class ElectricSearch extends ElectricSearchBase {
 	attached() {
+		if (isServerSide()) {
+			return;
+		}
+
 		ElectricSearchBase.prototype.attached.apply(this);
 
 		const queryString = window.location.search;
