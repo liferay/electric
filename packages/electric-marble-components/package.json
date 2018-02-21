@@ -1,6 +1,6 @@
 {
   "name": "electric-marble-components",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Components that are compatible with Marble for use with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
