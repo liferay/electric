@@ -1,10 +1,11 @@
 {namespace ElectricAPIEntities}
 
 /**
- * @param entityData
- * @param project
  */
 {template .render}
+	{@param entityData: ?}
+	{@param project: ?}
+
 	<div>
 		{if $entityData}
 			{call .entity data="all" /}
@@ -13,9 +14,10 @@
 {/template}
 
 /**
- * @param augments
  */
 {template .augments}
+	{@param augments: ?}
+
 	<div class="entity-augments">
 		{foreach $augmentation in $augments}
 			<span>{$augmentation.title} </span>
@@ -30,18 +32,20 @@
 {/template}
 
 /**
- * @param default
  */
 {template .default}
+	{@param default: ?}
+
 	<div class="entity-default">
 		<span>Default: <code>{$default}</code></span>
 	</div>
 {/template}
 
 /**
- * @param description
  */
 {template .description}
+	{@param description: ?}
+
 	{if $description.type == 'html' or $description.type == 'text'}
 		{$description.value}
 	{elseif $description.type == 'inlineCode'}
@@ -56,10 +60,11 @@
 {/template}
 
 /**
- * @param entityData
- * @param project
  */
 {template .entity}
+	{@param entityData: ?}
+	{@param project: ?}
+
 	<section class="card entity" data-access="{$entityData.access ? $entityData.access : 'public'}" id="{$entityData.name}">
 		{call .entityHeader data="all" /}
 
@@ -104,10 +109,11 @@
 {/template}
 
 /**
- * @param entityData
- * @param project
  */
 {template .entityHeader}
+	{@param entityData: ?}
+	{@param project: ?}
+
 	<div class="entity-header">
 		{call .entityName data="all" /}
 
@@ -125,9 +131,10 @@
 {/template}
 
 /**
- * @param entityData
  */
 {template .entityName}
+	{@param entityData: ?}
+
 	<h1 class="entity-name">
 		<a href="#{$entityData.name}">
 			{if $entityData.access}
@@ -152,9 +159,10 @@
 {/template}
 
 /**
- * @param params
  */
 {template .inlineParams}
+	{@param params: ?}
+
 	<span>
 		{foreach $param in $params}
 			{$param.name}
@@ -171,6 +179,9 @@
  * @param project
  */
 {template .members}
+	{@param members: ?}
+	{@param project: ?}
+
 	<div class="entity-members">
 		{if $members.properties and $members.properties.length}
 			<h2>Properties:</h2>
@@ -208,9 +219,10 @@
 {/template}
 
 /**
- * @param param
  */
 {template .param}
+	{@param param: ?}
+
 	<tr>
 		<td>{$param.name}</td>
 		<td>
@@ -231,9 +243,10 @@
 {/template}
 
 /**
- * @param params
  */
 {template .params}
+	{@param params: ?}
+
 	<div class="entity-params">
 		<div class="datatable">
 			<table class="table">
@@ -257,9 +270,10 @@
 {/template}
 
 /**
- * @param returns
  */
 {template .returns}
+	{@param returns: ?}
+
 	<div class="entity-returns">
 		{let $return: $returns[0] /}
 
@@ -282,9 +296,10 @@
 {/template}
 
 /**
- * @param type
  */
 {template .type}
+	{@param type: ?}
+
 	<span>
 		{if $type.expression}
 			{$type.expression.name}
