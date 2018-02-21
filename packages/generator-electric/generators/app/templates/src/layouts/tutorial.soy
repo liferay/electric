@@ -1,12 +1,13 @@
 {namespace tutorial}
 
 /**
- * @param content
- * @param? elementClasses
- * @param page
- * @param site
  */
 {template .render}
+	{@param content: ?}
+	{@param page: ?}
+	{@param site: ?}
+	{@param? elementClasses: ?}
+
 	<div class="{$elementClasses ?: 'main'}">
 		<main class="content">
 			<div class="tutorial">
@@ -26,11 +27,12 @@
 {/template}
 
 /**
- * @param content
- * @param page
- * @param site
  */
 {template .tutorials}
+	{@param content: ?}
+	{@param page: ?}
+	{@param site: ?}
+
 	<div class="sidebar-offset">
 		{call Topbar.render}
 			{param items: $site.topbar /}
@@ -58,10 +60,11 @@
 {/template}
 
 /**
- * @param page
- * @param site
  */
 {template .footerButtons}
+	{@param page: ?}
+	{@param site: ?}
+
 	<div class="tutorial-page-nav">
 		{let $tutorialObject: $site.index.children['tutorials'].children[$page.parentId] /}
 		{if $page.weight < length($tutorialObject.childIds)}
@@ -76,9 +79,10 @@
 {/template}
 
 /**
- * @param page
  */
 {template .sidebar}
+	{@param page: ?}
+
 	<div class="sidebar-navigation">
 		<nav class="sidebar">
 			{call ElectricNavigation.render}
@@ -92,9 +96,10 @@
 {/template}
 
 /**
- * @param page
  */
 {deltemplate ElectricNavigation.anchor variant="'tutorial'"}
+	{@param page: ?}
+
 	<a class="sidebar-link{$page.active ? ' sidebar-link-selected' : ''}" href="{$page.url}" data-time="{$page.time}">
 		<span class="before"></span>
 		<span class="tutorial-step">{$page.weight}</span>

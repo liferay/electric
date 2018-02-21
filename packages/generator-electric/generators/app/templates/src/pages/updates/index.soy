@@ -40,9 +40,10 @@ updates:
 {namespace updatesIndex}
 
 /**
- * @param page
  */
 {template .render}
+	{@param page: ?}
+
 	{call main.render data="all"}
 		{param content kind="html"}
 			<div>

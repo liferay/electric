@@ -1,7 +1,6 @@
 {namespace blog}
 
 /**
- *
  */
 {template .render}
 	{call main.render data="all"}
@@ -15,11 +14,12 @@
 {/template}
 
 /**
- * @param content
- * @param page
- * @param siteUrl
  */
 {template .mainPost}
+	{@param content: ?}
+	{@param page: ?}
+	{@param siteUrl: ?}
+
 	<article class="container">
 		<header>
 			<small>By {$page.author} <span>| {$page.date}</span></small>
@@ -37,10 +37,11 @@
 {/template}
 
 /**
- * @param page
- * @param site
  */
 {template .olderPosts}
+	{@param page: ?}
+	{@param site: ?}
+
 	<div class="posts-list">
 		<div class="container">
 			{foreach $childId in $site.index.children['blog'].childIds}

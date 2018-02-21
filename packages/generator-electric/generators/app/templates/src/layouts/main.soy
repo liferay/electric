@@ -1,11 +1,12 @@
 {namespace main}
 
 /**
- * @param content
- * @param site
- * @param? elementClasses
  */
 {template .render}
+	{@param content: ?}
+	{@param site: ?}
+	{@param? elementClasses: ?}
+
 	<div class="{$elementClasses ?: 'main'}">
 		<main class="content">
 			{call Topbar.render}
