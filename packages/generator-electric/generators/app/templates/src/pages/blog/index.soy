@@ -20,9 +20,10 @@ type: "blog"
 {/template}
 
 /**
- * @param site
  */
 {template .allPosts}
+	{@param site: ?}
+
   <div class="posts-list posts-list-all">
     <div class="container">
       {foreach $childId in $site.index.children['blog'].childIds}
