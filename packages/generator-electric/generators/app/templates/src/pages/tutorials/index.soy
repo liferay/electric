@@ -2,26 +2,20 @@
 title: "Tutorials"
 description: "Foo bar."
 url: "/tutorials/example/first-step.html/"
+layout: false
 ---
 
 {namespace tutorialsIndex}
 
 /**
- *
  */
 {template .render}
-{/template}
-
-/**
- */
-{template .soyweb}
 	{@param page: ?}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="refresh" content="0; URL='{$page.url}'">
-</head>
-</html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta http-equiv="refresh" content="0; URL='{$page.url}'">
+		</head>
+	</html>
 {/template}
