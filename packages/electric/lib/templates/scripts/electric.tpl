@@ -1,4 +1,40 @@
 (function() {
+	const electric = {
+		init: function(json) {
+			var data = JSON.parse(json);
+
+			if (electric.currentPageComponent) {
+				electric.currentPageComponent.dispose();
+			}
+
+			var getByPath = function(obj, path) {
+				path = path.split('.');
+
+				for (var i = 0; i < path.length; i++) {
+					obj = obj[path[i]];
+				};
+
+				return obj;
+			};
+
+			if (window.pageComponent) {
+				var page = getByPath(data.site, data.pageLocation);
+
+				if (page) {
+					electric.currentPageComponent = pageComponent.default.render(pageComponent.default, {
+						element: '#pageComponent > *',
+						page: page,
+						site: data.site
+					});
+				}
+
+				if (electric.runCodeMirror) {
+					electric.runCodeMirror();
+				}
+			}
+		}
+	};
+
 	<% if (codeMirror) { %>
 		CodeMirror.defaults.lineNumbers = true;
 		CodeMirror.defaults.matchBrackets = true;
@@ -12,7 +48,7 @@
 
 		var REGEX_RB = /&#125;/g;
 
-		function runCodeMirror() {
+		electric.runCodeMirror = function() {
 			var code = document.querySelectorAll('.code');
 
 			for (var i = 0; i < code.length; i++) {
@@ -35,28 +71,17 @@
 			if (window.ElectricCodeTabs) {
 				new window.ElectricCodeTabs();
 			}
-		}
-
-		runCodeMirror();
+		};
 	<% } %>
 
-	function runGoogleAnalytics(path) {
-		if (typeof ga === 'function') {
-			ga('set', 'page', path);
-			ga('send', 'pageview');
-		}
-	}
-
-	document.addEventListener('DOMContentLoaded', function() {
-		if (typeof senna !== 'undefined') {
-			var app = senna.dataAttributeHandler.getApp();
-			app.on('endNavigate', function(event) {
-				runGoogleAnalytics(event.path);
-			});
-		}
-	});
-
 	<% if (googleAnalytics) { %>
+		electric.runGoogleAnalytics = function(path) {
+			if (typeof ga === 'function') {
+				ga('set', 'page', path);
+				ga('send', 'pageview');
+			}
+		};
+
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -64,5 +89,17 @@
 
 		ga('create', '<%= googleAnalytics %>', 'auto');
 		ga('send', 'pageview');
+
+		document.addEventListener('DOMContentLoaded', function() {
+			if (typeof senna !== 'undefined') {
+				var app = senna.dataAttributeHandler.getApp();
+
+				app.on('endNavigate', function(event) {
+					electric.runGoogleAnalytics(event.path);
+				});
+			}
+		});
 	<% } %>
+
+	window.electric = electric;
 })();

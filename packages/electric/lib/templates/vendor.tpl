@@ -1,1 +1,1 @@
-<script src="{$site.basePath}/js/electric/vendor.js"></script>
+<script data-senna-track="permanent" src="{$site.basePath}/js/electric/electric.js"></script>
