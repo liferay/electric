@@ -8,9 +8,10 @@ author: "Author Name"
 {namespace pageBlogFirstPost}
 
 /**
- * @param page
  */
 {template .render}
+	{@param page: ?}
+
 	{call blog.render data="all"}
 		{param content kind="html"}
 			<section>

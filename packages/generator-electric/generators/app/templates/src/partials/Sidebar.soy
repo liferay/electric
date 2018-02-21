@@ -1,10 +1,11 @@
 {namespace Sidebar}
 
 /**
- * @param section
- * @param site
  */
 {template .render}
+	{@param section: ?}
+	{@param site: ?}
+
 	<nav class="sidebar">
 		<a class="sidebar-header toggler-header-collapsed">
 			<span class="sidebar-icon icon-16-menu"></span>
@@ -36,9 +37,10 @@
 {/template}
 
 /**
- * @param page
  */
 {deltemplate ElectricNavigation.anchor variant="'sidebar'"}
+	{@param page: ?}
+
 	<a class="sidebar-link {$page.active ? 'sidebar-link-selected' : ''}" href="{$page.url}">
 		{if $page.icon}
 			<span class="sidebar-icon icon-16-{$page.icon}"></span>
