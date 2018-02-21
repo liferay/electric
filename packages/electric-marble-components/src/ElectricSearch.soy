@@ -1,12 +1,13 @@
 {namespace ElectricSearch}
 
 /**
- * @param? action
- * @param? placeholder
- * @param? query
- * @param? results
  */
 {template .render}
+	{@param? actions: ?}
+	{@param? placeholder: ?}
+	{@param? query: ?}
+	{@param? results: ?}
+
 	<div class="search">
 		{call .form data="all" /}
 		{call .results data="all" /}
@@ -14,11 +15,12 @@
 {/template}
 
 /**
- * @param? action
- * @param? placeholder
- * @param? query
  */
 {template .form}
+	{@param? actions: ?}
+	{@param? placeholder: ?}
+	{@param? query: ?}
+
 	<form class="docs-home-top-form" action="{$action}" method="GET" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-md-7 col-md-offset-3 col-xs-16">
@@ -39,10 +41,11 @@
 {/template}
 
 /**
- * @param? results
- * @param? query
  */
 {template .results}
+	{@param? query: ?}
+	{@param? results: ?}
+
 	<div class="search-result-container">
 		{if $query}
 			<p class="search-result-summary">
