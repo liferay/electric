@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "start": "lerna bootstrap -- --no-optional --no-package-lock",
-    "publish": "lerna publish"
+    "publish": "lerna run prepublish && lerna publish"
   },
   "devDependencies": {
     "lerna": "^2.5.1"
