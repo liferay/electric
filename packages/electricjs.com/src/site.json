@@ -4,6 +4,12 @@
 	"googleAnalytics": "UA-37033501-5",
 	"showcase": [
 		{
+			"title": "Metal.js",
+			"description": "Metal is a JavaScript library that helps people build UI components in a solid, flexible way.",
+			"site": "https://metaljs.com/",
+			"image": "metal"
+		},
+		{
 			"title": "Liferay Community",
 			"description": "A place for the Liferay community to discover open source projects and stay updated with the latest announcements.",
 			"site": "https://community.liferay.com/",
