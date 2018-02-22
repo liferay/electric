@@ -98,14 +98,14 @@ Now you should see 'MyComponent attached!' in the browser console.
 
 ## Electric Components
 
-The [electric-components](https://github.com/wedeploy/electric-components) package
-contains a number of components that are compatible with electric site meta
+The [electric-base-components](https://github.com/electricjs/electric/tree/master/packages/electric-base-components)
+package contains a number of components that are compatible with electric site meta
 data, such as navigation and search components.
 
 Currently these components come in two themes.
 
-- [Marble](https://marblecss.com/): [electric-marble-components](https://github.com/wedeploy/electric-marble-components)
-- [Clay](https://claycss.com/): [electric-clay-components](https://github.com/wedeploy/electric-clay-components)
+- [Marble](https://marblecss.com/): [electric-marble-components](https://github.com/electricjs/electric/tree/master/packages/electric-marble-components)
+- [Clay](https://claycss.com/): [electric-clay-components](https://github.com/electricjs/electric/tree/master/packages/electric-clay-components)
 
 These components are invoked the same way as your own components.
 
