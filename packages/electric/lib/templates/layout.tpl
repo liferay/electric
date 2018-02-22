@@ -5,10 +5,11 @@
 {namespace <%= namespace %>}
 
 /**
- * @param page
- * @param site
  */
 {template .render}
+	{@param page: ?}
+	{@param site: ?}
+
 	{call <%= layout %>.render data="all"}
 		{param content kind="html"}
 			<%= content %>
