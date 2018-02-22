@@ -6,6 +6,7 @@ const compileSoy = require('metal-tools-soy/lib/pipelines/compileSoy');
 const data = require('gulp-data');
 const filter = require('gulp-filter');
 const frontMatter = require('gulp-front-matter');
+const gutil = require('gulp-util');
 const fs = require('fs-extra');
 const globby = require('globby');
 const path = require('path');
@@ -268,11 +269,18 @@ module.exports = function(options) {
 							data.page.componentName = component.default.name;
 						}
 
-						const componentString = Component.renderToString(
-							component.default, {
-								page: data.page,
-								pageLocation: data.pageLocation,
-								site: data.site
+						try {
+							const componentString = Component.renderToString(
+								component.default, {
+									page: data.page,
+									pageLocation: data.pageLocation,
+									site: data.site
+								}
+							);
+						}
+						catch(e) {
+							gutil.log(`Error when trying to render the "${file.path}" file`);
+						}
 							}
 						);
 
