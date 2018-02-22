@@ -13,12 +13,14 @@
 			"title": "Metal.js",
 			"description": "Metal is a JavaScript library that helps people build UI components in a solid, flexible way.",
 			"site": "https://metaljs.com/",
+			"repo": "https://github.com/metal/metal.js/tree/master/packages/metaljs.com",
 			"image": "metal"
 		},
 		{
 			"title": "AlloyEditor",
 			"description": "A modern WYSIWYG editor built on top of CKEDITOR, designed to create modern and gorgeous web content.",
 			"site": "https://alloyeditor.com/",
+			"repo": "https://github.com/liferay/alloyeditor.com",
 			"image": "alloyeditor"
 		},
 		{
@@ -38,7 +40,7 @@
 			"title": "Clay",
 			"description": "Clay is Liferay's web implementation of Lexicon Experience Language. Built with Bootstrap as a foundation, it's comprised of HTML, CSS, and JS.",
 			"site": "https://claycss.com/",
-			"repo": "https://github.com/liferay/claycss.com",
+			"repo": "https://github.com/liferay/clay/tree/master/packages/claycss.com",
 			"image": "clay"
 		},
 		{
@@ -58,27 +60,28 @@
 			"title": "Jonathan and Marissa",
 			"description": "A wedding site with RSVP, present list, and gallery capabilities.",
 			"site": "http://jonathanandmarissa.com/",
-			"repo": "https://github.com/jonnilundy/jonathan-and-marissa",
+			"repo": "https://github.com/jonnilundy/champagne",
 			"image": "jonathanandmarissa"
 		},
 		{
 			"title": "Guia do trabalho remoto",
 			"description": "A guide to help creative professionals in the search of remote jobs.",
 			"site": "https://guiadotrabalhoremoto.com/",
+			"repo": "https://github.com/nomadsonrails/guia-do-trabalho-remoto",
 			"image": "guiadotrabalhoremoto"
 		},
 		{
 			"title": "Marble",
 			"description": "A CSS library for sleek, intuitive, and powerful UI components.",
 			"site": "https://marblecss.com/",
-			"repo": "https://github.com/wedeploy/marblecss.com/",
+			"repo": "https://github.com/wedeploy/marble/tree/master/packages/marblecss.com",
 			"image": "marble"
 		},
 		{
 			"title": "Electric",
 			"description": "A Node.js static generator that allows you to create beautiful documentation for your projects.",
 			"site": "https://electricjs.com/",
-			"repo": "https://github.com/electricjs/electricjs.com",
+			"repo": "https://github.com/electricjs/electric/tree/master/packages/electricjs.com",
 			"image": "electric"
 		}
 	]
