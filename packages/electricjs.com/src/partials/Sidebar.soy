@@ -1,11 +1,12 @@
 {namespace Sidebar}
 
 /**
- * @param section
- * @param? searchExcludePath
- * @param? searchPath
  */
 {template .render}
+	{@param section: ?}
+	{@param? searchExcludePath: ?}
+	{@param? searchPath: ?}
+
 	<nav class="sidebar">
 		<a class="sidebar-header toggler-header-collapsed">
 			<span class="sidebar-icon icon-16-menu"></span>
@@ -37,9 +38,10 @@
 {/template}
 
 /**
- * @param page
  */
 {deltemplate ElectricNavigation.anchor variant="'sidebar'"}
+	{@param page: ?}
+
 	<a class="sidebar-link {$page.active ? 'sidebar-link-selected' : ''}" href="{$page.url}">
 		{if $page.icon}
 			<span class="sidebar-icon icon-16-{$page.icon}"></span>

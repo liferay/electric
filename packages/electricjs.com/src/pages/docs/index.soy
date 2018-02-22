@@ -6,9 +6,10 @@ description: "List of articles documenting electric."
 {namespace pageDocsIndex}
 
 /**
- * @param site
  */
 {template .render}
+	{@param site: ?}
+
 	<div class="main">
 		<main class="content">
 			<div class="docs">
@@ -30,12 +31,12 @@ description: "List of articles documenting electric."
 {/template}
 
 /**
- * @param page
- * @param site
  */
 {template .topics}
-	<div class="sidebar-offset">
+	{@param page: ?}
+	{@param site: ?}
 
+	<div class="sidebar-offset">
 		<div class="container-hybrid docs-home-top">
 			<div class="row">
 				<div class="col-xs-16">

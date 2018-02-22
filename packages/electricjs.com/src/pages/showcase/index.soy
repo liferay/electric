@@ -6,9 +6,10 @@ description: "Check all the sites created with Electric"
 {namespace pageShowcase}
 
 /**
- * @param site
  */
 {template .render}
+	{@param site: ?}
+
 	{call main.render data="all"}
 		{param content kind="html"}
 			{call .header data="all" /}
@@ -19,9 +20,10 @@ description: "Check all the sites created with Electric"
 {/template}
 
 /**
- * @param page
  */
 {template .header}
+	{@param page: ?}
+
 	<header class="header">
 		<div class="container">
 			<h1 class="header-title">{$page.title}</h1>
@@ -31,9 +33,10 @@ description: "Check all the sites created with Electric"
 {/template}
 
 /**
- * @param site
  */
 {template .showcase}
+	{@param site: ?}
+
 	<div class="showcase">
 		<div class="container">
 			<div class="row">

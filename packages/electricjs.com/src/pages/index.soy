@@ -6,9 +6,10 @@ description: "Create beautiful documentation for your projects"
 {namespace pageIndex}
 
 /**
- * @param site
  */
 {template .render}
+	{@param site: ?}
+
 	{call main.render data="all"}
 		{param content kind="html"}
 			{call .header data="all" /}
@@ -22,9 +23,10 @@ description: "Create beautiful documentation for your projects"
 {/template}
 
 /**
- * @param site
  */
 {template .header}
+	{@param site: ?}
+
 	<header class="header">
 		<div class="container">
 			<h1 class="header-title">
@@ -46,7 +48,6 @@ description: "Create beautiful documentation for your projects"
 {/template}
 
 /**
- *
  */
 {template .why}
 	<article class="about">
@@ -63,7 +64,6 @@ description: "Create beautiful documentation for your projects"
 {/template}
 
 /**
- *
  */
 {template .highlights}
 	<div class="highlights">
@@ -106,7 +106,6 @@ description: "Create beautiful documentation for your projects"
 {/template}
 
 /**
- *
  */
 {template .how}
 	<article class="about">
@@ -122,7 +121,6 @@ description: "Create beautiful documentation for your projects"
 {/template}
 
 /**
- *
  */
 {template .features}
 	<div class="features">
