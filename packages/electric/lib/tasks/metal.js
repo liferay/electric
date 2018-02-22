@@ -269,8 +269,10 @@ module.exports = function(options) {
 							data.page.componentName = component.default.name;
 						}
 
+						let componentString;
+
 						try {
-							const componentString = Component.renderToString(
+							componentString = Component.renderToString(
 								component.default, {
 									page: data.page,
 									pageLocation: data.pageLocation,
@@ -281,16 +283,27 @@ module.exports = function(options) {
 						catch(e) {
 							gutil.log(`Error when trying to render the "${file.path}" file`);
 						}
-							}
-						);
 
-						const contents = data.page.layout === false ? componentString :
-							replaceProtectedTags(Component.renderToString(baseComponent.base, {
-								content: componentString,
-								page: data.page,
-								serialized: data.serialized,
-								site: data.site
-							}));
+						let contents;
+
+						if (data.page.layout === false) {
+							contents = componentString;
+						}
+						else {
+							try {
+								const baseComponentString = Component.renderToString(baseComponent.base, {
+									content: componentString,
+									page: data.page,
+									serialized: data.serialized,
+									site: data.site
+								});
+
+								contents = replaceProtectedTags(baseComponentString);
+							}
+							catch(e) {
+								gutil.log(`Error when trying to render the base component on "${file.path}" file`);
+							}
+						}
 
 						file.contents = new Buffer(contents);
 						file.path = file.path.replace(path.extname(file.path), '.html');
