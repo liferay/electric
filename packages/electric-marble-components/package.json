@@ -1,6 +1,6 @@
 {
   "name": "electric-marble-components",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Components that are compatible with Marble for use with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
@@ -34,7 +34,7 @@
     "gulp-metal": "^1.9.13"
   },
   "dependencies": {
-    "electric-base-components": "^3.0.0",
+    "electric-base-components": "^3.0.2",
     "metal-toggler": "^2.2.0"
   }
 }

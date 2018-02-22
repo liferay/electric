@@ -1,6 +1,6 @@
 {
   "name": "electric-clay-components",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Components that are compatible with Clay for use with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
@@ -35,6 +35,6 @@
     "gulp-metal": "^1.9.13"
   },
   "dependencies": {
-    "electric-base-components": "^3.0.0"
+    "electric-base-components": "^3.0.2"
   }
 }
