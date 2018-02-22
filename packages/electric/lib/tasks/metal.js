@@ -6,6 +6,7 @@ const compileSoy = require('metal-tools-soy/lib/pipelines/compileSoy');
 const data = require('gulp-data');
 const filter = require('gulp-filter');
 const frontMatter = require('gulp-front-matter');
+const gutil = require('gulp-util');
 const fs = require('fs-extra');
 const globby = require('globby');
 const path = require('path');
@@ -219,7 +220,7 @@ module.exports = function(options) {
 		function() {
 			return gulp
 				.src([
-					path.join(TEMP_DIR_SITE, '**/*.js'),
+					path.join(TEMP_DIR_SITE, 'pages/**/*.js'),
 					'!' + path.join(TEMP_DIR_SITE, '**/*.soy.js')
 				])
 				.pipe(
@@ -268,21 +269,41 @@ module.exports = function(options) {
 							data.page.componentName = component.default.name;
 						}
 
-						const componentString = Component.renderToString(
-							component.default, {
-								page: data.page,
-								pageLocation: data.pageLocation,
-								site: data.site
-							}
-						);
+						let componentString;
 
-						const contents = data.page.layout === false ? componentString :
-							replaceProtectedTags(Component.renderToString(baseComponent.base, {
-								content: componentString,
-								page: data.page,
-								serialized: data.serialized,
-								site: data.site
-							}));
+						try {
+							componentString = Component.renderToString(
+								component.default, {
+									page: data.page,
+									pageLocation: data.pageLocation,
+									site: data.site
+								}
+							);
+						}
+						catch(e) {
+							gutil.log(`Error when trying to render the "${file.path}" file`);
+						}
+
+						let contents;
+
+						if (data.page.layout === false) {
+							contents = componentString;
+						}
+						else {
+							try {
+								const baseComponentString = Component.renderToString(baseComponent.base, {
+									content: componentString,
+									page: data.page,
+									serialized: data.serialized,
+									site: data.site
+								});
+
+								contents = replaceProtectedTags(baseComponentString);
+							}
+							catch(e) {
+								gutil.log(`Error when trying to render the base component on "${file.path}" file`);
+							}
+						}
 
 						file.contents = new Buffer(contents);
 						file.path = file.path.replace(path.extname(file.path), '.html');
