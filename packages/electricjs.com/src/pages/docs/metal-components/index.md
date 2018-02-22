@@ -104,8 +104,8 @@ data, such as navigation and search components.
 
 Currently these components come in two themes.
 
-- Marble: [electric-marble-components](https://github.com/wedeploy/electric-marble-components)
-- Quartz: [electric-quartz-components](https://github.com/wedeploy/electric-quartz-components)
+- [Marble](https://marblecss.com/): [electric-marble-components](https://github.com/wedeploy/electric-marble-components)
+- [Clay](https://claycss.com/): [electric-clay-components](https://github.com/wedeploy/electric-clay-components)
 
 These components are invoked the same way as your own components.
 
