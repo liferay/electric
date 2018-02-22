@@ -23,7 +23,6 @@ the HTML boilerplate of your site. Every page will be rendered with this layout.
  * @param site
  */
 &#123;template .render private="true"&#125;
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
