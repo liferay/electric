@@ -20,9 +20,13 @@ function bundle(options) {
 			}
 
 			if (file.isBuffer()) {
-				const name = require(file.path).default.name;
-
-				entries[name] = file.path;
+				try {
+					const name = require(file.path).default.name;
+					entries[name] = file.path;
+				}
+				catch(e) {
+					gutil.log(`Error when trying to require the "${file.path}" file`);
+				}
 			}
 
 			cb(null, file);
