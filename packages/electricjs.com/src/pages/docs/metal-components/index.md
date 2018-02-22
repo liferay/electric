@@ -34,7 +34,6 @@ Components should be placed in the the `src/partials` directory.
 &#123;namespace MyComponent&#125;
 
 /**
- *
  */
 &#123;template .render&#125;
 	<div>Hello, World!</div>
@@ -83,7 +82,6 @@ title: "Page"
 &#123;namespace page&#125;
 
 /**
- *
  */
 &#123;template .render&#125;
 	<div>
@@ -120,9 +118,10 @@ title: "Page"
 &#123;namespace page&#125;
 
 /**
- * @param site
  */
 &#123;template .render&#125;
+    {@param site: ?}
+
 	<div>
 		{call ElectricNavigation.render}
 			{param depth: 1 /}

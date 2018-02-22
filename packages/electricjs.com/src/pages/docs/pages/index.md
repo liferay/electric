@@ -43,7 +43,6 @@ title: "Page"
 &#123;namespace page&#125;
 
 /**
- *
  */
 &#123;template .render&#125;
     <span>Hello, World!</span>

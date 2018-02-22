@@ -17,13 +17,14 @@ the HTML boilerplate of your site. Every page will be rendered with this layout.
 &#123;namespace base&#125;
 
 /**
- * @param content
- * @param page
- * @param serialized
- * @param site
  */
 &#123;template .render private="true"&#125;
-<html lang="en">
+    {@param content: ?}
+    {@param page: ?}
+    {@param serialized: ?}
+    {@param site: ?}
+
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta content="minimum-scale=1.0, width=device-width" name="viewport">
@@ -49,7 +50,7 @@ the HTML boilerplate of your site. Every page will be rendered with this layout.
         <!-- inject:codemirror:js -->
         <!-- endinject -->
     </body>
-</html>
+    </html>
 &#123;/template&#125;
 ```
 
@@ -98,12 +99,13 @@ layouts are simply `soy` templates that can be implemented by individual pages.
 &#123;namespace docs&#125;
 
 /**
- * @param content
- * @param elementClasses
- * @param page
- * @param site
  */
 &#123;template .render&#125;
+    {@param content: ?}
+    {@param elementClasses: ?}
+    {@param page: ?}
+    {@param site: ?}
+
     <div class="{$elementClasses ?: 'main'}">
         <div class="topper">
             <h1>{$site.title}</h1>
@@ -134,7 +136,6 @@ title: "Page"
 &#123;namespace page&#125;
 
 /**
- *
  */
 &#123;template .render&#125;
     {call docs.render data="all"}
