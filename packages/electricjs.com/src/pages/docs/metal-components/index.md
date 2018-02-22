@@ -48,7 +48,7 @@ Components should be placed in the the `src/partials` directory.
 import Component from 'metal-component';
 import Soy from 'metal-soy';
 
-import templates from './MyComponent.soy';
+import templates from './MyComponent.soy.js';
 
 class MyComponent extends Component {
 	attached() {
