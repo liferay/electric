@@ -1,0 +1,79 @@
+{
+	"title": "Electric",
+	"githubRepo": "electricjs/electricjs.com",
+	"googleAnalytics": "UA-37033501-5",
+	"showcase": [
+		{
+			"title": "Metal.js",
+			"description": "Metal is a JavaScript library that helps people build UI components in a solid, flexible way.",
+			"site": "https://metaljs.com/",
+			"image": "metal"
+		},
+		{
+			"title": "AlloyEditor",
+			"description": "A modern WYSIWYG editor built on top of CKEDITOR, designed to create modern and gorgeous web content.",
+			"site": "https://alloyeditor.com/",
+			"image": "alloyeditor"
+		},
+		{
+			"title": "Liferay Community",
+			"description": "A place for the Liferay community to discover open source projects and stay updated with the latest announcements.",
+			"site": "https://community.liferay.com/",
+			"image": "liferay-community"
+		},
+		{
+			"title": "Lexicon",
+			"description": "A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces.",
+			"site": "https://lexicondesign.io/",
+			"repo": "https://github.com/liferay/lexicon-site",
+			"image": "lexicon"
+		},
+		{
+			"title": "Clay",
+			"description": "Clay is Liferay's web implementation of Lexicon Experience Language. Built with Bootstrap as a foundation, it's comprised of HTML, CSS, and JS.",
+			"site": "https://claycss.com/",
+			"repo": "https://github.com/liferay/claycss.com",
+			"image": "clay"
+		},
+		{
+			"title": "WeDeploy",
+			"description": "A modern deployment platform that lets you forget about infrastructure and dedicate your time to what really matters: building great apps.",
+			"site": "https://wedeploy.com/",
+			"repo": "https://github.com/wedeploy/wedeploy.com",
+			"image": "wedeploy"
+		},
+		{
+			"title": "Simple Slider",
+			"description": "An extremely lightweight JavaScript carousel micro library.",
+			"site": "http://ruyadorno.github.io/simple-slider/",
+			"image": "simple-slider"
+		},
+		{
+			"title": "Jonathan and Marissa",
+			"description": "A wedding site with RSVP, present list, and gallery capabilities.",
+			"site": "http://jonathanandmarissa.com/",
+			"repo": "https://github.com/jonnilundy/jonathan-and-marissa",
+			"image": "jonathanandmarissa"
+		},
+		{
+			"title": "Guia do trabalho remoto",
+			"description": "A guide to help creative professionals in the search of remote jobs.",
+			"site": "https://guiadotrabalhoremoto.com/",
+			"image": "guiadotrabalhoremoto"
+		},
+		{
+			"title": "Marble",
+			"description": "A CSS library for sleek, intuitive, and powerful UI components.",
+			"site": "https://marblecss.com/",
+			"repo": "https://github.com/wedeploy/marblecss.com/",
+			"image": "marble"
+		},
+		{
+			"title": "Electric",
+			"description": "A Node.js static generator that allows you to create beautiful documentation for your projects.",
+			"site": "https://electricjs.com/",
+			"repo": "https://github.com/electricjs/electricjs.com",
+			"image": "electric"
+		}
+	]
+}

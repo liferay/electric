@@ -1,0 +1,54 @@
+---
+title: "Showcase"
+description: "Check all the sites created with Electric"
+---
+
+{namespace pageShowcase}
+
+/**
+ * @param site
+ */
+{template .render}
+	{call main.render data="all"}
+		{param content kind="html"}
+			{call .header data="all" /}
+			{call .showcase data="all" /}
+			{call Footer.render /}
+		{/param}
+	{/call}
+{/template}
+
+/**
+ * @param page
+ */
+{template .header}
+	<header class="header">
+		<div class="container">
+			<h1 class="header-title">{$page.title}</h1>
+			<h2 class="header-subtitle">{$page.description}</h2>
+		</div>
+	</header>
+{/template}
+
+/**
+ * @param site
+ */
+{template .showcase}
+	<div class="showcase">
+		<div class="container">
+			<div class="row">
+				{foreach $showcase in $site.showcase}
+					<div class="col-xs-16 col-md-8">
+						<div class="showcase-item">
+							<div class="showcase-img-wrapper"><img class="showcase-img" src="/images/{$showcase.image}.jpg" alt="{$showcase.title}"></div>
+							<p class="showcase-title">{$showcase.title}</p>
+							<p class="showcase-description">{$showcase.description}<br><br>
+								<a href="{$showcase.site}">Visit Site</a>{if $showcase.repo} | <a href="{$showcase.repo}">Source Code</a>{/if}
+							</p>
+						</div>
+					</div>
+				{/foreach}
+			</div>
+		</div>
+	</div>
+{/template}

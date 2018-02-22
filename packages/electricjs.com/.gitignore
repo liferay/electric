@@ -1,0 +1,4 @@
+.publish
+dist
+node_modules
+temp

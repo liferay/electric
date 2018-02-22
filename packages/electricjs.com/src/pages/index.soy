@@ -1,0 +1,180 @@
+---
+title: "Home"
+description: "Create beautiful documentation for your projects"
+---
+
+{namespace pageIndex}
+
+/**
+ * @param site
+ */
+{template .render}
+	{call main.render data="all"}
+		{param content kind="html"}
+			{call .header data="all" /}
+			{call .why /}
+			{call .highlights /}
+			{call .how /}
+			{call .features /}
+			{call Footer.render /}
+		{/param}
+	{/call}
+{/template}
+
+/**
+ * @param site
+ */
+{template .header}
+	<header class="header">
+		<div class="container">
+			<h1 class="header-title">
+				<span class="icon-16-flash"></span> Electric
+			</h1>
+			<h2 class="header-subtitle">{$site.index.description}</h2>
+			<div class="header-cta">
+				<a href="/docs/getting-started.html" class="btn btn-accent">
+					<span class="icon-16-circle-arrow"></span>
+					Get Started
+				</a>
+			</div>
+		</div>
+		<p class="gh-btns">
+			<iframe src="//ghbtns.com/github-btn.html?user=electricjs&amp;repo=electric&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="150" height="30"></iframe>
+			<iframe src="//ghbtns.com/github-btn.html?user=electricjs&amp;repo=electric&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="150" height="30"></iframe>
+		</p>
+	</header>
+{/template}
+
+/**
+ *
+ */
+{template .why}
+	<article class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-2">
+					<h3 class="about-title">Why?</h3>
+					<p class="about-description">Because good documentation is a must, and your project deserves better than a readme file.</p>
+					<p class="about-description">Electric is a Node.js static generator that accelerates the process of writing detailed documentation sites.</p>
+				</div>
+			</div>
+		</div>
+	</article>
+{/template}
+
+/**
+ *
+ */
+{template .highlights}
+	<div class="highlights">
+		<div class="container">
+			<section class="highlight row">
+				<div class="col-md-6 col-md-offset-2">
+					<h4 class="highlight-title">Customize the way you want.</h4>
+					<p class="highlight-description">Electric comes with a flexible default theme that includes a landing page, docs, changelog, search, code highlight, copy to clipboard, and more.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-1">
+					<div class="highlight-graphic">
+						<span class="icon-16-star"></span>
+					</div>
+				</div>
+			</section>
+			<section class="highlight row">
+				<div class="col-md-6 col-md-push-8">
+					<h4 class="highlight-title">Focus on the content.</h4>
+					<p class="highlight-description">No more databases or server-side logic. Transform plain text into fully functional sites using the latest web technologies.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-2 col-md-pull-6">
+					<div class="highlight-graphic">
+						<span class="icon-16-streams"></span>
+					</div>
+				</div>
+			</section>
+			<section class="highlight row">
+				<div class="col-md-6 col-md-offset-2">
+					<h4 class="highlight-title">Host anywhere.</h4>
+					<p class="highlight-description">Electric builds completely static HTML sites that you can host on Amazon S3, GitHub pages, WeDeploy or anywhere else you choose.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-1">
+					<div class="highlight-graphic">
+						<span class="icon-16-cloud"></span>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+{/template}
+
+/**
+ *
+ */
+{template .how}
+	<article class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-2">
+					<h3 class="about-title">How?</h3>
+					<p class="about-description">We're not trying to reinvent the wheel here. Our idea is to leverage existing and well established tools, so you can feel more familiar with the workflow, worry less about tooling, and focus on what's important.</p>
+				</div>
+			</div>
+		</div>
+	</article>
+{/template}
+
+/**
+ *
+ */
+{template .features}
+	<div class="features">
+		<div class="container">
+			<div class="row">
+				<a class="feature col-md-4 col-md-offset-2" href="https://developers.google.com/closure/templates/" target="_blank">
+					<div class="feature-graphic">
+						<span class="icon-16-code-file"></span>
+					</div>
+					<h3 class="feature-title">Soy</h3>
+					<p class="feature-description">Create reusable layouts and pages using Closure Templates (aka Soy).</p>
+				</a>
+				<a class="feature col-md-4" href="http://sass-lang.com/" target="_blank">
+					<div class="feature-graphic">
+						<span class="icon-16-image"></span>
+					</div>
+					<h3 class="feature-title">Sass</h3>
+					<p class="feature-description">Customize the entire look and feel of our default theme using Sass.</p>
+				</a>
+				<a class="feature col-md-4" href="http://metaljs.com/" target="_blank">
+					<div class="feature-graphic">
+						<span class="icon-16-metal">
+							<img class="logo-metal" src="/images/logo_metal@2x.png" />
+						</span>
+					</div>
+					<h3 class="feature-title">Metal.js</h3>
+					<p class="feature-description">Use existing UI components with Metal.js or just build your own.</p>
+				</a>
+			</div>
+			<div class="row">
+				<a class="feature col-md-4 col-md-offset-2" href="https://guides.github.com/features/mastering-markdown/" target="_blank">
+					<div class="feature-graphic">
+						<span class="icon-16-markdown"></span>
+					</div>
+					<h3 class="feature-title">Markdown</h3>
+					<p class="feature-description">Write documentation with the simplicity of Markdown and Front Matter.</p>
+				</a>
+				<a class="feature col-md-4" href="http://gulpjs.com/" target="_blank">
+					<div class="feature-graphic">
+						<span class="icon-16-hammer"></span>
+					</div>
+					<h3 class="feature-title">Gulp</h3>
+					<p class="feature-description">Run Gulp tasks to leverage the power of node streams and get fast builds.</p>
+				</a>
+				<a class="feature col-md-4" href="http://yeoman.io/" target="_blank">
+					<div class="feature-graphic">
+						<span class="icon-16-command-line"></span>
+					</div>
+					<h3 class="feature-title">Yeoman</h3>
+					<p class="feature-description">Kickstart new projects and themes using a Yeoman generator.</p>
+				</a>
+			</div>
+		</div>
+	</div>
+{/template}

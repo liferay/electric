@@ -1,0 +1,17 @@
+.topbar-logo-link {
+	.icon {
+		color: $accent;
+		font-size: 24px;
+		position: relative;
+		top: 5px;
+	}
+}
+
+.btn-accent {
+	color: rgba($primary, .6);
+
+	&:hover,
+	&:focus {
+		color: rgba($primary, .9);
+	}
+}

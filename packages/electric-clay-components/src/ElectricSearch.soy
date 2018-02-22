@@ -1,13 +1,14 @@
 {namespace ElectricSearch}
 
 /**
- * @param? action
- * @param? placeholder
- * @param? query
- * @param? results
- * @param? spritesheet
  */
 {template .render}
+	{@param? action: ?}
+	{@param? placeholder: ?}
+	{@param? query: ?}
+	{@param? results: ?}
+	{@param? spritesheet: ?}
+
 	{let $spritesheet_: $spritesheet ?: '/vendor/lexicon/icons.svg' /}
 
 	<div class="search">
@@ -22,12 +23,13 @@
 {/template}
 
 /**
- * @param? action
- * @param? placeholder
- * @param? query
- * @param spritesheet
  */
 {template .form}
+	{@param spritesheet: ?}
+	{@param? action: ?}
+	{@param? placeholder: ?}
+	{@param? query: ?}
+
 	<form action="{$action}" method="GET" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-2">
@@ -54,11 +56,12 @@
 {/template}
 
 /**
- * @param? results
- * @param? query
- * @param spritesheet
  */
 {template .results}
+	{@param spritesheet: ?}
+	{@param? results: ?}
+	{@param? query: ?}
+
 	<div class="search-result-container">
 		{if $query}
 			<p class="search-result-summary">

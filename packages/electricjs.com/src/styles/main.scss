@@ -1,0 +1,21 @@
+$accent: #FFCC00;
+
+@import "marble";
+
+// Root
+@import "templates/root";
+
+// Landing
+@import "templates/landing";
+
+// Docs
+@import "templates/docs";
+
+// Search
+@import "templates/search";
+
+// Customization
+@import "custom/all";
+@import "custom/docs";
+@import "custom/landing";
+@import "custom/showcase";

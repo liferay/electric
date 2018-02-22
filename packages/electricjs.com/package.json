@@ -1,0 +1,15 @@
+{
+  "name": "electricjs.com",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "electric"
+  },
+  "devDependencies": {
+    "electric-cli": "^3.0.1",
+    "electric-marble-components": "^4.0.0",
+    "marble": "~3.2.6",
+    "marble-topbar": "^1.6.0",
+    "metal-toggler": "^3.1.0"
+  }
+}
