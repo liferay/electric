@@ -134,6 +134,6 @@ title: "Page"
 
 This will render a list with all direct descendants of the index page.
 
-See [configuration](/docs/configuration.html#options) for more information.
+See [configuration](/docs/configuration#options) for more information.
 
 </article>

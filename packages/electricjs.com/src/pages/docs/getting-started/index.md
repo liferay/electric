@@ -34,7 +34,7 @@ electric run
 This will build your newly created project and start up a development server
 along with a watch task for quickly making changes.
 
-You can also modify the default port `8888` by running `electric run -p 3000`. 
+You can also modify the default port `8888` by running `electric run -p 3000`.
 
 </article>
 
@@ -71,7 +71,7 @@ Here is a basic example of an `electric` project.
 This file provides configuration options to electric. It must always be located
 in the root directory of your project.
 
-See [configuration](/docs/configuration.html) for more information.
+See [configuration](/docs/configuration) for more information.
 
 </article>
 
@@ -95,7 +95,7 @@ every file as an identifier.
 All layout files must be a soy template, and the only required layout is
 `base.soy`.
 
-See [layouts](/docs/layouts.html) for more information.
+See [layouts](/docs/layouts) for more information.
 
 </article>
 
@@ -113,6 +113,6 @@ building.
 Pages named `index` will be located at the path of it's parent directory,
 so `pages/docs/index.soy` will be available at `/docs/`.
 
-See [pages](/docs/pages.html) for more information.
+See [pages](/docs/pages) for more information.
 
 </article>
