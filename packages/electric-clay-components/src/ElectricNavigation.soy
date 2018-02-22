@@ -1,17 +1,18 @@
 {namespace ElectricNavigation}
 
 /**
- * @param section
- * @param? anchorVariant
- * @param? currentDepth
- * @param? currentURL
- * @param? depth
- * @param? elementClasses
- * @param? linkClasses
- * @param? listItemActiveClasses
- * @param? listItemClasses
  */
 {template .render}
+	{@param section: ?}
+	{@param? anchorVariant: ?}
+	{@param? currentDepth: ?}
+	{@param? currentURL: ?}
+	{@param? depth: ?}
+	{@param? elementClasses: ?}
+	{@param? linkClasses: ?}
+	{@param? listItemActiveClasses: ?}
+	{@param? listItemClasses: ?}
+
 	{let $localAnchorVariant: $anchorVariant ?: 'basic' /}
 	{let $localCurrentDepth: $currentDepth ?: 0 /}
 	{let $localListItemActiveClasses: $listItemActiveClasses ?: 'active' /}
@@ -48,10 +49,11 @@
 {/template}
 
 /**
- * @param page
- * @param? linkClasses
  */
 {deltemplate ElectricNavigation.anchor variant="'basic'"}
+	{@param page: ?}
+	{@param? linkClasses: ?}
+
 	{if $page.url or $page.redirect}
 		<a class="{$linkClasses ?: ''}" href="{$page.redirect ?: $page.url}">
 			<span>{$page.title ?: 'Missing'}</span>

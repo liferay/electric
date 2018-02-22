@@ -1,12 +1,13 @@
 {namespace ElectricCode}
 
 /**
- * @param code
- * @param? elementClasses
- * @param mode
- * @param? spritesheet
  */
 {template .render}
+	{@param code: ?}
+	{@param mode: ?}
+	{@param? elementClasses: ?}
+	{@param? spritesheet: ?}
+
 	{let $spritesheet_: $spritesheet ?: '/vendor/lexicon/icons.svg' /}
 
 	<div class="code-container{$elementClasses ? ' ' + $elementClasses: ''}">

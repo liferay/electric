@@ -1,10 +1,11 @@
 {namespace ElectricSearchAutocomplete}
 
 /**
- * @param? placeholder
- * @param? spritesheet
  */
 {template .render}
+	{@param? spritesheet: ?}
+	{@param? placeholder: ?}
+
 	{let $spritesheet_: $spritesheet ?: '/vendor/lexicon/icons.svg' /}
 
 	<div class="page-autocomplete">

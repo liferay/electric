@@ -1,10 +1,11 @@
 {namespace ElectricUpdates}
 
 /**
- * @param? featureVariant
- * @param updates
  */
 {template .render}
+	{@param updates: ?}
+	{@param? featureVariant: ?}
+
 	<div class="updates">
 		<div class="container">
 			{call .updates data="all" /}
@@ -13,10 +14,11 @@
 {/template}
 
 /**
- * @param? featureVariant
- * @param updates
  */
 {template .updates}
+	{@param updates: ?}
+	{@param? featureVariant: ?}
+
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-12 col-md-offset-0">
 			{if $updates}
@@ -41,10 +43,11 @@
 {/template}
 
 /**
- * @param? featureVariant
- * @param features
  */
 {template .features}
+	{@param features: ?}
+	{@param? featureVariant: ?}
+
 	{let $localFeatureVariant: $featureVariant ?: 'basic' /}
 
 	<div class="row">
@@ -57,10 +60,11 @@
 {/template}
 
 /**
- * @param feature
- * @param? spritesheet
  */
 {deltemplate ElectricUpdates.feature variant="'basic'"}
+	{@param feature: ?}
+	{@param? spritesheet: ?}
+
 	{let $spritesheet_: $spritesheet ?: '/vendor/lexicon/icons.svg' /}
 
 	<div class="col-xs-12 col-sm-6 update-feature">
