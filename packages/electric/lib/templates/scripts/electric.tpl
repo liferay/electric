@@ -21,11 +21,16 @@
 				var page = getByPath(data.site, data.pageLocation);
 
 				if (page) {
-					electric.currentPageComponent = pageComponent.default.render(pageComponent.default, {
-						element: '#pageComponent > *',
-						page: page,
-						site: data.site
-					});
+					electric.data = data;
+					electric.page = page;
+
+					electric.currentPageComponent = pageComponent.default.render(
+						pageComponent.default, {
+							element: '#pageComponent > *',
+							page: electric.page,
+							site: electric.data.site
+						}
+					);
 				}
 
 				if (electric.runCodeMirror) {
