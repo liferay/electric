@@ -291,12 +291,14 @@ module.exports = function(options) {
 						}
 						else {
 							try {
-								const baseComponentString = Component.renderToString(baseComponent.base, {
-									content: componentString,
-									page: data.page,
-									serialized: data.serialized,
-									site: data.site
-								});
+								const baseComponentString = Component.renderToString(
+									baseComponent.base, {
+										content: componentString,
+										page: data.page,
+										serialized: data.serialized,
+										site: data.site
+									}
+								);
 
 								contents = replaceProtectedTags(baseComponentString);
 							}
