@@ -219,7 +219,7 @@ module.exports = function(options) {
 		function() {
 			return gulp
 				.src([
-					path.join(TEMP_DIR_SITE, '**/*.js'),
+					path.join(TEMP_DIR_SITE, 'pages/**/*.js'),
 					'!' + path.join(TEMP_DIR_SITE, '**/*.soy.js')
 				])
 				.pipe(
