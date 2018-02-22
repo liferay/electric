@@ -3,7 +3,7 @@
 import Soy from 'metal-soy';
 import {ElectricSearchAutocomplete} from 'electric-base-components';
 
-import templates from './ElectricSearchAutocomplete.soy';
+import templates from './ElectricSearchAutocomplete.soy.js';
 
 Soy.register(ElectricSearchAutocomplete, templates);
 

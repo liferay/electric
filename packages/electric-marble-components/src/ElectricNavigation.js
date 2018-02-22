@@ -5,7 +5,7 @@ import Soy from 'metal-soy';
 import ElectricNavigationBase from 'electric-base-components';
 import {isServerSide} from 'metal';
 
-import templates from './ElectricNavigation.soy';
+import templates from './ElectricNavigation.soy.js';
 
 class ElectricNavigation extends ElectricNavigationBase {
   attached() {
