@@ -308,7 +308,10 @@ module.exports = function(options) {
 						}
 
 						file.contents = new Buffer(contents);
-						file.path = file.path.replace(path.extname(file.path), '.html');
+
+						let extname = path.extname(file.path);
+
+						file.path = file.path.slice(0, file.path.length - extname.length) + '.html';
 
 						return file;
 					})
