@@ -1,6 +1,6 @@
 {
   "name": "electric-clay-components",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Components that are compatible with Clay for use with electric.js sites.",
   "jsnext:main": "src/all/components.js",
   "main": "lib/all/components.js",
