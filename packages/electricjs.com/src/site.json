@@ -4,6 +4,12 @@
 	"googleAnalytics": "UA-37033501-5",
 	"showcase": [
 		{
+			"title": "Webda",
+			"description": "Webda is a serverless platform for developers. The idea is that you can focus only on your code and deploy everywhere.",
+			"site": "https://webda.io",
+			"image": "webda"
+		},
+		{
 			"title": "Metal.js",
 			"description": "Metal is a JavaScript library that helps people build UI components in a solid, flexible way.",
 			"site": "https://metaljs.com/",
