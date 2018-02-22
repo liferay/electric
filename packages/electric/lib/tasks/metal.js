@@ -282,6 +282,8 @@ module.exports = function(options) {
 						}
 						catch(e) {
 							gutil.log(`Error when trying to render the "${file.path}" file`);
+							gutil.log(`Details: ${e.message}`);
+							return file;
 						}
 
 						let contents;
@@ -304,6 +306,8 @@ module.exports = function(options) {
 							}
 							catch(e) {
 								gutil.log(`Error when trying to render the base component on "${file.path}" file`);
+								gutil.log(`Details: ${e.message}`);
+								return file;
 							}
 						}
 

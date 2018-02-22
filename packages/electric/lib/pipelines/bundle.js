@@ -26,6 +26,7 @@ function bundle(options) {
 				}
 				catch(e) {
 					gutil.log(`Error when trying to require the "${file.path}" file`);
+					gutil.log(`Details: ${e.message}`);
 				}
 			}
 
