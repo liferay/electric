@@ -3,15 +3,11 @@
 /**
  *
  */
-{template .soyweb}
-	{call base.render data="all"}
+{template .render}
+	{call <%= layout %>.render data="all"}
 		{param content kind="html"}
-			{call <%= layout %>.render data="all"}
-				{param content kind="html"}
-					{call ElectricApi.render data="all" /}
-				{/param}
-				{param elementClasses: 'docs' /}
-			{/call}
+			{call ElectricApi.render data="all" /}
 		{/param}
+		{param elementClasses: 'docs' /}
 	{/call}
 {/template}

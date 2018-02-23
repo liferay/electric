@@ -30,10 +30,6 @@ module.exports = function(options) {
 			compileTasks
 		];
 
-		if (options.apiConfig) {
-			tasks.splice(2, 0, taskPrefix + 'api');
-		}
-
 		if (!options.debug) {
 			tasks.push(taskPrefix + 'clean:temp');
 		}
