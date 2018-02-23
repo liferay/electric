@@ -38,21 +38,15 @@ function api(project, options) {
 
 			normalizeApiData(apiData, project);
 
-			stream.push(
-				new gutil.File({
-					base: '',
-					contents: new Buffer(
-						apiSoywebTemplate({
-							layout: layout,
-							namespace: getRandomString()
-						})
-					),
-					cwd: cwd,
-					path: 'index.soy'
-				})
-			);
+			addVinylFiles(stream, {
+				name: 'index',
+				namespace: getRandomString()
+			}, layout, options.metalComponents);
 
 			apiData.forEach(function(item) {
+				item.namespace = _.camelCase(_.deburr(item.context.file) + '_' + item.name) +
+					getRandomString();
+
 				addVinylFiles(stream, item, layout, options.metalComponents);
 			});
 
@@ -67,14 +61,11 @@ function api(project, options) {
  * Adds vinyl files using data from JSDoc entitiy
  */
 function addVinylFiles(stream, item, layout, metalComponents) {
-	const namespace = _.camelCase(_.deburr(item.context.file) + '_' + item.name) +
-		getRandomString();
-
 	stream.push(
 		creatVinylFile(
 			apiSoywebTemplate({
 				layout: layout,
-				namespace: namespace
+				namespace: item.namespace
 			}),
 			item.name + '.soy'
 		)
@@ -84,7 +75,7 @@ function addVinylFiles(stream, item, layout, metalComponents) {
 		creatVinylFile(
 			apiCompTemplate({
 				imports: getImports(metalComponents),
-				name: namespace,
+				name: item.namespace,
 				soyName: item.name + '.soy'
 			}),
 			item.name + '.js'
