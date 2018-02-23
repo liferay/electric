@@ -1,0 +1,19 @@
+.update-point {
+	font-family: $font-primary;
+}
+
+.update-feature {
+	.feature-header {
+		font-family: $font-primary;
+	}
+
+	.feature-lead {
+		font-family: $font-secondary;
+		font-size: 16px;
+	}
+
+	.read-more a {
+		font-family: $font-secondary;
+		text-decoration: none;
+	}
+}

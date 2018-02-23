@@ -1,0 +1,82 @@
+---
+title: Updates
+description: Check out what's new on Electric CLI
+updates:
+ -
+  version: 3.0.2
+  major: false
+  features:
+   -
+    icon: globe
+    title: Global variables
+    description: Scoped 'data' and 'page' properties inside a global 'electric' variable
+    url: https://github.com/electricjs/electric/commit/29d4ccb5427cd0bcb108f42c9cbb0a111b6967cd
+   -
+    icon: alert
+    title: Error handling
+    description: Improved the way errors are catched and showed to the user
+    url: https://github.com/electricjs/electric/commit/cf9ee144bf88a0829b4d4dfd3a21d9d7603abb0a
+   -
+    icon: pen
+    title: Clay components
+    description: Renamed 'electric-quartz-components' to 'electric-clay-components'
+    url: https://github.com/electricjs/electric/commit/74ab2049e558c52b266e48b8a133c4c550cf2b36
+ -
+  version: 3.0.1
+  major: false
+  features:
+   -
+    icon: command-line
+    title: Publish scripts
+    description: Made sure that 'npm prepublish' scripts are run prior to 'lerna publish'
+    url: https://github.com/electricjs/electric/commit/0fa9a7840e710fa52c81c2bf4fe6ca8d9efedab5
+ -
+  version: 3.0.0
+  major: true
+  features:
+   -
+    icon: star
+    title: Metal rendering
+    description: Replaced 'gulp-soynode' with Metal server side rendering
+    url: https://github.com/electricjs/electric/commit/0f41ccafebad17a2a27face6f03460e4d264e52e
+   -
+    icon: hammer
+    title: SSR compatible
+    description: Made components to be compatible with server side rendering
+    url: https://github.com/electricjs/electric/commit/4ecbd9470b21794dc67ed74fd5c70d2b9f78ddb4
+   -
+    icon: spinner-single-arrow
+    title: Soy comments
+    description: Migrated to the comment syntax used on the new Soy compiler
+    url: https://github.com/electricjs/electric/issues/105
+   -
+    icon: external
+    title: Redirect pages
+    description: Updated the pattern used on the new redirect pages
+    url: https://github.com/electricjs/electric/commit/c10ff5d9b8eccafa664ce4a0dea274d462611c21
+---
+
+{namespace updatesIndex}
+
+/**
+ */
+{template .render}
+	{@param page: ?}
+
+	{call main.render data="all"}
+		{param content kind="html"}
+			<div>
+				<header class="header">
+					<div class="container">
+						<h1 class="header-title">{$page.title}</h1>
+						<h2 class="header-subtitle">{$page.description}</h2>
+					</div>
+				</header>
+
+				{call ElectricUpdates.render}
+					{param updates: $page.updates /}
+				{/call}
+			</div>
+		{/param}
+	{/call}
+{/template}
