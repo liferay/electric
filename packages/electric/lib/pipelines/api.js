@@ -6,8 +6,14 @@ const gutil = require('gulp-util');
 const path = require('path');
 const through = require('through2');
 
+const getImports = require('../get_imports');
+
 const apiSoywebTemplate = _.template(
 	fs.readFileSync(path.join(__dirname, '../templates/api-soyweb.tpl'))
+);
+
+const apiCompTemplate = _.template(
+	fs.readFileSync(path.join(__dirname, '../templates/api-component.tpl'))
 );
 
 /**
@@ -32,22 +38,16 @@ function api(project, options) {
 
 			normalizeApiData(apiData, project);
 
-			stream.push(
-				new gutil.File({
-					base: '',
-					contents: new Buffer(
-						apiSoywebTemplate({
-							layout: layout,
-							namespace: getRandomString()
-						})
-					),
-					cwd: cwd,
-					path: 'index.soy'
-				})
-			);
+			addVinylFiles(stream, {
+				name: 'index',
+				namespace: getRandomString()
+			}, layout, options.metalComponents);
 
 			apiData.forEach(function(item) {
-				stream.push(creatVinylFile(item, layout));
+				item.namespace = _.camelCase(_.deburr(item.context.file) + '_' + item.name) +
+					getRandomString();
+
+				addVinylFiles(stream, item, layout, options.metalComponents);
 			});
 
 			file.contents = new Buffer(JSON.stringify(apiData, null, '\t'));
@@ -58,21 +58,40 @@ function api(project, options) {
 }
 
 /**
- * Creates vinyl file using data from JSDoc entitiy
+ * Adds vinyl files using data from JSDoc entitiy
  */
-function creatVinylFile(item, layout) {
-	return new gutil.File({
-		base: '',
-		contents: new Buffer(
+function addVinylFiles(stream, item, layout, metalComponents) {
+	stream.push(
+		creatVinylFile(
 			apiSoywebTemplate({
 				layout: layout,
-				namespace:
-					_.camelCase(_.deburr(item.context.file) + '_' + item.name) +
-						getRandomString()
-			})
-		),
+				namespace: item.namespace
+			}),
+			item.name + '.soy'
+		)
+	);
+
+	stream.push(
+		creatVinylFile(
+			apiCompTemplate({
+				imports: getImports(metalComponents),
+				name: item.namespace,
+				soyName: item.name + '.soy'
+			}),
+			item.name + '.js'
+		)
+	);
+}
+
+/**
+ * Creates vinyl file using data from JSDoc entitiy
+ */
+function creatVinylFile(contents, path) {
+	return new gutil.File({
+		base: '',
+		contents: new Buffer(contents),
 		cwd: process.cwd(),
-		path: item.name + '.soy'
+		path: path
 	});
 }
 

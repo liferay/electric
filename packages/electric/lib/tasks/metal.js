@@ -8,7 +8,6 @@ const filter = require('gulp-filter');
 const frontMatter = require('gulp-front-matter');
 const gutil = require('gulp-util');
 const fs = require('fs-extra');
-const globby = require('globby');
 const path = require('path');
 const replace = require('gulp-replace');
 const {Component} = require('metal-component');
@@ -20,6 +19,7 @@ require('jsdom-global')();
 
 const baseInject = require('../pipelines/base_inject');
 const bundle = require('../pipelines/bundle');
+const getImports = require('../get_imports');
 const getTemplate = require('../get_template');
 const handleError = require('../handle_error');
 const layout = require('../pipelines/layout');
@@ -54,7 +54,7 @@ module.exports = function(options) {
 	const util = options.util;
 
 	gulp.task(taskPrefix + 'metal', function(cb) {
-		runSequence(
+		const tasks = [
 			[
 				taskPrefix + 'metal:prep:partials',
 				taskPrefix + 'metal:prep:layouts',
@@ -65,9 +65,18 @@ module.exports = function(options) {
 			taskPrefix + 'metal:prep:page-components',
 			taskPrefix + 'metal:render:soy',
 			taskPrefix + 'metal:prep:transpile',
-			[taskPrefix + 'metal:render:bundles', taskPrefix + 'metal:render:html'],
+			[
+				taskPrefix + 'metal:render:bundles',
+				taskPrefix + 'metal:render:html'
+			],
 			cb
-		);
+		];
+
+		if (options.apiConfig) {
+			tasks.splice(5, 0, taskPrefix + 'api');
+		}
+
+		runSequence.apply(null, tasks);
 	});
 
 	gulp.task(taskPrefix + 'metal:prep:base-layout', function() {
@@ -99,27 +108,6 @@ module.exports = function(options) {
 			restore: true
 		});
 
-		const partials = _.map(
-			globby.sync(
-				path.join(TEMP_DIR_SITE, '+(components|layouts|partials)/**/*.soy')
-			),
-			function(filePath) {
-				const jsFilePath =
-					path.join(
-						path.dirname(filePath),
-						path.basename(filePath, path.extname(filePath))
-					) + '.js';
-
-				if (fs.existsSync(jsFilePath)) {
-					filePath = jsFilePath;
-				} else if (path.extname(filePath) === '.soy') {
-					filePath += '.js';
-				}
-
-				return path.join(cwd, filePath).split(path.sep).join('/');
-			}
-		);
-
 		return gulp
 			.src(path.join(pathSrc, 'pages/**/*.+(html|md|soy)'), {
 				base: pathSrc
@@ -141,7 +129,7 @@ module.exports = function(options) {
 					const namespace = util.getNamespaceFromContents(file);
 
 					const componentContents = componentTemplate({
-						imports: metalComponents.concat(partials),
+						imports: getImports(options.metalComponents),
 						name: namespace,
 						soyName: path.basename(filePath)
 					});
@@ -221,6 +209,7 @@ module.exports = function(options) {
 			return gulp
 				.src([
 					path.join(TEMP_DIR_SITE, 'pages/**/*.js'),
+					'!' + path.join(TEMP_DIR_SITE, 'pages/api/**/*.js'),
 					'!' + path.join(TEMP_DIR_SITE, '**/*.soy.js')
 				])
 				.pipe(
@@ -254,7 +243,16 @@ module.exports = function(options) {
 				})
 				.pipe(
 					data(function(file) {
-						const component = require(file.path);
+						let component;
+
+						try {
+							component = require(file.path);
+						}
+						catch (e) {
+							gutil.log(`Error when trying to require the "${file.path}" file`);
+							gutil.log(`Details: ${e.message}`);
+							return file;
+						}
 
 						let data;
 
@@ -273,11 +271,8 @@ module.exports = function(options) {
 
 						try {
 							componentString = Component.renderToString(
-								component.default, {
-									page: data.page,
-									pageLocation: data.pageLocation,
-									site: data.site
-								}
+								component.default,
+								data
 							);
 						}
 						catch(e) {

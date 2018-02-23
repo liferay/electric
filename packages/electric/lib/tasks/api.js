@@ -1,14 +1,16 @@
 'use strict';
 
 const _ = require('lodash');
+const data = require('gulp-data');
 const documentation = require('gulp-documentation');
+const fs = require('fs-extra');
 const path = require('path');
 const streamSeries = require('stream-series');
 
 const api = require('../pipelines/api');
 const download = require('../download');
 
-const TEMP_DIR = '.temp/task/soyweb/site/pages/api';
+const TEMP_DIR = '.temp/task/metal/site/pages/api';
 
 module.exports = function(options) {
 	const apiConfig = options.apiConfig;
