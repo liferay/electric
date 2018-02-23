@@ -23,8 +23,7 @@ class OlderPosts extends Component {
 				}
 			}
 
-			const postsToShow = posts.lenth < 3 ? posts.lenth : 3;
-			this.posts = posts.slice(0, postsToShow);
+			this.posts = posts.slice(0, 3);
 		}
 	}
 };
