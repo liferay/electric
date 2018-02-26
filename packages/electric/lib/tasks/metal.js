@@ -73,7 +73,7 @@ module.exports = function(options) {
 		];
 
 		if (options.apiConfig) {
-			tasks.splice(5, 0, taskPrefix + 'api');
+			tasks.splice(4, 0, taskPrefix + 'api');
 		}
 
 		runSequence.apply(null, tasks);
