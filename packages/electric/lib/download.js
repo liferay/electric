@@ -37,6 +37,7 @@ function projectDownload(project, cb) {
 		project.refs,
 		function(ref, done) {
 			const pathProject = path.join(process.cwd(), '.temp', 'project');
+			const mainFolderName = project.mainFolderName || 'src';
 
 			fs.ensureDirSync(pathProject);
 
@@ -67,11 +68,11 @@ function projectDownload(project, cb) {
 						readableStream.pipe(writableStream);
 
 						writableStream.on('finish', function () {
-							const pathUnZip = path.join(pathProject, ref, 'src');
+							const pathUnZip = path.join(pathProject, ref, mainFolderName);
 
 							fs.ensureDirSync(pathUnZip);
 
-							projectUnzip(zipPath, `${project.repo}-${cleanRef}/src/`, pathUnZip, done);
+							projectUnzip(zipPath, `${project.repo}-${cleanRef}/${mainFolderName}/`, pathUnZip, done);
 						});
 
 						writableStream.on('error', function (err) {
