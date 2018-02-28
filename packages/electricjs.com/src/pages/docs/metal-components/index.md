@@ -145,8 +145,8 @@ data, such as navigation and search components.
 
 Currently these components come in two themes.
 
-- [Marble](https://marblecss.com/): [electric-marble-components](https://github.com/electricjs/electric/tree/master/packages/electric-marble-components)
-- [Clay](https://claycss.com/): [electric-clay-components](https://github.com/electricjs/electric/tree/master/packages/electric-clay-components)
+- [Marble](https://marbleui.com/): [electric-marble-components](https://github.com/electricjs/electric/tree/master/packages/electric-marble-components)
+- [Clay](https://clayui.com/): [electric-clay-components](https://github.com/electricjs/electric/tree/master/packages/electric-clay-components)
 
 These components are invoked the same way as your own components.
 
