@@ -39,8 +39,8 @@
 		{
 			"title": "Clay",
 			"description": "Clay is Liferay's web implementation of Lexicon Experience Language. Built with Bootstrap as a foundation, it's comprised of HTML, CSS, and JS.",
-			"site": "https://claycss.com/",
-			"repo": "https://github.com/liferay/clay/tree/master/packages/claycss.com",
+			"site": "https://clayui.com/",
+			"repo": "https://github.com/liferay/clay/tree/master/packages/clayui.com",
 			"image": "clay"
 		},
 		{
@@ -73,8 +73,8 @@
 		{
 			"title": "Marble",
 			"description": "A CSS library for sleek, intuitive, and powerful UI components.",
-			"site": "https://marblecss.com/",
-			"repo": "https://github.com/wedeploy/marble/tree/master/packages/marblecss.com",
+			"site": "https://marbleui.com/",
+			"repo": "https://github.com/wedeploy/marble/tree/master/packages/marbleui.com",
 			"image": "marble"
 		},
 		{
