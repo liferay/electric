@@ -40,6 +40,10 @@ module.exports = function(options) {
 
 	gulp.task(taskPrefix + 'api:prep', function() {
 		const project = apiConfig.project;
+		const optionsDocs = Object.assign({
+			access: ['public', 'private', 'protected', 'undefined'],
+			private: true
+		}, apiConfig.project.docsOptions);
 
 		const streams = _.map(project.refs, function(ref) {
 			const refProject = _.assign({}, project, {
@@ -56,12 +60,7 @@ module.exports = function(options) {
 
 			return gulp
 				.src(src)
-				.pipe(
-					documentation('json', {
-						access: ['public', 'private', 'protected', 'undefined'],
-						private: true
-					})
-				)
+				.pipe(documentation('json', optionsDocs))
 				.pipe(api(refProject, options))
 				.pipe(gulp.dest(path.join(TEMP_DIR, ref)));
 		});
