@@ -7,7 +7,7 @@ import Soy from 'metal-soy';
 import '<%= component %>';
 <% }); %>
 
-import 'electric-marble-components/lib/ElectricAPIEntities.soy.js';
+import '<%= soyAPIEntitiesPath %>';
 
 import templates from './<%= soyName %>.js';
 
