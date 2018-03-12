@@ -7,7 +7,7 @@ import Soy from 'metal-soy';
 import '<%= component %>';
 <% }); %>
 
-import '<%= apiEntitiesPath %>.soy.js';
+import '<%= soyAPIEntitiesPath %>';
 
 import templates from './<%= soyName %>.js';
 

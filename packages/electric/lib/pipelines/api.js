@@ -21,7 +21,7 @@ const apiCompTemplate = _.template(
  * for each entity.
  */
 function api(project, options) {
-	const apiEntitiesPath = project.apiEntitiesPath || 'electric-marble-components/lib/ElectricAPIEntities';
+	const soyAPIEntitiesPath = project.soyAPIEntitiesPath || 'electric-marble-components/lib/ElectricAPIEntities.soy.js';
 	const cwd = process.cwd();
 	const layout = options.apiConfig.layout;
 
@@ -40,13 +40,13 @@ function api(project, options) {
 			normalizeApiData(apiData, project);
 
 			addVinylFiles(stream, {
-				apiEntitiesPath: apiEntitiesPath,
+				soyAPIEntitiesPath: soyAPIEntitiesPath,
 				name: 'index',
 				namespace: getRandomString()
 			}, layout, options.metalComponents);
 
 			apiData.forEach(function(item) {
-				item.apiEntitiesPath = apiEntitiesPath;
+				item.soyAPIEntitiesPath = soyAPIEntitiesPath;
 				item.namespace = _.camelCase(_.deburr(item.context.file) + '_' + item.name) +
 					getRandomString();
 
@@ -67,7 +67,7 @@ function addVinylFiles(stream, item, layout, metalComponents) {
 	stream.push(
 		creatVinylFile(
 			apiSoywebTemplate({
-				apiEntitiesPath: item.apiEntitiesPath,
+				soyAPIEntitiesPath: item.soyAPIEntitiesPath,
 				layout: layout,
 				namespace: item.namespace
 			}),
