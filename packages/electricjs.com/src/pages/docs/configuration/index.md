@@ -328,4 +328,58 @@ module.exports = {
 };
 ```
 
+### apiConfig
+
+- Type: `Object`
+
+Configuration object to generate the API documentation following the JSDOC specification.
+
+Example:
+
+```text/javascript
+module.exports = {
+	apiConfig: {
+		layout: 'main',
+		project: {
+			docsConfig: {
+				shallow: true,
+			},
+			refs: ['electric@3.0.2'],
+			repo: 'electric',
+			soyAPIEntitiesPath: '../../../partials/ElectricAPIEntities.soy.js',
+			src: [
+				'packages/electric/lib/**/*.js',
+			],
+			srcPath: 'packages',
+			user: 'electricjs'
+		}
+	}
+}
+```
+
+#### Parameters
+
+- **layout** `?String` Set the name of your layout that Electric should take as a basis, See an [example](https://github.com/electricjs/electric/blob/master/packages/generator-electric/generators/app/templates/src/layouts/main.soy). (default `main`)
+
+- **project** `!Object` project
+
+	- **docsConfig** `?Object` Config object passed to [documentation](https://github.com/documentationjs/documentation/blob/master/docs/NODE_API.md#build). default `access: ['public', 'private', 'protected', 'undefined'], private: true`
+
+	- **refs** `!Array<string>` Set the tag of the version that your project was launched, example `v1.0.0`. (Remember that this is referring to releases released by the Github platform.)
+
+	- **repo** `!String` Set the name of the repository that contains your project.
+
+	- **soyAPIEntitiesPath** `?String` Set your soy path containing `APIEntitiesName.soy.js`, See an example [marble](https://github.com/electricjs/electric/blob/master/packages/electric-marble-components/src/ElectricAPIEntities.soy) (default `electric-marble-components/lib/ElectricAPIEntities.soy.js`)
+
+	- **src** `!Array<string>` Pass the location of the files you want the Electric to analyze and generate the documents. (glob is supported.)
+
+	- **srcPath** `?String` Set the source path of your project. (default `src`)
+
+	- **user** `!String` Set the username or organization that your repo is on. (example `electric`)
+
+<div class="alert alert-inline alert-warning">
+   <span class="icon-16-alert"></span>
+   <span class="alert-body"><b>apiConfig.project.soyAPIEntitiesPath</b> has its default value will be deprecated and removed in the next major releases. <a href="https://github.com/electricjs/electric/issues/132" class="alert-link">See issue</a>.</span>
+</div>
+
 </article>
