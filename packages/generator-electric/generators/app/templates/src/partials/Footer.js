@@ -15,7 +15,7 @@ class Footer extends Component {
 
 	rendered() {
 		this.year = new Date().getFullYear();
-    }
+	}
 
 };
 
