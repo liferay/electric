@@ -17,7 +17,7 @@ description: "Something nice and compelling about the project. Make it short and
 			{call .features /}
 			{call .how /}
 			{call .highlights /}
-			{call .footer /}
+			{call Footer.render data="all" /}
 		{/param}
 	{/call}
 {/template}
@@ -135,21 +135,4 @@ description: "Something nice and compelling about the project. Make it short and
 			</section>
 		</div>
 	</div>
-{/template}
-
-/**
- */
-{template .footer}
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<p class="footer-description col-md-6 col-md-offset-2">
-					Copyright © 2018 <a href="https://liferay.com">Liferay, Inc</a>
-				</p>
-				<p class="footer-description col-md-6">
-					Powered by <a href="http://wedeploy.com">WeDeploy™</a>
-				</p>
-			</div>
-		</div>
-	</footer>
 {/template}
