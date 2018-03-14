@@ -67,7 +67,6 @@ function addVinylFiles(stream, item, layout, metalComponents) {
 	stream.push(
 		creatVinylFile(
 			apiSoywebTemplate({
-				soyAPIEntitiesPath: item.soyAPIEntitiesPath,
 				layout: layout,
 				namespace: item.namespace
 			}),
@@ -80,6 +79,7 @@ function addVinylFiles(stream, item, layout, metalComponents) {
 			apiCompTemplate({
 				imports: getImports(metalComponents),
 				name: item.namespace,
+				soyAPIEntitiesPath: item.soyAPIEntitiesPath,
 				soyName: item.name + '.soy'
 			}),
 			item.name + '.js'
