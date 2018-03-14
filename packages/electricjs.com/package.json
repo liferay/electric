@@ -1,12 +1,12 @@
 {
   "name": "electricjs.com",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "start": "electric"
   },
   "devDependencies": {
-    "electric-cli": "^3.0.2",
+    "electric-cli": "^3.0.3",
     "electric-marble-components": "^4.0.4",
     "marble": "~3.2.6",
     "marble-topbar": "^1.6.0",
