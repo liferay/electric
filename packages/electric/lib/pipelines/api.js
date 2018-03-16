@@ -67,6 +67,7 @@ function addVinylFiles(stream, item, layout, metalComponents) {
 	stream.push(
 		creatVinylFile(
 			apiSoywebTemplate({
+				soyAPIEntitiesPath: item.soyAPIEntitiesPath,
 				layout: layout,
 				namespace: item.namespace
 			}),
