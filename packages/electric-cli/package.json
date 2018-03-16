@@ -1,6 +1,6 @@
 {
   "name": "electric-cli",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "CLI for creating and building electric sites.",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "chalk": "^1.1.3",
-    "electric": "^3.0.3",
+    "electric": "^3.0.4",
     "generator-electric": "^3.0.3",
     "gulp": "^3.9.1",
     "pretty-hrtime": "^1.0.3",
