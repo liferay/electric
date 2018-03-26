@@ -57,6 +57,10 @@ updates:
 				{call ElectricUpdates.render}
 					{param updates: $page.updates /}
 				{/call}
+
+                {call Footer.render data="all"}
+                    {param haveSidebar: false /}
+                {/call}
 			</div>
 		{/param}
 	{/call}
