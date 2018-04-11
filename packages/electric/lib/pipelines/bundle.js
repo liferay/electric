@@ -44,7 +44,7 @@ function bundle(options) {
 			if (uglify) {
 				plugins.push(
 					new UglifyJSPlugin({
-						minimize: true
+						parallel: true
 					})
 				);
 
