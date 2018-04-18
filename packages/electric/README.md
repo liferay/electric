@@ -18,9 +18,19 @@
   <img src="https://img.shields.io/npm/l/electric.svg" alt="License">
 </div>
 
-## Attention
+## Support and Project status
 
-Electric is under development. It's usable and we're using in production already, but if you plan on using it right now, expect some UI changes and API breaks.
+Electric is widely used internally at Liferay but does not currently have staffing to support
+an open source release or provide continuous improvements. As such this project is mostly _internal_
+and support is _minimal_.
+
+To get assistance you can use any of the following forums
+
+1. Look through the [documentation](http://electricjs.com).
+2. File an [issue on GitHub](https://github.com/electricjs/electric/issues)
+
+We will try our best, but keep in mind that given our support staffing, we may
+not be able to help.
 
 ## Learn
 
