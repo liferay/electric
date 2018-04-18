@@ -26,6 +26,10 @@ description: "Everything you need to know to get started."
 					{param site: $site /}
 				{/call}
 				{call .topics data="all" /}
+
+				{call Footer.render data="all"}
+					{param haveSidebar: true /}
+				{/call}
 			</div>
 		</main>
 	</div>

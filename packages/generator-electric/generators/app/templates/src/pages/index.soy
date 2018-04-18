@@ -17,9 +17,12 @@ description: "Something nice and compelling about the project. Make it short and
 			{call .features /}
 			{call .how /}
 			{call .highlights /}
-			{call Footer.render data="all" /}
 		{/param}
 	{/call}
+
+	{call Footer.render data="all"}
+    	{param haveSidebar: false /}
+  	{/call}
 {/template}
 
 /**
