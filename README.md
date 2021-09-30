@@ -6,7 +6,7 @@
 
 1. Install NodeJS >= [v6.11.0](http://nodejs.org/dist/v6.11.0/), if you don't have it yet.
 
-2. Install global dependencies:
+2. Install Global dependencies:
 
 	```
 	[sudo] npm install -g yarn
