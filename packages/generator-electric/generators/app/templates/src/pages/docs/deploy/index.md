@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2017 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 ---
 title: "Deploy"
 description: "Sapien in monti palavris qui num significa nadis i pareci latim. in elementis mé pra quem é amistosis quis leo. Mais vale um bebadis conhecidiss, que um alcoolatra anonimiss. Ta deprimidis, eu conheço uma cachacis que pode alegrar sua vidis."

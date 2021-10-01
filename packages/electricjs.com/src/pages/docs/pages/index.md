@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2016 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 ---
 description: "Creating pages in soy and markdown."
 icon: "streams"

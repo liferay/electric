@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2017 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 # Electric.js Generator
 
 ###### Yeoman generator for creating documentation sites using [electric.js](https://github.com/electricjs/electric).

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2016 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 # Electric
 
 > A static site generator powered by [soy templates](https://developers.google.com/closure/templates/), [metal.js](https://metaljs.com), and [marble](https://marblecss.com).

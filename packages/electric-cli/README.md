@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2017 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 # electric-cli
 
 Command line tools for [electric](https://github.com/wedeploy/electric).

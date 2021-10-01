@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2017 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 ---
 title: "Develop"
 description: "Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Quem num gosta di mé, boa gente num é."
