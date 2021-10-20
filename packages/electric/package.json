@@ -19,7 +19,7 @@
     "generator"
   ],
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/wedeploy/electric/issues"
   },

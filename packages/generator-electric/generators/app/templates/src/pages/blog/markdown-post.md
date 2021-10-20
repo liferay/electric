@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2017 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 ---
 title: "Markdown Post"
 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."

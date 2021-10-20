@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2017 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 ---
 title: "Nulla Eget"
 description: "Viva Forevis aptent taciti sociosqu ad litora torquent Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Pra lá , depois divoltis porris, paradis. Delegadis gente finis, bibendum egestas augue arcu ut est."

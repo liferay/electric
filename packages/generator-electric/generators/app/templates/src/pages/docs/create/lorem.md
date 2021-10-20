@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2017 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 ---
 title: "Lorem Ipsum"
 description: "Mais vale um bebadis conhecidiss, que um alcoolatra anonimiss. Mé faiz elementum girarzis, nisi eros vermeio. Suco de cevadiss deixa as pessoas mais interessantiss. Cevadis im ampola pa arma uma pindureta."

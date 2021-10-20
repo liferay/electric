@@ -8,7 +8,7 @@
   },
   "repository": "https://github.com/electricjs/electric/tree/master/packages/electric-cli",
   "author": "Rob Frampton <rob.g.frampton@gmail.com> (https://github.com/Robert-Frampton)",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
   "bin": {
     "electric": "bin/electric.js",
     "el": "bin/electric.js"

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2017 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 ---
 title: "Create"
 description: "Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. A ordem dos tratores não altera o pão duris Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Ta deprimidis, eu conheço uma cachacis que pode alegrar sua vidis."

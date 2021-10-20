@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: © 2017 Liferay International Ltd. <https://liferay.com>
+//
+// SPDX-License-Identifier: BSD-3-Clause
+
 var fs = require('fs');
 var path = require('path');
 var chalk = require('chalk');

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2016 Liferay International Ltd. <https://liferay.com>
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 <h1 align="center"><a href="http://electricjs.com">⚡ Electric</a></h1>
 
 <h5 align="center">Static site generator using soy templates and <a href="http://metaljs.com/">metal.js</a>.</h5>
